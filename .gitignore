@@ -3,6 +3,10 @@ bin-debug/
 bin-release/
 [Oo]bj/
 [Bb]in/
+main.css
+main.css.map
+normalize.css
+normalize.css.map
 
 # Other files and folders
 .settings/
