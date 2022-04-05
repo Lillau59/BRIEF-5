@@ -1,16 +1,12 @@
-// à supprimer quand le vrai header sera intégré dans la page
-.header {
-    width:100%;
+// A supprimer lorsque la navbar sera insérée dans le code HTML
+.temporaire {
     height: 100px;
-    background-color: red;
-    position: absolute;
-    top:0;
-    left:0; 
+    background-color: lightgray;
 }
 
 .itineraire {
     position:absolute;
-    top:100px;
+    top:100px;  
     left:0;
     bottom:0;
     right:0;
@@ -20,18 +16,18 @@
     .etapes {
         display:flex;
         flex-direction: column;
-        width:40%;
-        font-family: 'Istok Web', sans-serif;
+        width:50%;
+        font-family: 'Istok Web', Arial, sans-serif;
         font-weight: 100;
         overflow-y: scroll;
-        //scrollbar-color: rebeccapurple green;
+        scrollbar-color: rebeccapurple green;
         scrollbar-width: thin;
-
+    
         .etape {
             display:flex;
             flex-direction: row;
             padding:2px 0;
-
+    
             .left-etape {
                 .img-etape {
                     width: 190px;
@@ -51,26 +47,26 @@
                     margin-top:-30px;
                 }
             }
-            
+    
             .right-etape {
                 display:flex;
                 flex-direction: column;
                 width:100%;
-
+    
                 .type-etape {
                     background-color: $color-eurovelo5;
                     color:white;
                     padding: 8px;
                     font-size: 0.9rem;
                 }
-                
+    
                 .nom-etape {
                     padding-left: 8px;
                 }
             }
         }
     }
-    
+
     #map { 
         //max-width: 1000px; 
         height: 800px;
