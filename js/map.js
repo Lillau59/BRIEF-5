@@ -7,7 +7,31 @@ L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
 
 var url = './js/EuroVelo_5_Via_Romea_Francigena.xml'; // URL to your GPX file or the GPX itself
 
-new L.GPX(url, {
+// var itineraire = new L.GPX(url, {
+//     polyline_options: {
+//       color: 'orange',
+//       opacity: 0.85,
+//       weight: 5,
+//       lineCap: 'round'
+//     }
+//   }).on('loaded', function(e) {
+//     var gpx = e.target;
+//     map.fitToBounds(gpx.getBounds());
+//   }).on('mouseover', function(e) {
+//     var gpx = e.target;
+//     var info = "<div class='popup'>EuroVelo 5 - Via Romea Francigena - partie France 1</div>"
+//     var popLocation = e.latlng;
+//     var popup = L.popup()
+//       .setLatLng(popLocation)
+//       .setContent(info)
+//       .openOn(map);
+//   }).addTo(map);
+   
+//   itineraire.on('mouseout', function(e) {
+//     map.closePopup();
+//   });
+
+  var itineraire = new L.GPX(url, {
     polyline_options: {
       color: 'orange',
       opacity: 0.85,
@@ -19,7 +43,24 @@ new L.GPX(url, {
     map.fitToBounds(gpx.getBounds());
   }).addTo(map);
 
-// var marker = L.marker([50.4932069, 2.5494601]).addTo(map);
+  var customOptions =
+    {
+    'className' : 'popupCustom'
+    }
+  //itineraire.bindPopup("<a href='index.html'>EuroVelo 5 - Via Romea Francigena</a>",customOptions).openPopup();
+
+var popup = L.popup(customOptions);
+
+function onMapOver(e) {
+    popup
+        .setLatLng(e.latlng)
+        .setContent("<a href='index.html'>EuroVelo 5 - Via Romea Francigena</a>")
+        .openOn(map);
+}
+
+itineraire.on('mouseover', onMapOver);
+
+ //var marker = L.marker([50.4932069, 2.5494601]).addTo(map);
 
 // var circle = L.circle([50.8250846, 2.1768488], {
 //     color: 'red',
@@ -34,18 +75,18 @@ new L.GPX(url, {
 //     [50.4250847, 2.8214096]
 // ]).addTo(map);
 
-// marker.bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
+// marker.bindPopup("<a href='index.html'>EuroVelo 5 - Via Romea Francigena</a>",customOptions).openPopup();
 // circle.bindPopup("I am a circle.");
 // polygon.bindPopup("I am a polygon.");
 
-var popup = L.popup();
+// var popup = L.popup();
 
-function onMapClick(e) {
-    popup
-        .setLatLng(e.latlng)
-        .setContent("You clicked the map at " + e.latlng.toString())
-        .openOn(map);
-}
+// function onMapClick(e) {
+//     popup
+//         .setLatLng(e.latlng)
+//         .setContent("You clicked the map at " + e.latlng.toString())
+//         .openOn(map);
+// }
 
-map.on('click', onMapClick);
+// map.on('click', onMapClick);
 

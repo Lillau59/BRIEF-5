@@ -4,13 +4,23 @@ header {
     width: 1300px;
     overflow: hidden;
 
-
-}
-
+    .titre {
+        
+        color: white;
+        text-shadow: 1px 1px 2px black;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: larger;
+        position: absolute;
+        top: 40%;
+        right: 50%;
+        z-index: 1;
+    }
 .caroussel {
-    width: calc(1300px * 6);
-    animation: glisse 40s infinite;
+    width: calc(1300px * 5);
+    animation: glisse 30s infinite;
     list-style-type: none;
+    padding: 0px;
+    position: relative;
 
     img {
         width: 1300px;
@@ -24,32 +34,25 @@ header {
             transform: translateX(0);
         }
 
-        10% {
-            transform: translateX(0);
-        }
-
-        17%{
+        20%{
             transform: translateX(-1300px);
         }
 
-        33%{
+        40%{
             transform: translateX(-2600px);
         }
 
-        50%{
+        60%{
             transform: translateX(-3900px);
         }
 
-        63%{
+        80%{
             transform: translateX(-5200px);
-        }
-
-        83%{
-            transform: translateX(-6500px);
         }
 
         100%{
             transform: translateX(0);
         }
 
+}
 }
