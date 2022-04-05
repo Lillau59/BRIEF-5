@@ -1,8 +1,11 @@
-#map { 
-    //max-width: 1000px; 
-    height: 800px;
-    width: 100%; 
-    height:100%;
+// à supprimer quand le vrai header sera intégré dans la page
+.header {
+    width:100%;
+    height: 100px;
+    background-color: red;
+    position: absolute;
+    top:0;
+    left:0; 
 }
 
 .itineraire {
@@ -13,57 +16,65 @@
     right:0;
     display:flex;
     flex-direction: row;
-}
 
-.etapes {
-    display:flex;
-    flex-direction: column;
-    width:40%;
-    font-family: 'Istok Web', sans-serif;
-    font-weight: 100;
-    overflow-y: scroll;
-    scrollbar-color: rebeccapurple green;
-    scrollbar-width: thin;
-}
+    .etapes {
+        display:flex;
+        flex-direction: column;
+        width:40%;
+        font-family: 'Istok Web', sans-serif;
+        font-weight: 100;
+        overflow-y: scroll;
+        //scrollbar-color: rebeccapurple green;
+        scrollbar-width: thin;
 
-.etape {
-    display:flex;
-    flex-direction: row;
-    padding:2px 0;
-}
+        .etape {
+            display:flex;
+            flex-direction: row;
+            padding:2px 0;
 
-.img-etape {
-    width: 190px;
-    height: 190px;
-}
+            .left-etape {
+                .img-etape {
+                    width: 190px;
+                    height: 190px;
+                }
+                
+                .km {
+                    position:relative;
+                    top:-150px;
+                    left:10px;
+                    background-color: #eee;
+                    width:60px;
+                    padding:5px;
+                    text-align: center;
+                    font-size: 0.8rem;
+                    font-weight: bold;
+                    margin-top:-30px;
+                }
+            }
+            
+            .right-etape {
+                display:flex;
+                flex-direction: column;
+                width:100%;
 
-.km {
-    position:relative;
-    top:-150px;
-    left:10px;
-    background-color: #eee;
-    width:60px;
-    padding:5px;
-    text-align: center;
-    font-size: 0.8rem;
-    font-weight: bold;
-    margin-top:-30px;
+                .type-etape {
+                    background-color: $color-eurovelo5;
+                    color:white;
+                    padding: 8px;
+                    font-size: 0.9rem;
+                }
+                
+                .nom-etape {
+                    padding-left: 8px;
+                }
+            }
+        }
+    }
+    
+    #map { 
+        //max-width: 1000px; 
+        height: 800px;
+        width: 100%; 
+        height:100%;
+    }
 }
-
-.right-etape {
-    display:flex;
-    flex-direction: column;
-    width:100%;
-}
-
-.nom-etape {
-    padding-left: 8px;
-}
-
-.type-etape {
-    background-color: $color-eurovelo5;
-    color:white;
-    padding: 8px;
-    font-size: 0.9rem;
-}
-
