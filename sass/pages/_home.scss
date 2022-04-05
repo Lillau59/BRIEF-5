@@ -7,10 +7,12 @@ header {
     .titre {
         
         color: white;
+        text-shadow: 1px 1px 2px black;
         font-family: 'Courier New', Courier, monospace;
         font-size: larger;
         position: absolute;
-        bottom: 100px;
+        top: 40%;
+        right: 50%;
         z-index: 1;
     }
 .caroussel {
