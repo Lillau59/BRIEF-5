@@ -8,9 +8,10 @@ header {
 }
 
 .caroussel {
-    width: calc(1300px * 6);
-    animation: glisse 40s infinite;
+    width: calc(1300px * 5);
+    animation: glisse 30s infinite;
     list-style-type: none;
+    padding: 0px;
 
     img {
         width: 1300px;
@@ -24,28 +25,20 @@ header {
             transform: translateX(0);
         }
 
-        10% {
-            transform: translateX(0);
-        }
-
-        17%{
+        20%{
             transform: translateX(-1300px);
         }
 
-        33%{
+        40%{
             transform: translateX(-2600px);
         }
 
-        50%{
+        60%{
             transform: translateX(-3900px);
         }
 
-        63%{
+        80%{
             transform: translateX(-5200px);
-        }
-
-        83%{
-            transform: translateX(-6500px);
         }
 
         100%{
