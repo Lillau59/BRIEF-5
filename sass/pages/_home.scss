@@ -4,14 +4,23 @@ header {
     width: 1300px;
     overflow: hidden;
 
-
-}
-
+    .titre {
+        
+        color: white;
+        text-shadow: 1px 1px 2px black;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: larger;
+        position: absolute;
+        top: 40%;
+        right: 50%;
+        z-index: 1;
+    }
 .caroussel {
     width: calc(1300px * 5);
     animation: glisse 30s infinite;
     list-style-type: none;
     padding: 0px;
+    position: relative;
 
     img {
         width: 1300px;
@@ -45,4 +54,5 @@ header {
             transform: translateX(0);
         }
 
+}
 }
