@@ -1,58 +1,55 @@
-body {
-    background-color: aquamarine;
-    margin: auto;
+header {
+    //ici la width doit être égale à la largeur des images pour le carousel. Donc si on veut réaranger la page, il faut aussi retoucher
+    //les widths et la largeur des imgs 
+    width: 1300px;
+    overflow: hidden;
 
-    header{
-        //ici la width doit être égale à la largeur des images pour le carousel. Donc si on veut réaranger la page, il faut aussi retoucher
-        //les widths et la largeur des imgs 
+
+}
+
+.caroussel {
+    width: calc(1300px * 6);
+    animation: glisse 40s infinite;
+    list-style-type: none;
+
+    img {
         width: 1300px;
-        overflow: hidden;
-
-        @keyframes glisse {
-            0% {
-                transform: translateX();
-            }
-
-            16%{
-
-            }
-
-            32%{
-
-            }
-
-            48%{
-
-            }
-
-            64%{
-
-            }
-
-            80%{
-
-            }
-
-            100%{
-
-            }
-
-
-
-
-        }
-        .caroussel
-        {
-            width: calc(1300px * 6);
-            list-style-type: none;
-
-            img{
-                width: 1300px;
-                height: 900px;
-                // width: 60px;
-                // height: 50px;
-                float: left;
-            }
-        }
+        height: 900px;
+        float: left;
     }
+}
+
+    @keyframes glisse {
+        0% {
+            transform: translateX(0);
+        }
+
+        10% {
+            transform: translateX(0);
+        }
+
+        17%{
+            transform: translateX(-1300px);
+        }
+
+        33%{
+            transform: translateX(-2600px);
+        }
+
+        50%{
+            transform: translateX(-3900px);
+        }
+
+        63%{
+            transform: translateX(-5200px);
+        }
+
+        83%{
+            transform: translateX(-6500px);
+        }
+
+        100%{
+            transform: translateX(0);
+        }
+
 }
