@@ -7,29 +7,12 @@ L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
 
 var url = './js/EuroVelo_5_Via_Romea_Francigena.xml'; // URL to your GPX file or the GPX itself
 
-// var itineraire = new L.GPX(url, {
-//     polyline_options: {
-//       color: 'orange',
-//       opacity: 0.85,
-//       weight: 5,
-//       lineCap: 'round'
-//     }
-//   }).on('loaded', function(e) {
-//     var gpx = e.target;
-//     map.fitToBounds(gpx.getBounds());
-//   }).on('mouseover', function(e) {
-//     var gpx = e.target;
-//     var info = "<div class='popup'>EuroVelo 5 - Via Romea Francigena - partie France 1</div>"
-//     var popLocation = e.latlng;
-//     var popup = L.popup()
-//       .setLatLng(popLocation)
-//       .setContent(info)
-//       .openOn(map);
-//   }).addTo(map);
-   
-//   itineraire.on('mouseout', function(e) {
-//     map.closePopup();
-//   });
+var customOptions =
+{
+'className' : 'popupCustom'
+}
+
+var popup = L.popup(customOptions);
 
   var itineraire = new L.GPX(url, {
     polyline_options: {
@@ -38,27 +21,26 @@ var url = './js/EuroVelo_5_Via_Romea_Francigena.xml'; // URL to your GPX file or
       weight: 5,
       lineCap: 'round'
     }
+  }).on('mouseover', function(e) {
+    this.setStyle({
+      color: 'red'
+    });
+    popup
+    .setLatLng(e.latlng)
+    .setContent("<a href='index.html'>EuroVelo 5 - Via Romea Francigena</a>")
+    .openOn(map);
+
   }).on('loaded', function(e) {
     var gpx = e.target;
     map.fitToBounds(gpx.getBounds());
   }).addTo(map);
 
-  var customOptions =
-    {
-    'className' : 'popupCustom'
-    }
-  //itineraire.bindPopup("<a href='index.html'>EuroVelo 5 - Via Romea Francigena</a>",customOptions).openPopup();
-
-var popup = L.popup(customOptions);
-
-function onMapOver(e) {
-    popup
-        .setLatLng(e.latlng)
-        .setContent("<a href='index.html'>EuroVelo 5 - Via Romea Francigena</a>")
-        .openOn(map);
-}
-
-itineraire.on('mouseover', onMapOver);
+itineraire.on('mouseout', function(e) {
+  map.closePopup();
+  itineraire.setStyle({
+    color: 'orange'
+  });
+});
 
  //var marker = L.marker([50.4932069, 2.5494601]).addTo(map);
 

@@ -7,7 +7,6 @@
 .popupCustom .leaflet-popup-tip,
 .popupCustom .leaflet-popup-content-wrapper {
     background: #222;
-
     opacity: 0.8;
 
     a {
@@ -32,7 +31,7 @@
         font-family: 'Istok Web', Arial, sans-serif;
         font-weight: 100;
         overflow-y: scroll;
-        scrollbar-color: rebeccapurple green;
+        //scrollbar-color: rebeccapurple green;
         scrollbar-width: thin;
     
         .etape {
@@ -74,7 +73,13 @@
                 }
     
                 .nom-etape {
+                    margin: 2px 0;
                     padding-left: 8px;
+                    font-size: 1.3rem;
+                }
+
+                .desc-etape {
+                    padding:5px;
                 }
             }
 
