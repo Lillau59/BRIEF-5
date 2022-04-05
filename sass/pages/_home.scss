@@ -9,7 +9,7 @@ header {
 
 .caroussel {
     width: calc(1300px * 6);
-    animation: glisse 40s infinite;
+    animation: glisse 30s infinite;
     list-style-type: none;
 
     img {
@@ -21,10 +21,6 @@ header {
 
     @keyframes glisse {
         0% {
-            transform: translateX(0);
-        }
-
-        10% {
             transform: translateX(0);
         }
 
