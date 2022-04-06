@@ -18,10 +18,8 @@
     align-self: center;
     padding-left: 5px;
     font-size: 20px;
-    i
-    {
-        
-    } 
+
+    i {}
 }
 
 .newsletternav {
@@ -88,5 +86,139 @@ header a {
         align-self: center;
         text-decoration: none;
         color: blue;
+    }
+}
+
+nav {
+    display: flex;
+    background-color: blue;
+    justify-content: space-between;
+
+    .boutongauchenav {
+        display: flex;
+        align-items: center;
+
+        .navbord {
+            font-family: 'Istok Web', Arial, sans-serif;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            gap: 40px;
+
+            a {
+                display: flex;
+                text-decoration: none;
+                color: black;
+                font-size: 16px;
+            }
+
+            a:hover {
+                color: $color-eurovelo5;
+            }
+
+        }
+
+        .imgnav1 {
+            margin: 15px;
+            height: 60px;
+            width: 60px;
+            padding-left: 10px;
+        }
+
+        .imgnav2 {
+            margin: 15px;
+            height: 60px;
+            width: 180px;
+        }
+    }
+
+    .sidenav {
+        display: flex;
+        height: 10px;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        right: 0;
+        background-color: rgba($color: #212222, $alpha: 0.4);
+        overflow-x: hidden;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        transition: 0.5s;
+        border-radius: 10px;
+    }
+
+    .sidenav a {
+        padding: 10px 10px 10px 10px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+    }
+
+    .sidenav a:hover {
+        color: #f1f1f1;
+    }
+
+
+    .sidenav .closebtn {
+        position: absolute;
+        top: 0;
+        right: 5px;
+        font-size: 30px;
+        margin-left: 5px;
+    }
+
+    #main {
+        transition: margin-left .5s;
+        padding: 20px;
+    }
+
+    @media screen and (max-height: 450px) {
+        .sidenav {
+            padding-top: 15px;
+        }
+
+        .sidenav a {
+            font-size: 18px;
+        }
+    }
+
+    .navrech {
+        padding: 35px;
+        margin-right: 50px;
+
+        .cache {
+            display: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+            font-size: 16px;
+        }
+
+        a:hover {
+            color: $color-eurovelo5;
+            cursor: pointer;
+        }
+
+    }
+
+    .sidenav {
+        display: flex;
+        align-items: center;
+
+        .searchbar {
+            width: 700px;
+            height: 50px;
+            border: none;
+            border-radius: 10px;
+            background-color: rgba($color: #212222, $alpha: 0.2);
+            color: white;
+
+        }
     }
 }
