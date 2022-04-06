@@ -1,41 +1,40 @@
 var map = L.map('map').setView([50.679057, 2.432957], 10);
 
 L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
-	maxZoom: 20,
-	attribution: '&copy; OpenStreetMap France | &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+  maxZoom: 20,
+  attribution: '&copy; OpenStreetMap France | &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
 
 var url = './js/EuroVelo_5_Via_Romea_Francigena.xml'; // URL to your GPX file or the GPX itself
 
 var customOptions =
 {
-'className' : 'popupCustom'
+  'className': 'popupCustom'
 }
 
 var popup = L.popup(customOptions);
 
-  var itineraire = new L.GPX(url, {
-    polyline_options: {
-      color: 'orange',
-      opacity: 0.85,
-      weight: 5,
-      lineCap: 'round'
-    }
-  }).on('mouseover', function(e) {
-    this.setStyle({
-      color: 'yellow'
-    });
-    popup
+var itineraire = new L.GPX(url, {
+  polyline_options: {
+    color: 'orange',
+    opacity: 0.85,
+    weight: 5,
+    lineCap: 'round'
+  }
+}).on('mouseover', function (e) {
+  this.setStyle({
+    color: 'yellow'
+  });
+  popup
     .setLatLng(e.latlng)
     .setContent("<a href='index.html'>EuroVelo 5 - Via Romea Francigena</a>")
     .openOn(map);
+}).on('loaded', function (e) {
+  var gpx = e.target;
+  map.fitToBounds(gpx.getBounds());
+}).addTo(map);
 
-  }).on('loaded', function(e) {
-    var gpx = e.target;
-    map.fitToBounds(gpx.getBounds());
-  }).addTo(map);
-
-itineraire.on('mouseout', function(e) {
+itineraire.on('mouseout', function (e) {
   map.closePopup();
   itineraire.setStyle({
     color: 'orange'
