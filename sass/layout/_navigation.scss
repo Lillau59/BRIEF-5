@@ -19,7 +19,7 @@
     // }
     .divnavbouton {
         display: flex;
-        justify-content: space-around;
+        justify-content: space-evenly;
 
     .boutondroit{
         display: flex;
@@ -187,8 +187,27 @@
             transition: margin-left 0.5s;
             padding: 20px;
         }
+        .navrech {
+            padding: 35px;
+            margin-right: 50px;
 
-        @media screen and (max-height: 450px) {
+            .cache {
+                display: none;
+            }
+
+            a {
+                text-decoration: none;
+                color: black;
+                font-size: 16px;
+            }
+
+            a:hover {
+                color: $color-eurovelo5;
+                cursor: pointer;
+            }
+        }
+
+        @media screen and (max-width: 1200px) {
             .sidenav {
                 padding-top: 15px;
             }
