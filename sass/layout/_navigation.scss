@@ -101,7 +101,7 @@
             align-items: center;
 
             .navbord {
-                font-family: 'Istok Web', Arial, sans-serif;
+                font-family: "Istok Web", Arial, sans-serif;
                 white-space: nowrap;
                 display: flex;
                 align-items: center;
@@ -118,7 +118,6 @@
                 a:hover {
                     color: $color-eurovelo5;
                 }
-
             }
 
             .imgnav1 {
@@ -164,7 +163,6 @@
             color: #f1f1f1;
         }
 
-
         .sidenav .closebtn {
             position: absolute;
             top: 0;
@@ -174,11 +172,30 @@
         }
 
         #main {
-            transition: margin-left .5s;
+            transition: margin-left 0.5s;
             padding: 20px;
         }
+        .navrech {
+            padding: 35px;
+            margin-right: 50px;
 
-        @media screen and (max-height: 450px) {
+            .cache {
+                display: none;
+            }
+
+            a {
+                text-decoration: none;
+                color: black;
+                font-size: 16px;
+            }
+
+            a:hover {
+                color: $color-eurovelo5;
+                cursor: pointer;
+            }
+        }
+
+        @media screen and (max-width: 1200px) {
             .sidenav {
                 padding-top: 15px;
             }
@@ -206,7 +223,6 @@
                 color: $color-eurovelo5;
                 cursor: pointer;
             }
-
         }
 
         .sidenav {
@@ -220,69 +236,7 @@
                 border-radius: 10px;
                 background-color: rgba($color: #212222, $alpha: 0.2);
                 color: white;
-
             }
         }
-    }
-}
-
-@media only screen and (max-width: 1200px) {
-    nav {
-        display: flex;
-        background-color: rgba($color: #84a8a6, $alpha: 0.8);
-        justify-content: space-between;
-
-        .boutongauchenav {
-            display: flex;
-            align-items: center;
-
-            .navbord {
-                font-family: 'Istok Web', Arial, sans-serif;
-                white-space: nowrap;
-                display: flex;
-                align-items: center;
-                flex-direction: row;
-                gap: 10px;
-
-                a {
-                    display: flex;
-                    text-decoration: none;
-                    color: black;
-                    font-size: 12px;
-                }
-
-                a:hover {
-                    color: $color-eurovelo5;
-                }
-
-            }
-
-            .imgnav1 {
-                margin: 5px;
-                height: 30px;
-                width: 30px;
-                padding-left: 10px;
-            }
-
-            .imgnav2 {
-                margin: 5px;
-                height: 30px;
-                width: 75px;
-            }
-        }
-
-        #boutonrech {
-            display: none;
-        }
-
-        .searchbar {
-            display: none;
-        }
-
-        .closebtn {
-            display: none;
-        }
-
-
     }
 }
