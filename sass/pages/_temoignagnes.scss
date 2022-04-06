@@ -1,4 +1,5 @@
 .temoignages {
+    font-family: 'Istok Web', Arial, sans-serif;
 
 
     header {
@@ -43,12 +44,15 @@
             h2 {
                 display: flex;
                 justify-content: center;
+                
 
             }
 
             p {
                 display: flex;
                 justify-content: center;
+                text-align: justify;
+                
             }
 
             .phototemoign1 {
