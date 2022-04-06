@@ -5,30 +5,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="sass/main.css">
     <script src="https://kit.fontawesome.com/30705cebc4.js" crossorigin="anonymous"></script>
     <title>News</title>
 </head>
 
 <body>
-    <header>
-        <div class="divnavbouton">
-            <section class="boutondroit">
-                <a href="https://instagram.com"><i class="fa-brands fa-instagram"></i></a>
-                <a href="https://youtube.com"><i class="fa-brands fa-youtube"></i></a>
-                <a href="https://facebook.com"><i class="fa-brands fa-facebook-f"></i></a>
-            </section>
-            <p> S'abonner à la newsletter</p>
-            <section class="newsletternav">
-                <input type="email" placeholder="Entrez votre mail"><a href="#"> JE M'INSCRIS </a>
-            </section>
-        </div>
-        <section class="boutongauche">
-            <a href="#">Espace pro</a>
-            <a href="#">Carnet de voyage</a>
-            <a href="#">Espace personnel</a>
+    <nav>
+        <section class="boutongauchenav">
+            <img src="img/logo.png" class="imgnav1">
+            <img src="img/eurovélo.jpg" class="imgnav2">
+            <div class="navbord">
+                <a href="https://instagram.com">L'INTINÉRAIRE</a>
+                <a href="https://youtube.com">TÉMOIGNAGES</a>
+                <a href="https://facebook.com">INFOS PRATIQUES</a>
+                <a href="https://youtube.com">SUGGESTIONS</a>
+                <a href="https://facebook.com">INSPIRATIONS</a>
+            </div>
+            <div id="mySidenav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <input class="searchbar" type="text" placeholder="Recherchez...">
+            </div>
         </section>
-    </header>
+        <div class="navrech">
+            <a onclick="openNav()" id="boutonrech">RECHERCHE</a>
+        </div>
+        </div>
+    </nav>
+    <script src="js/nav.js"></script>
 </body>
 
 </html>
