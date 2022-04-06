@@ -28,7 +28,14 @@ fetch(StrapiUrl)
   return response.json();
 })
 .then(function(response) {  
+
+  // les données peuvent arriver dans un ordre différents de celui des id ascendant, on les trie donc d'abord pour les remettre dans l'ordre
+  response.data.sort(function (a, b) {
+    return a.id - b.id;
+  });  
+
   construct(response.data);
+
 }).catch(function(error) {
   console.log('Il y a eu un problème avec l\'opération fetch: ' + error.message);
 });
@@ -73,10 +80,17 @@ function construct(etapes) {
     a.appendChild(leftEtape);    
 
     // On crée l'élément img pour la miniature
-    let img = document.createElement('img');
-    img.src = "img/thumbnails/etape1.jpg";  
+    let img = document.createElement('img');      
     img.classList.add('img-etape');  
     img.alt = etape.attributes.nom;
+
+    if(etape.attributes.photo.data != null) {
+      img.src = strapiIp + strapiPort + etape.attributes.photo.data.attributes.formats.thumbnail.url
+      console.log(img.src);
+    }
+    else {
+      img.src = "img/thumbnails/etape1.jpg";
+    }
 
     // On ajoute l'image à la div leftEtape
     leftEtape.appendChild(img);
@@ -84,7 +98,7 @@ function construct(etapes) {
     // On crée la div qui contient le nombre de kilomètres
     let km = document.createElement('div');
     km.classList.add('km');
-    km.innerText = etape.attributes.distance + " km";
+    km.innerText = etape.attributes.distance.toString().replace('.', ',') + " km";
 
     // On ajoute cette div à la div leftEtape
     leftEtape.appendChild(km);
