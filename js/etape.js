@@ -10,7 +10,7 @@ let strapiApi = "";
 // Affichage de la map, avec les coordonnnées récupérées dans strapi pour centrer la map
 const latitude = 50.679057;
 const longitude = 2.432957;
-const Zoom = 10;
+const zoom = 10;
 var map = L.map('map').setView([latitude, longitude], zoom);
 
 L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
