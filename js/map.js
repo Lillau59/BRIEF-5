@@ -1,19 +1,36 @@
-var map = L.map('map').setView([50.679057, 2.432957], 10);
+// Affichage de la map, avec les coordonnnées par défaut pour centrer la map
+const defaultLatitude = 50.679057;
+const defaultLongitude = 2.432957;
+const defaultZoom = 10;
+var map = L.map('map').setView([defaultLatitude, defaultLongitude], defaultZoom);
 
 L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
   maxZoom: 20,
   attribution: '&copy; OpenStreetMap France | &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
 
-var url = './js/EuroVelo_5_Via_Romea_Francigena.xml'; // URL to your GPX file or the GPX itself
-
+// permet de customiser la popup en lui ajoutant une classe ('popupCustom'), donc modifiable depuis le CSS
 var customOptions =
 {
   'className': 'popupCustom'
 }
 
+// On récupère la liste des étapes dans strapi
+let strapiIp = "20.107.97.3";
+let strapiPort = ":1337";
+let strapiApi = "";
+
+// On parcoure la liste des étapes
+
+// On crée les éléments HTML de cette étape (nom, Kms...)
+
+// On charge le fichier gpx de l'étape
+var url = './gpx/EuroVelo_5_Via_Romea_Francigena.xml'; // URL to your GPX file or the GPX itself
+
+// La popup qui s'affiche lorsqu'on survole le tracé de l'étape
 var popup = L.popup(customOptions);
 
+// On crée le tracé de l'étape à partir des données du fichier gpx
 var itineraire = new L.GPX(url, {
   polyline_options: {
     color: 'orange',
@@ -41,14 +58,25 @@ itineraire.on('mouseout', function (e) {
   });
 });
 
- //var marker = L.marker([50.4932069, 2.5494601]).addTo(map);
 
-// var circle = L.circle([50.8250846, 2.1768488], {
-//     color: 'red',
-//     fillColor: '#f03',
-//     fillOpacity: 0.5,
-//     radius: 2000
-// }).addTo(map);
+// On trace les cercles de début et fin de l'itinéraire
+var circleStart = L.circle([50.967177, 1.854066], {
+  color: 'green',
+  fillColor: '#fff',
+  fillOpacity: 0.8,
+  radius: 500
+}).addTo(map);
+
+var circleEnd = L.circle([50.691165, 3.254207], {
+color: 'red',
+fillColor: '#fff',
+fillOpacity: 0.8,
+radius: 500
+}).addTo(map);
+
+
+// ****************************************************************************************
+//var marker = L.marker([50.4932069, 2.5494601]).addTo(map);
 
 // var polygon = L.polygon([
 //     [50.4553814, 2.5503794],
