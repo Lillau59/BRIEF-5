@@ -1,15 +1,12 @@
-$(window).scroll(
-    {
-        previousTop: 0
-    }, 
-    function () {
-    var currentTop = $(window).scrollTop();
-    if (currentTop < this.previousTop) {
-        $(".sidebar em").text("Up");
-        $("nav").show();
-    } else {
-        $(".sidebar em").text("Down");
-        $("nav").hide();
-    }
-    this.previousTop = currentTop;
-});
+function openNav() {
+    document.getElementById("mySidenav").style.width = "800px";
+    document.getElementById("mySidenav").style.height = "30px";
+    document.getElementById("boutonrech").classList.add("cache");
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    setTimeout(function () {
+        document.getElementById("boutonrech").classList.remove("cache")
+    }, 200);
+} 
