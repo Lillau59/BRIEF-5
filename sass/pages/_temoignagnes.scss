@@ -20,6 +20,7 @@
             color: aliceblue;
         }
     }
+
     div {
         text-align: center;
         margin: 30px;
@@ -31,10 +32,6 @@
         max-width: 1400px;
         grid-template-columns: repeat(3, 1fr);
 
-        img {
-            
-        }
-
         article {
             align-items: center;
             flex-direction: column;
@@ -42,32 +39,31 @@
             text-align: center;
             align-content: space-around;
             padding: 10px;
-                                   
-        h2 {
-            display: flex;
-            justify-content: center;
-            
-        }
-        p 
-        {
-            display: flex;
-            justify-content: center;
-        }
-        .phototemoign1 {
-            img 
-            {
-            width: 400px;
-            height: 600px;
+
+            h2 {
+                display: flex;
+                justify-content: center;
+
             }
-        }    
-        .phototemoign2
-        {
-            img 
-            {
-            width: 400px;
-            height: 270px;
+
+            p {
+                display: flex;
+                justify-content: center;
+            }
+
+            .phototemoign1 {
+                img {
+                    width: 400px;
+                    height: 600px;
+                }
+            }
+
+            .phototemoign2 {
+                img {
+                    width: 400px;
+                    height: 270px;
+                }
             }
         }
-    }
     }
 }
