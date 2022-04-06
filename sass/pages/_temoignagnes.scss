@@ -17,17 +17,53 @@
             text-align: center;
             left: 0%;
             right: 0%;
+            color: aliceblue;
         }
+    }
 
-
+    div {
+        text-align: center;
+        margin: 30px;
 
     }
-    main{
+
+    main {
         display: grid;
         max-width: 1400px;
-        grid-template-columns: repeat(3,1fr);
-        img {
-            width: 100%;
+        grid-template-columns: repeat(3, 1fr);
+
+        article {
+            align-items: center;
+            flex-direction: column;
+            display: flex;
+            text-align: center;
+            align-content: space-around;
+            padding: 10px;
+
+            h2 {
+                display: flex;
+                justify-content: center;
+
+            }
+
+            p {
+                display: flex;
+                justify-content: center;
+            }
+
+            .phototemoign1 {
+                img {
+                    width: 400px;
+                    height: 600px;
+                }
+            }
+
+            .phototemoign2 {
+                img {
+                    width: 400px;
+                    height: 270px;
+                }
+            }
         }
     }
 }

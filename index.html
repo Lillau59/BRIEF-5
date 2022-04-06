@@ -11,6 +11,7 @@
     <script src="https://kit.fontawesome.com/30705cebc4.js" crossorigin="anonymous"></script>
     <title>Accueil</title>
 
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
 </head>
 
 <body>
@@ -20,38 +21,54 @@
     </nav>
 
     <header>
+
+        <!-- navs bar -->
         <div class="navup">
-        <div class="divnavbouton">
-            <section class="boutondroit">
-                <a href="https://instagram.com"><i class="fa-brands fa-instagram"></i></a>
-                <a href="https://youtube.com"><i class="fa-brands fa-youtube"></i></a>
-                <a href="https://facebook.com"><i class="fa-brands fa-facebook-f"></i></a>
-            </section>
-            <p> S'abonner à la newsletter</p>
-            <section class="newsletternav">
-                <input type="email" placeholder="Entrez votre mail"><a href="#"> JE M'INSCRIS </a>
+            <div class="divnavbouton">
+                <section class="boutondroit">
+                    <a href="https://instagram.com"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://youtube.com"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://facebook.com"><i class="fa-brands fa-facebook-f"></i></a>
+                </section>
+                <p> S'abonner à la newsletter</p>
+                <section class="newsletternav">
+                    <input type="email" placeholder="Entrez votre mail"><a href="#"> JE M'INSCRIS </a>
+                </section>
+            </div>
+            <section class="boutongauche">
+                <a href="#">Espace pro</a>
+                <a href="#">Carnet de voyage</a>
+                <a href="#">Espace personnel</a>
             </section>
         </div>
-        <section class="boutongauche">
-            <a href="#">Espace pro</a>
-            <a href="#">Carnet de voyage</a>
-            <a href="#">Espace personnel</a>
-        </section>
-        </div>
-        <section class="titre">
+
+
+        <!-- Slider main container -->
+<div class="swiper">
+        <div class="title">
             <h1>EuroVélo</h1>
             <h2>Hauts-de-France</h2>
-        </section>
+        </div>
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+        
+      <!-- Slides -->
 
-        <ul class="caroussel">
+      <div class="swiper-slide">
+        <img src="img/moyen/carou3.jpg" alt="image carousel">
+      </div>
 
-            <li><img src="img/moyen/carou1.jpg" alt="image caroussel"></li>
-            <li><img src="img/moyen/carou2.jpg" alt="image caroussel"></li>
-            <li><img src="img/moyen/carou3.jpg" alt="image caroussel"></li>
-            <li><img src="img/moyen/carou4.jpg" alt="image caroussel"></li>
-            <li><img src="img/moyen/carou5.jpg" alt="image caroussel"></li>
+      <div class="swiper-slide">
+        <img src="img/moyen/carou2.jpg" alt="image carousel">
+      </div>
 
-        </ul>
+      <div class="swiper-slide">
+        <img src="img/moyen/carou1.jpg" alt="image carousel">
+      </div>
+
+    </div>
+
+</div>
 
     </header>
 
@@ -201,7 +218,8 @@
         <!--Footer a faire-->
 
     </footer>
-
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+<script src="js/carousel.js"></script>
 </body>
 
 </html>
