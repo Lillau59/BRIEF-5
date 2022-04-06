@@ -23,7 +23,7 @@ var popup = L.popup(customOptions);
     }
   }).on('mouseover', function(e) {
     this.setStyle({
-      color: 'red'
+      color: 'yellow'
     });
     popup
     .setLatLng(e.latlng)
