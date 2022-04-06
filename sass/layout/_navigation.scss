@@ -19,7 +19,7 @@
     // }
     .divnavbouton {
         display: flex;
-        justify-content: space-around;
+        justify-content: space-evenly;
 
     .boutondroit{
         display: flex;
@@ -37,12 +37,10 @@
 
     .newsletternav {
         display: flex;
-        flex-direction: row;
-        align-self: center;
-        display: flex;
         align-items: center;
         font-size: 15px;
         height: 40px;
+        gap: 20px;
 
         p{
             color: #4d6362;
