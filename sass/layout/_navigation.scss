@@ -7,8 +7,7 @@
     right: 9px;
     height: 50px;
     border: 1px dotted blue;
-    font-family: 'Istok Web', Arial, sans-serif;
-
+    font-family: "Istok Web", Arial, sans-serif;
 }
 
 .boutondroit {
@@ -19,7 +18,8 @@
     padding-left: 5px;
     font-size: 20px;
 
-    i {}
+    i {
+    }
 }
 
 .newsletternav {
@@ -34,7 +34,7 @@
     a {
         text-decoration: none;
         color: white;
-        background-color: #007C74;
+        background-color: #007c74;
         border-radius: 0 5px 5px 0;
         display: flex;
         align-items: center;
@@ -49,7 +49,6 @@
         height: 40px;
         border: none;
         background-color: rgba($color: #84a8a6, $alpha: 0.4);
-
     }
 }
 
@@ -58,7 +57,6 @@
     flex-direction: row;
     align-self: center;
     gap: 15px;
-
 }
 
 .test {
@@ -100,7 +98,7 @@ header a {
             align-items: center;
 
             .navbord {
-                font-family: 'Istok Web', Arial, sans-serif;
+                font-family: "Istok Web", Arial, sans-serif;
                 white-space: nowrap;
                 display: flex;
                 align-items: center;
@@ -117,7 +115,6 @@ header a {
                 a:hover {
                     color: $color-eurovelo5;
                 }
-
             }
 
             .imgnav1 {
@@ -163,7 +160,6 @@ header a {
             color: #f1f1f1;
         }
 
-
         .sidenav .closebtn {
             position: absolute;
             top: 0;
@@ -173,7 +169,7 @@ header a {
         }
 
         #main {
-            transition: margin-left .5s;
+            transition: margin-left 0.5s;
             padding: 20px;
         }
 
@@ -205,7 +201,6 @@ header a {
                 color: $color-eurovelo5;
                 cursor: pointer;
             }
-
         }
 
         .sidenav {
@@ -219,69 +214,7 @@ header a {
                 border-radius: 10px;
                 background-color: rgba($color: #212222, $alpha: 0.2);
                 color: white;
-
             }
         }
-    }
-}
-
-@media only screen and (max-width: 1200px) {
-    nav {
-        display: flex;
-        background-color: rgba($color: #84a8a6, $alpha: 0.8);
-        justify-content: space-between;
-
-        .boutongauchenav {
-            display: flex;
-            align-items: center;
-
-            .navbord {
-                font-family: 'Istok Web', Arial, sans-serif;
-                white-space: nowrap;
-                display: flex;
-                align-items: center;
-                flex-direction: row;
-                gap: 10px;
-
-                a {
-                    display: flex;
-                    text-decoration: none;
-                    color: black;
-                    font-size: 12px;
-                }
-
-                a:hover {
-                    color: $color-eurovelo5;
-                }
-
-            }
-
-            .imgnav1 {
-                margin: 5px;
-                height: 30px;
-                width: 30px;
-                padding-left: 10px;
-            }
-
-            .imgnav2 {
-                margin: 5px;
-                height: 30px;
-                width: 75px;
-            }
-        }
-
-        #boutonrech {
-            display: none;
-        }
-
-        .searchbar {
-            display: none;
-        }
-
-        .closebtn {
-            display: none;
-        }
-
-
     }
 }
