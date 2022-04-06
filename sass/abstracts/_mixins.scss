@@ -1,0 +1,19 @@
+@mixin mixincasegrillePN
+{
+    background-color: bisque;
+    width: 1fr;
+    height: 500px;
+    
+    @media screen and (max-width: 1000px)
+    {
+        height: 300px;
+    }
+}
+@mixin mixintitrearticlecasegrille
+{
+    .titrearticlecasegrille
+    {
+        position: absolute;
+        bottom: 30px;
+    }
+}
