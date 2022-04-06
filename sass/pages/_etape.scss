@@ -1,0 +1,22 @@
+// A supprimer lorsque la navbar sera insérée dans le code HTML
+
+.step {
+    position:absolute;
+    top:100px;  
+    left:0;
+    bottom:0;
+    right:0;
+    display:flex;
+    flex-direction: row;
+
+    .description {
+        display:flex;
+    }
+
+    #map { 
+        //max-width: 1000px; 
+        height: 800px;
+        width: 100%; 
+        height:100%;
+    }
+}

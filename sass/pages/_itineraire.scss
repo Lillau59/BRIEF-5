@@ -35,64 +35,72 @@
         scrollbar-width: thin;
     
         .etape {
-            display:flex;
-            flex-direction: row;
-            padding:2px 0;
-            transition: all ease 0.3s;
-    
-            .left-etape {
-                .img-etape {
-                    width: 190px;
-                    height: 190px;
-                }
-                
-                .km {
-                    position:relative;
-                    top:-150px;
-                    left:10px;
-                    background-color: #eee;
-                    width:60px;
-                    padding:5px;
-                    text-align: center;
-                    font-size: 0.8rem;
-                    font-weight: bold;
-                    margin-top:-30px;
-                }
-            }
-    
-            .right-etape {
+
+
+            a {
                 display:flex;
-                flex-direction: column;
-                width:100%;
-    
-                .type-etape {
-                    background-color: $color-eurovelo5;
-                    color:white;
-                    padding: 8px;
-                    font-size: 0.9rem;
-                }
-    
-                .nom-etape {
-                    margin: 2px 0;
-                    padding-left: 8px;
-                    font-size: 1.3rem;
-                }
-
-                .desc-etape {
-                    padding:5px;
-                }
-            }
-
-            &:hover {
-                background-color: #fef;
-                cursor: pointer;
+                flex-direction: row;
+                padding:2px 0;
+                transition: all ease 0.3s;
+                text-decoration: none;
+                color:black;
 
                 .left-etape {
                     .img-etape {
-                        filter: blur(2px);
+                        width: 190px;
+                        height: 190px;
+                    }
+                    
+                    .km {
+                        position:relative;
+                        top:-150px;
+                        left:10px;
+                        background-color: #eee;
+                        width:60px;
+                        padding:5px;
+                        text-align: center;
+                        font-size: 0.8rem;
+                        font-weight: bold;
+                        margin-top:-30px;
+                    }
+                }
+        
+                .right-etape {
+                    display:flex;
+                    flex-direction: column;
+                    width:100%;
+        
+                    .type-etape {
+                        background-color: $color-eurovelo5;
+                        color:white;
+                        padding: 8px;
+                        font-size: 0.9rem;
+                    }
+        
+                    .nom-etape {
+                        margin: 2px 0;
+                        padding-left: 8px;
+                        font-size: 1.3rem;
+                    }
+    
+                    .desc-etape {
+                        padding:5px;
+                    }
+                }
+    
+                &:hover {
+                    background-color: #fef;
+                    cursor: pointer;
+    
+                    .left-etape {
+                        .img-etape {
+                            filter: blur(2px);
+                        }
                     }
                 }
             }
+    
+
         }
     }
 
