@@ -4,11 +4,11 @@
 
     header {
         width: 100%;
-        height: 100vh;
         position: relative;
 
         img {
             width: 100%;
+            height: 450px;
             object-fit: cover;
         }
 
@@ -32,6 +32,7 @@
         display: grid;
         max-width: 1400px;
         grid-template-columns: repeat(3, 1fr);
+        width: 100%;
 
         article {
             align-items: center;
@@ -44,31 +45,24 @@
             h2 {
                 display: flex;
                 justify-content: center;
-                
-
             }
 
             p {
                 display: flex;
                 justify-content: center;
                 text-align: justify;
-                
+
             }
 
-            .phototemoign1 {
+            .phototemoign {
+                width: 100%;
                 img {
-                    width: 400px;
-                    height: 600px;
-                }
-            }
-
-            .phototemoign2 {
-                img {
-                    width: 400px;
-                    height: 270px;
+                    width: 100%;
+                    height: 400px;
+                    object-fit: cover;
+                    width: 100%;
                 }
             }
         }
     }
 }
-@media screen and (max-width: px)
