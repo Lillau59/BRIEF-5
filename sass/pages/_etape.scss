@@ -11,6 +11,11 @@
 
     .description {
         display:flex;
+        flex-direction: column;
+        width:50%;
+        font-weight: 100;
+        overflow-y: scroll;
+        scrollbar-width: thin;
     }
 
     #map { 
