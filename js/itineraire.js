@@ -4,7 +4,7 @@ const defaultLongitude = 2.432957;
 const defaultZoom = 10;
 var map = L.map('map').setView([defaultLatitude, defaultLongitude], defaultZoom);
 
-let itineraire = [];
+let mapEtape = [];
 let popup = [];
 
 L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
@@ -19,10 +19,9 @@ var customOptions =
 }
 
 // On récupère la liste des étapes dans strapi
-let strapiIp = "http://20.107.97.3";
-let strapiPort = ":1337";
-let strapiApi = "/api/etapes?populate=*";
-let StrapiUrl = strapiIp + strapiPort + strapiApi;
+
+const strapiApi = "/api/etapes?populate=*";
+const StrapiUrl = strapiIp + strapiPort + strapiApi;
 
 console.log(StrapiUrl);
 
@@ -67,6 +66,7 @@ function construct(etapes) {
     // On crée la div 'etape'
     let eltEtape = document.createElement('div');
     eltEtape.classList.add('etape');
+    eltEtape.classList.add('etape' + etape.id);    
 
     // On crée l'élément 'a' (qui mène à la page détail)
     let a = document.createElement('a');
@@ -92,7 +92,7 @@ function construct(etapes) {
       console.log(img.src);
     }
     else {
-      img.src = "img/thumbnails/etape1.jpg";
+      img.src = "img/thumbnails/default.jpg";
     }
 
     // On ajoute l'image à la div leftEtape
@@ -153,12 +153,49 @@ function construct(etapes) {
 
     //console.log(etape.attributes.nom.toString())
 
-    itineraire[etape.id] = new L.GPX(url, {
+    // Quand on survole une étape sur la gauche, le tronçon correspondant est surligné
+    document.querySelector('.etape' + etape.id).addEventListener('mouseover', () => {
+      mapEtape[etape.id].setStyle({
+        color: 'yellow'
+      });
+    });
+    document.querySelector('.etape' + etape.id).addEventListener('mouseout', () => {
+      mapEtape[etape.id].setStyle({
+        color: 'orange'
+      });
+    });
+
+    let iconStart = "pin-icon-start.png";
+    let iconEnd = "circle.png";
+    let iconShadow = "transparent.png";
+
+    if(etape.id == 1) {
+      iconStart = "pin-icon-start.png";
+      iconEnd = "circle.png";
+      iconShadow = "transparent.png";
+    }
+    else if (etape.id == 12) {
+      iconStart = "circle.png";
+      iconEnd = "pin-icon-end.png";
+      iconShadow = "transparent.png";
+    }
+    else {
+      iconStart = "circle.png";
+      iconEnd = "circle.png";
+      iconShadow = "transparent.png";
+    }
+
+    mapEtape[etape.id] = new L.GPX(url, {
       polyline_options: {
         color: 'orange',
         opacity: 0.85,
         weight: 5,
         lineCap: 'round'
+      },
+      marker_options: {
+        startIconUrl: iconStart,
+        endIconUrl: iconEnd,
+        shadowUrl: iconShadow
       }
     }).on('mouseover', function (e) {
         this.setStyle({
@@ -166,7 +203,7 @@ function construct(etapes) {
         });
         popup[etape.id]
           .setLatLng(e.latlng)
-          .setContent("<h3>" + etape.attributes.nom.toString() + "</h3>")
+          .setContent("<h3>" + etape.attributes.nom + "</h3>")
           .openOn(map);
       }).on('mouseout', function (e) {
         map.closePopup();
@@ -175,14 +212,11 @@ function construct(etapes) {
         });
       }).on('click', function (e) {
         document.location.href = "etape.html?etape=" + etape.id;
-      }).on('loaded', function (e) {
-      var gpx = e.target;
-      map.fitToBounds(gpx.getBounds());
     }).addTo(map);
     
-    // itineraire[etape.id].on('mouseout', function (e) {
+    // mapEtape[etape.id].on('mouseout', function (e) {
     //   map.closePopup();
-    //   itineraire[etape.id].setStyle({
+    //   mapEtape[etape.id].setStyle({
     //     color: 'orange'
     //   });
     // });
@@ -199,7 +233,7 @@ function construct(etapes) {
 //var popup = L.popup(customOptions);
 
 // On crée le tracé de l'étape à partir des données du fichier gpx
-// var itineraire = new L.GPX(url, {
+// var mapEtape = new L.GPX(url, {
 //   polyline_options: {
 //     color: 'orange',
 //     opacity: 0.85,
@@ -219,9 +253,9 @@ function construct(etapes) {
 //   map.fitToBounds(gpx.getBounds());
 // }).addTo(map);
 
-// itineraire.on('mouseout', function (e) {
+// mapEtape.on('mouseout', function (e) {
 //   map.closePopup();
-//   itineraire.setStyle({
+//   mapEtape.setStyle({
 //     color: 'orange'
 //   });
 // });
