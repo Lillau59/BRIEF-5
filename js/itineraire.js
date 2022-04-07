@@ -19,8 +19,7 @@ var customOptions =
 }
 
 // On récupère la liste des étapes dans strapi
-let strapiIp = "http://20.107.97.3";
-let strapiPort = ":1337";
+
 let strapiApi = "/api/etapes?populate=*";
 let StrapiUrl = strapiIp + strapiPort + strapiApi;
 
