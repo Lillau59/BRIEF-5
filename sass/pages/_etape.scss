@@ -23,6 +23,25 @@
             padding-left:10px;
         }
 
+        .type-etape {
+            background-color: $color-eurovelo5;
+            color:white;
+            padding: 8px;
+            font-size: 0.9rem;
+        }
+
+        .resume, .situation, .parcours, 
+        .caracteristiques, .tourisme, 
+        .transport, h2 {
+            padding: 0 10px;
+        }
+
+        .km {
+            padding:5px;
+            font-size: 1rem;
+            font-weight: bold;
+        }
+
         .navigation {
             display:flex;
             justify-content: space-between;
