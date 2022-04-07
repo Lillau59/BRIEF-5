@@ -165,12 +165,37 @@ function construct(etapes) {
       });
     });
 
+    let iconStart = "pin-icon-start.png";
+    let iconEnd = "circle.png";
+    let iconShadow = "transparent.png";
+
+    if(etape.id == 1) {
+      iconStart = "pin-icon-start.png";
+      iconEnd = "circle.png";
+      iconShadow = "transparent.png";
+    }
+    else if (etape.id == 12) {
+      iconStart = "circle.png";
+      iconEnd = "pin-icon-end.png";
+      iconShadow = "transparent.png";
+    }
+    else {
+      iconStart = "circle.png";
+      iconEnd = "circle.png";
+      iconShadow = "transparent.png";
+    }
+
     mapEtape[etape.id] = new L.GPX(url, {
       polyline_options: {
         color: 'orange',
         opacity: 0.85,
         weight: 5,
         lineCap: 'round'
+      },
+      marker_options: {
+        startIconUrl: iconStart,
+        endIconUrl: iconEnd,
+        shadowUrl: iconShadow
       }
     }).on('mouseover', function (e) {
         this.setStyle({
