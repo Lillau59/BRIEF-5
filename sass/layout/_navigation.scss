@@ -208,31 +208,9 @@ nav {
 
         }
     }
-<<<<<<< HEAD
 }
     nav {
         @media only screen and (min-width: 1201px) {
-=======
-
-    @media screen and (max-width: 1200px) {
-        display: flex;
-        background-color: rgba($color: #84a8a6, $alpha: 0.8);
-        justify-content: space-between;
-
-        .navbar__links {
-            display: none;
-        }
-
-        .navbar__logo {
-            display: none;
-        }
-
-        .burger {
-            display: none;
-        }
-
-        .boutongauchenav {
->>>>>>> a5f2b89a79a9796b85cca256d9a83cd1faf1c96d
             display: flex;
             align-items: center;
 
