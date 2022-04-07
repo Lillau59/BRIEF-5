@@ -24,6 +24,7 @@
 
 <div class="swiper">
 
+
     <div class="navup">
         <div class="divnavbouton">
 
@@ -78,7 +79,7 @@
 
     <main>
 
-        <h2>EuroVelo 5 - du ch'nord a l'italie, distance a déterminée</h2>
+        <article class="presentation">
 
         <p>Dans le nord de la France, la véloroute suit d’abord les nombreux canaux artificiels et marais de Calais jusqu’à Saint-Omer. Charmante ville au riche patrimoine architectural et aux nombreuses rues piétonnes, Saint-Omer est situé au cœur du marais audomarois. L’itinéraire se dirige ensuite le bassin minier du Nord-Pas-de-Calais, classé au patrimoine mondial de l’Unesco.</p>
             
@@ -89,9 +90,8 @@
 
         <article class="menuderoulant">
 
-            <p>
-                <label for="difficultes">Pédalez selon vos envies</label>
-                <select name="difficultes" id="difficultes">
+                <h3>Pédalez selon vos envies</h3>
+                <select class="menuderoulantboite" name="difficultes" id="difficultes">
 
                     <option value="touteslesdifficultes">Toutes les difficultés</option>
                     <option value="jailhabitude">J'ai l'habitude</option>
@@ -100,7 +100,7 @@
 
                 </select>
 
-                <select name="durees" id="durees">
+                <select  class="menuderoulantboite" name="durees" id="durees">
 
                     <option value="touteslesdurees">Toutes les durées</option>
                     <option value="1journee">1 journée</option>
@@ -110,7 +110,7 @@
 
                 </select>
 
-                <select name="thematiques" id="thematiques">
+                <select  class="menuderoulantboite" name="thematiques" id="thematiques">
 
                     <option value="touteslesthematique">Toutes les thématiques</option>
                     <option value="nature">Nature</option>
@@ -123,29 +123,31 @@
 
                 </select>
 
-                <input type="submit" value="Envoyer le formulaire">
-
-            </p>
+                <input class="menuderoulantboite2" type="submit" value="Envoyer le formulaire">
 
         </article>
 
         <article class="TMAV">
 
-            <h3><img src="" alt="">Trouver mon Accueil vélo</h3>
+            <div class="TMAVhaut">
+
+            <img src="img/ACCUEIL-VELO_LOGO.jpg" class="TMAVlogo" alt=""><h3>Trouver mon Accueil vélo</h3>
+
+            </div>
 
             <p>Accueil Vélo est une marque qui garantit des services de qualité auprés des cyclistes le long de
                 l'itinéraire
             </p>
 
-            <article class="TMAV-image"><a href="#"><img src="" alt="">Hébergements</a></article>
+            <article class="TMAVarticle"><a href="#"><img class="TMAVimage"  src="img/TMAV-Hebergement.jpg" alt="">Hébergements</a></article>
 
-            <article class="TMAV-image"><a href="#"><img src="" alt="">Restaurants</a></article>
+            <article class="TMAVarticle"><a href="#"><img class="TMAVimage"  src="img/TMAV-Restaurants.jpg" alt="">Restaurants</a></article>
 
-            <article class="TMAV-image"><a href="#"><img src="" alt="">Lieux de visite</a></article>
+            <article class="TMAVarticle"><a href="#"><img class="TMAVimage"  src="img/TMAV-Lieux_de_visite.jpg" alt="">Lieux de visite</a></article>
 
-            <article class="TMAV-image"><a href="#"><img src="" alt="">Office de tourisme</a></article>
+            <article class="TMAVarticle"><a href="#"><img class="TMAVimage"  src="img/TMAV-Office_du_tourisme.jpg" alt="">Office de tourisme</a></article>
 
-            <article class="TMAV-image"><a href="#"><img src="" alt="">Loueurs & réparateurs de vélo</a></article>
+            <article class="TMAVarticle"><a href="#"><img class="TMAVimage" src="img/TMAV-Reparateur_de_velo.jpg" alt="">Loueurs & réparateurs de vélo</a></article>
 
         </article>
 
@@ -220,6 +222,9 @@
     <footer>
 
         <!--Footer a faire-->
+
+    </footer>
+
 
     </footer>
     <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>

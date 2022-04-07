@@ -1,0 +1,89 @@
+main
+{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    article
+    {
+        max-width: 1200px;
+    }
+}
+.presentation
+{
+    
+    max-width: 800px;
+    margin: 20px 0;
+    h2
+    {
+        font-size: 30px;
+    }
+    p
+    {
+        display: flex;
+        justify-items: center;
+        text-align: justify;
+    }
+}
+.menuderoulant
+{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    white-space: pre-line;
+    background-color: #00b9cb;
+    border-radius: 5px;
+    h3
+    {
+        margin: 20px 0;
+        font-size: 30px;
+        color: white;
+        text-align: center;
+    }
+    .menuderoulantboite
+    {
+        width: 950px;
+        height: 30px;
+        margin: 5px 25px;
+        border-radius: 5px;
+    }
+    .menuderoulantboite2
+    {
+        width: 950px;
+        height: 30px;
+        margin: 15px 25px;
+        border-radius: 5px;
+    }
+}
+.TMAV
+{
+    margin: 50px 0;
+    .TMAVlogo
+    {
+        width: 22px;
+        height: 32px;
+    }
+    h3
+    {
+        font-size: 30px;
+        margin-left: 15px;
+        margin-top: 0;
+    }
+    .TMAVhaut
+    {
+        display: flex;
+        height: 60px;
+    }
+    .TMAVarticle
+    {
+        display: grid;
+        grid-auto-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+    }
+    .TMAVimage
+    {
+        width: 100%;
+    }
+}
+ 

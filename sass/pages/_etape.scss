@@ -16,6 +16,32 @@
         font-weight: 100;
         overflow-y: scroll;
         scrollbar-width: thin;
+
+        .nom-etape a{
+            text-decoration: none;
+            color:black;
+            padding-left:10px;
+        }
+
+        .navigation {
+            display:flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: $color-eurovelo5;
+            padding:10px 0;
+            position:sticky;
+            bottom:0;
+            width:100%;
+            text-transform:uppercase;
+
+            .precedent a, .middle, .suivant a{
+                text-decoration: none;
+                color:white;
+                font-weight: bold;
+                padding:10px 15px;;
+            }
+
+        }
     }
 
     #map { 

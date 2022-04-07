@@ -4,6 +4,9 @@ const defaultLongitude = 2.432957;
 const defaultZoom = 10;
 var map = L.map('map').setView([defaultLatitude, defaultLongitude], defaultZoom);
 
+let itineraire = [];
+let popup = [];
+
 L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
   maxZoom: 20,
   attribution: '&copy; OpenStreetMap France | &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -28,7 +31,14 @@ fetch(StrapiUrl)
   return response.json();
 })
 .then(function(response) {  
+
+  // les données peuvent arriver dans un ordre différents de celui des id ascendant, on les trie donc d'abord pour les remettre dans l'ordre
+  response.data.sort(function (a, b) {
+    return a.id - b.id;
+  });  
+
   construct(response.data);
+
 }).catch(function(error) {
   console.log('Il y a eu un problème avec l\'opération fetch: ' + error.message);
 });
@@ -73,10 +83,17 @@ function construct(etapes) {
     a.appendChild(leftEtape);    
 
     // On crée l'élément img pour la miniature
-    let img = document.createElement('img');
-    img.src = "img/thumbnails/etape1.jpg";  
+    let img = document.createElement('img');      
     img.classList.add('img-etape');  
     img.alt = etape.attributes.nom;
+
+    if(etape.attributes.photo.data != null) {
+      img.src = strapiIp + strapiPort + etape.attributes.photo.data.attributes.formats.thumbnail.url
+      console.log(img.src);
+    }
+    else {
+      img.src = "img/thumbnails/etape1.jpg";
+    }
 
     // On ajoute l'image à la div leftEtape
     leftEtape.appendChild(img);
@@ -84,7 +101,7 @@ function construct(etapes) {
     // On crée la div qui contient le nombre de kilomètres
     let km = document.createElement('div');
     km.classList.add('km');
-    km.innerText = etape.attributes.distance + " km";
+    km.innerText = etape.attributes.distance.toString().replace('.', ',') + " km";
 
     // On ajoute cette div à la div leftEtape
     leftEtape.appendChild(km);
@@ -131,9 +148,44 @@ function construct(etapes) {
     // On charge le fichier gpx de l'étape
     let url = './gpx/' + etape.attributes.gpx;
 
+    // La popup qui s'affiche lorsqu'on survole le tracé de l'étape
+    popup[etape.id] = L.popup(customOptions);
 
+    //console.log(etape.attributes.nom.toString())
+
+    itineraire[etape.id] = new L.GPX(url, {
+      polyline_options: {
+        color: 'orange',
+        opacity: 0.85,
+        weight: 5,
+        lineCap: 'round'
+      }
+    }).on('mouseover', function (e) {
+        this.setStyle({
+          color: 'yellow'
+        });
+        popup[etape.id]
+          .setLatLng(e.latlng)
+          .setContent("<h3>" + etape.attributes.nom.toString() + "</h3>")
+          .openOn(map);
+      }).on('mouseout', function (e) {
+        map.closePopup();
+        this.setStyle({
+          color: 'orange'
+        });
+      }).on('click', function (e) {
+        document.location.href = "etape.html?etape=" + etape.id;
+      }).on('loaded', function (e) {
+      var gpx = e.target;
+      map.fitToBounds(gpx.getBounds());
+    }).addTo(map);
     
-
+    // itineraire[etape.id].on('mouseout', function (e) {
+    //   map.closePopup();
+    //   itineraire[etape.id].setStyle({
+    //     color: 'orange'
+    //   });
+    // });
   }
 
 }
@@ -141,54 +193,54 @@ function construct(etapes) {
 
 
 // On charge le fichier gpx de l'étape
-let url = './gpx/EuroVelo_5_Via_Romea_Francigena.xml'; // URL to your GPX file or the GPX itself
+//let url = './gpx/EuroVelo_5_Via_Romea_Francigena.xml'; // URL to your GPX file or the GPX itself
 
 // La popup qui s'affiche lorsqu'on survole le tracé de l'étape
-var popup = L.popup(customOptions);
+//var popup = L.popup(customOptions);
 
 // On crée le tracé de l'étape à partir des données du fichier gpx
-var itineraire = new L.GPX(url, {
-  polyline_options: {
-    color: 'orange',
-    opacity: 0.85,
-    weight: 5,
-    lineCap: 'round'
-  }
-}).on('mouseover', function (e) {
-  this.setStyle({
-    color: 'yellow'
-  });
-  popup
-    .setLatLng(e.latlng)
-    .setContent("<a href='index.html'>EuroVelo 5 - Via Romea Francigena</a>")
-    .openOn(map);
-}).on('loaded', function (e) {
-  var gpx = e.target;
-  map.fitToBounds(gpx.getBounds());
-}).addTo(map);
+// var itineraire = new L.GPX(url, {
+//   polyline_options: {
+//     color: 'orange',
+//     opacity: 0.85,
+//     weight: 5,
+//     lineCap: 'round'
+//   }
+// }).on('mouseover', function (e) {
+//   this.setStyle({
+//     color: 'yellow'
+//   });
+//   popup
+//     .setLatLng(e.latlng)
+//     .setContent("<a href='index.html'>EuroVelo 5 - Via Romea Francigena</a>")
+//     .openOn(map);
+// }).on('loaded', function (e) {
+//   var gpx = e.target;
+//   map.fitToBounds(gpx.getBounds());
+// }).addTo(map);
 
-itineraire.on('mouseout', function (e) {
-  map.closePopup();
-  itineraire.setStyle({
-    color: 'orange'
-  });
-});
+// itineraire.on('mouseout', function (e) {
+//   map.closePopup();
+//   itineraire.setStyle({
+//     color: 'orange'
+//   });
+// });
 
 
-// On trace les cercles de début et fin de l'itinéraire
-var circleStart = L.circle([50.967177, 1.854066], {
-  color: 'green',
-  fillColor: '#fff',
-  fillOpacity: 0.8,
-  radius: 500
-}).addTo(map);
+// // On trace les cercles de début et fin de l'itinéraire
+// var circleStart = L.circle([50.967177, 1.854066], {
+//   color: 'green',
+//   fillColor: '#fff',
+//   fillOpacity: 0.8,
+//   radius: 500
+// }).addTo(map);
 
-var circleEnd = L.circle([50.691165, 3.254207], {
-color: 'red',
-fillColor: '#fff',
-fillOpacity: 0.8,
-radius: 500
-}).addTo(map);
+// var circleEnd = L.circle([50.691165, 3.254207], {
+// color: 'red',
+// fillColor: '#fff',
+// fillOpacity: 0.8,
+// radius: 500
+// }).addTo(map);
 
 
 // ****************************************************************************************
