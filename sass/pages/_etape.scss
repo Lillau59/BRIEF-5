@@ -17,6 +17,10 @@
         overflow-y: scroll;
         scrollbar-width: thin;
 
+        strong {
+            font-weight: bold;
+        }
+
         .nom-etape a{
             text-decoration: none;
             color:black;
@@ -32,8 +36,18 @@
 
         .resume, .situation, .parcours, 
         .caracteristiques, .tourisme, 
-        .transport, h2 {
-            padding: 0 10px;
+        .transport {
+            padding: 0 10px;     
+        }
+        
+        .titre-etape {
+            background-color: $color-eurovelo5;
+            padding: 10px;
+            margin: 5px 0;
+        }
+
+        .img-etape {
+            margin: 10px 0;
         }
 
         .km {
@@ -59,12 +73,10 @@
                 font-weight: bold;
                 padding:10px 15px;;
             }
-
         }
     }
 
     #map { 
-        //max-width: 1000px; 
         height: 800px;
         width: 100%; 
         height:100%;
