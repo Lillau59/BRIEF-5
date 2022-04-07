@@ -8,6 +8,13 @@ let id = thisUrl.split('=')[1];
 const strapiApi = "/api/etapes/" + id + "?populate=*";
 const StrapiUrl = strapiIp + strapiPort + strapiApi;
 
+var itineraire;
+var map;
+
+const defaultLatitude = 50.679057;
+const defaultLongitude = 2.432957;
+const defaultZoom = 10;
+
 fetch(StrapiUrl)
 .then(function(response) {
   return response.json();
@@ -68,9 +75,6 @@ function construct(etape) {
   if(etape.attributes.transport != null)    
     document.querySelector('.transport').innerHTML = marked.parse(etape.attributes.transport);
 
-console.log(etape.attributes.parcours);
-
-
   if(id == 1) {    
     document.querySelector('.precedent').style.visibility = "hidden";
   }
@@ -88,7 +92,7 @@ console.log(etape.attributes.parcours);
   document.querySelector('.id-etape').innerText = id;  
 
   // Gestion de la carte
-  var map = L.map('map');
+  map = L.map('map');
 
   L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
     maxZoom: 20,
@@ -99,7 +103,7 @@ console.log(etape.attributes.parcours);
   var url = './gpx/' + etape.attributes.gpx; // URL to your GPX file or the GPX itself
 
   // On crée le tracé de l'étape à partir des données du fichier gpx
-  var itineraire = new L.GPX(url, {async: true, 
+  itineraire = new L.GPX(url, {async: true, 
       polyline_options: {
         color: 'orange',
         opacity: 0.85,
@@ -116,6 +120,17 @@ console.log(etape.attributes.parcours);
     }).addTo(map);
 
 }
+
+window.addEventListener('resize', () => {
+  if(window.innerWidth > 800) {
+    console.log(itineraire.i);
+
+    //map.setView(itineraire.getBounds(), defaultZoom);
+
+  }
+});
+
+
 
 
 
