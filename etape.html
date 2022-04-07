@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin=""/>
+     <!-- Make sure you put this AFTER Leaflet's CSS -->
+     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+     integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+     crossorigin=""></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-gpx/1.7.0/gpx.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+     <script src="https://kit.fontawesome.com/30705cebc4.js" crossorigin="anonymous"></script>
+     <link rel="stylesheet" href="sass/main.css">
+    <title>Etape</title>
+</head>
+<body>
+    
+    <div class="temporaire"></div>
+
+    <div class="step">
+        <div class="description">
+            <h2 class="nom-etape"><a href="itineraire.html"><i class="fa-solid fa-arrow-left"></i></a> Calais > Ardres</h2>
+            <h3 class="type-etape">Voie verte / Stabilisé</h3>
+            <div class="km">22,7 Km</div>
+            <img src="img/phototemoign6.jpg" alt="Calais - Ardres" class="img-etape">
+            <div class="resume">
+                Cet itinéraire fait partie de l'EuroVelo 5 « Via RomeaFrancigena », une voie célèbre de pèlerinage puis de commerce reliant à partir du 9ème siècle Canterbury à Rome en passant par la France et la Suisse.
+                Cette section de l'EuroVelo 5 est aménagée par le Département du Pas-de-Calais en voie verte lisse et en véloroute. Cette section permet de traverser les villages du Calaisis et les zones agricoles, autrefois vaste zone marécageuse. L’itinéraire n’est pas jalonné au départ de Calais, mais seulement à partir de Coulogne jusqu’à Audruicq.
+                Si le départ officiel se fait à Calais, il n’y a rien d’aménagé et aucune indication en arrivant en ferry ou en gare de Calais pour rejoindre l’EV5. Nous vous invitons à suivre le canal de Calais à Saint-Omer, jusqu’à Coulogne véritable point de départ de cette étape, où l’on débouche sur le départ de la voie verte que l’on suit jusqu'à Guînes. 
+                Après 7 km sur une voie verte en stabilisé très roulant, on suit ensuite l’itinéraire de Guînes à Ardres puis Audruicq en empruntant des routes en cohabitation avec les véhicules, des chemins partagés avec les agriculteurs et des voies vertes. Le jalonnement dans Ardres est encore manquant.
+                Il est possible de louer un vélo pour la journée à Ardres et Guînes.
+            </div>
+            <div class="situation">
+                Cet itinéraire est une section de l'EV5 (l'EuroVelo n°5 reliant Londres à Rome, baptisée "ViaRomeaFrancigena"), dont le point de départ en France se situe à Calais, mais elle n’est réellement aménagée qu’à partir de Coulogne. 
+                Cette section relie Calais à Audruicq pour un total de 30 km et a été aménagée par le département du Pas-de-Calais. 
+                La voie verte Coulogne – Guînes a été préalablement aménagée en 2015 par le Département, avec un revêtement en stabilisé renforcé adapté à tous les cycles, sous la dénomination « Véloroute des Marais ».
+            </div>
+            <div class="parcours">
+                Calais – Coulogne
+                Au départ de la gare de Calais, il faut rejoindre le canal de calais à Saint-Omer, situé derrière l’hôtel de ville de Calais, après avoir passé la passerelle piéton vélo. On suit la rive droite (car le canal est considéré comme allant vers la mer) sur 2 km, puis on rejoint la rive gauche plus tranquille à l’intersection du Boulevard Curie.
+                Coulogne - Ardres
+                Arrivé à Coulogne, au lieu-dit « Le pont de Coulogne », on emprunte les 7 km de voie verte qui permettent de rejoindre Guînes. À mi-parcours, un itinéraire plus court est indiqué pour les VTTistes. L’itinéraire se poursuit le long du canal jusqu’à Guînes.
+                À Guînes, il est indiqué de suivre la route principale, fortement empruntée. Nous vous conseillons de suivre le centre-ville, où un double sens cyclable permet de rejoindre tranquillement la suite de l’itinéraire et de profiter du centre-ville.
+                La suite du parcours contourne les équipements sportifs de la ville et rejoint une route aménagée en bande cyclable, puis une succession de chemins partagés avec les agriculteurs et de routes très tranquilles en cohabitation. On rejoint ensuite Balinghem sur une "chaussée à voie centrale banalisée" (chaucidou), puis Brême et Ardres par l’ancienne voie de chemin de fer de Calais à Anvin, réaménagée par endroit en voie verte.
+                Ardres - Audruicq
+                La traversée d’Ardres n’est pas jalonnée. Pour suivre l’EV5, il faut traverser le centre-ville, passer devant l’église et l’office du tourisme et continuer toujours tout droit, rejoindre l’Avenue de Calais – N943 aménagé en partie en piste cyclable. L’itinéraire est ensuite bien indiqué et emprunte des petites routes tranquilles et une route aménagée avec une "chaussée à voie centrale banalisée" (chaucidou) pour rejoindre l’entrée d’Audruicq. Comme à Ardres, ni le centre-ville ni la gare ne sont indiqués.
+            </div>
+            <div class="caracteristiques">
+                Cet itinéraire est jalonné de Coulogne à Audruicq, avec toutefois une interruption dans Ardres et à l’entrée d’Audruicq. Les panneaux de Guînes mériteraient d’être repositionnés afin de favoriser la traversée du centre-ville, aménagé avec un double sens cyclable.
+                L’itinéraire est aménagé en voie verte stabilisée renforcée entre Coulogne et Guînes. Appliqué en 2015, ce revêtement, très roulant les premières années, commence à se dégrader. Quelques chemins asphaltés, partagés avec les agriculteurs ont été aménagés, ainsi que des petites sections de voie verte asphaltées.
+                La majeure partie de l’itinéraire entre Guînes et Audruicq se fait sur route en cohabitation, deux sections sont aménagées en chaussée à voie centrale banalisée.
+                Il est possible de louer un vélo pour la journée à Ardres et Guînes.
+            </div>
+            <div class="tourisme">
+                À Calais : 
+                Le long du canal de Saint-Omer : 
+                Hôtel de ville de Calais, 
+                Cité internationale de la dentelle et de la mode. Voir https://www.cite-dentelle.fr/fr/
+                Ponts flamands (Curie, Coulogne.
+                Autour de Guînes :  
+                Les Wateringues, Écluse Carrée : canal de Guînes et Rivière Neuve superposée
+                Le Marais de Guînes, zone naturelle à visiter. Voir https://www.pas-de-calais-tourisme.com/wp-content/uploads/2018/02/marais-de-guines-randonnee-pedestre-sentier-des-tetards.pdf
+                Le village Saint-Joseph, parc écomusée : reconstitution de moulins et bâtiments du passé. Voir https://www.st-joseph-village.com/
+                À Guînes : 
+                Tour de l’Horloge, musée interactif. Voir http://www.tour-horloge-guines.com/
+                À Ardres : 
+                Lac, lieu de villégiature, restaurants
+                Base de voile : https://www.paysdopale-tourisme.fr/les-sports-nautiques/base-municipale-de-loisirs/
+                Maison de la nature : https://www.paysdopale-tourisme.fr/les-activites/decouverte-de-faune-de-flore/maison-de-nature-2/
+                Centre d’Ardres, ancienne place forte : jardins des remparts, église, chapelle des Carmes.
+            </div>
+            <div class="transport">
+                Gare(s) SNCF : 
+                Gare de Calais : ligne Calais-Lille /  Calais – Boulogne-sur-Mer / Calais – Dunkerque / Calais – Amiens / Calais - Paris
+                Gare d’Audruicq : ligne Calais-Lille
+            </div>
+            <div class="navigation">
+                <div class="precedent">
+                    <a href=""><i class="fa-solid fa-arrow-left"></i> étape précédente</a>
+                </div>
+                <div class="middle">1/12</div>
+                <div class="suivant">
+                    <a href="">étape suivante <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="map"></div>
+    </div>
+
+    <script src="js/etape.js"></script>
+</body>
+</html>

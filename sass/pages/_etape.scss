@@ -1,0 +1,53 @@
+// A supprimer lorsque la navbar sera insérée dans le code HTML
+
+.step {
+    position:absolute;
+    top:100px;  
+    left:0;
+    bottom:0;
+    right:0;
+    display:flex;
+    flex-direction: row;
+
+    .description {
+        display:flex;
+        flex-direction: column;
+        width:50%;
+        font-weight: 100;
+        overflow-y: scroll;
+        scrollbar-width: thin;
+
+        .nom-etape a{
+            text-decoration: none;
+            color:black;
+            padding-left:10px;
+        }
+
+        .navigation {
+            display:flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: $color-eurovelo5;
+            padding:10px 0;
+            position:sticky;
+            bottom:0;
+            width:100%;
+            text-transform:uppercase;
+
+            .precedent a, .middle, .suivant a{
+                text-decoration: none;
+                color:white;
+                font-weight: bold;
+                padding:10px 15px;;
+            }
+
+        }
+    }
+
+    #map { 
+        //max-width: 1000px; 
+        height: 800px;
+        width: 100%; 
+        height:100%;
+    }
+}

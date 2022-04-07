@@ -1,55 +1,38 @@
 header {
-    //ici la width doit être égale à la largeur des images pour le carousel. Donc si on veut réaranger la page, il faut aussi retoucher
-    //les widths et la largeur des imgs 
-    width: 1300px;
-    overflow: hidden;
+    
+    // width: 100%;
+    // overflow: hidden;
 
-
-}
-
-.caroussel {
-    width: calc(1300px * 6);
-    animation: glisse 40s infinite;
-    list-style-type: none;
-
-    img {
-        width: 1300px;
-        height: 900px;
-        float: left;
+    
+    
+    .swiper {
+        width: 100%;
+        height: 50vh;
+        position: relative;
+        .title {
+          color: white;
+          text-shadow: 1px 1px 2px black;
+          top: 30%;
+          right: 50%;
+          transform: translate(50%, 50%);
+          position: absolute;
+          z-index: 10;
+        }
+      .swiper-slide {
+        img{
+          object-fit: cover;
+          width: 100%;
+          height: 100%;
+        }
+        // font-family: "Open Sans", sans-serif;
+        background-size: cover;
+        background-position: 100%;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+    
     }
-}
-
-    @keyframes glisse {
-        0% {
-            transform: translateX(0);
-        }
-
-        10% {
-            transform: translateX(0);
-        }
-
-        17%{
-            transform: translateX(-1300px);
-        }
-
-        33%{
-            transform: translateX(-2600px);
-        }
-
-        50%{
-            transform: translateX(-3900px);
-        }
-
-        63%{
-            transform: translateX(-5200px);
-        }
-
-        83%{
-            transform: translateX(-6500px);
-        }
-
-        100%{
-            transform: translateX(0);
-        }
-
-}
+  }
