@@ -8,7 +8,7 @@
 
         img {
             width: 100%;
-            height: 450px;
+            height: 400px;
             object-fit: cover;
         }
 
@@ -35,20 +35,19 @@
         grid-template-columns: 0.5fr 1fr 1fr 1fr 0.5fr;
         width: 100%;
 
-        .article1
-        {
+        .article1 {
             grid-column: 2;
         }
-        .article2
-        {
+
+        .article2 {
             grid-column: 3;
         }
-        .article3
-        {
+
+        .article3 {
             grid-column: 4;
         }
-        .article4
-        {
+
+        .article4 {
             grid-column: 2;
         }
 
@@ -59,8 +58,8 @@
             text-align: center;
             align-content: space-around;
             padding: 15px;
-            
-            
+
+
 
             h2 {
                 display: flex;
@@ -76,6 +75,7 @@
 
             .phototemoign {
                 width: 100%;
+
                 img {
                     width: 100%;
                     height: 400px;
@@ -86,3 +86,13 @@
         }
     }
 }
+
+
+@media screen and (max-width: 700px) {
+    .temoignages {
+        display: block;
+        width: 100%;
+    }
+    .
+}
+

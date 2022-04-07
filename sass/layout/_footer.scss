@@ -1,31 +1,24 @@
 footer {
-    .boutonfooter{
+
+    display: flex;
+    flex-direction: column;
+
+    .imagesFooterHaut {
+
         display: flex;
-        align-items: center;
-
-        a {
-            display: flex;
-            text-decoration: none;
-            color: black;
-            font-size: 16px;
-        }
-
-        a:hover {
-            color: $color-eurovelo5;
-        }
+        justify-content: space-between;
+        padding: 10px;
 
         .imgfoot1 {
-            margin: 15px;
             height: 60px;
             width: 60px;
-            padding-left: 10px;
         }
 
         .imgfoot2 {
-            margin: 15px;
             height: 60px;
             width: 180px;
         }
+<<<<<<< HEAD
         .boutonfoot {
             display: flex;
             align-items: center;
@@ -42,5 +35,17 @@ footer {
                 }
             }
         }
+=======
+>>>>>>> 750b8b5ece8be6df0f946fdfb2319db4e920d45e
     }
-}
+        .footerHautDeuxiemeMoitiee{
+            display: flex;
+           flex-direction: column;
+        .texteFooterHaut{
+            display: flex;
+            flex-direction: column;
+           margin: 100px;
+           text-align: justify;
+        }
+    }
+    } 

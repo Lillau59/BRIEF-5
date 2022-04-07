@@ -1,8 +1,13 @@
 @mixin mixincasegrillePN
 {
-    background-color: bisque;
-    width: 1fr;
+    position: relative;
     height: 500px;
+    background-color: bisque;
+    a .imagearticlecasegrille
+    {
+        object-fit: cover;
+        
+    }
     
     @media screen and (max-width: 1000px)
     {
@@ -15,5 +20,6 @@
     {
         position: absolute;
         bottom: 30px;
+        left: 40%;
     }
 }
