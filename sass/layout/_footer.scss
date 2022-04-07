@@ -1,0 +1,45 @@
+footer {
+    .boutonfooter{
+        display: flex;
+        align-items: center;
+
+        a {
+            display: flex;
+            text-decoration: none;
+            color: black;
+            font-size: 16px;
+        }
+
+        a:hover {
+            color: $color-eurovelo5;
+        }
+
+        .imgfoot1 {
+            margin: 15px;
+            height: 60px;
+            width: 60px;
+            padding-left: 10px;
+        }
+
+        .imgfoot2 {
+            margin: 15px;
+            height: 60px;
+            width: 180px;
+        }
+        .boutonfoot {
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+
+            .reseauxfoot {
+                gap: 25px;
+                display: flex;
+                align-self: center;
+                font-size: 20px;
+
+                i {
+                    color: white;
+                }
+            }
+    }
+}
