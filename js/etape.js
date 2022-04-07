@@ -68,6 +68,9 @@ function construct(etape) {
   if(etape.attributes.transport != null)    
     document.querySelector('.transport').innerHTML = marked.parse(etape.attributes.transport);
 
+console.log(etape.attributes.parcours);
+
+
   if(id == 1) {    
     document.querySelector('.precedent').style.visibility = "hidden";
   }
@@ -102,11 +105,14 @@ function construct(etape) {
         opacity: 0.85,
         weight: 5,
         lineCap: 'round'
+      },
+      marker_options: {
+        startIconUrl: 'pin-icon-start.png',
+        endIconUrl: 'pin-icon-end.png',
+        shadowUrl: 'pin-shadow.png'
       }
     }).on('loaded', function (e) {
-
       map.fitBounds(e.target.getBounds());
-
     }).addTo(map);
 
 }
