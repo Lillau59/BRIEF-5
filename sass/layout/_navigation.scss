@@ -77,8 +77,8 @@
 
 
     //nav bar sur tt le site
-    @media only screen and (min-width: 1201px) {
         nav {
+        @media only screen and (min-width: 1201px) {
             display: flex;
             background-color: rgba($color: #84a8a6, $alpha: 0.8);
             justify-content: space-between;
@@ -182,7 +182,7 @@
                     cursor: pointer;
                 }
             }
-
+        
             @media screen and (max-width: 1200px) {
                 .sidenav {
                     padding-top: 15px;
