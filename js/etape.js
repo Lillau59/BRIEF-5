@@ -5,8 +5,8 @@ let thisUrl = document.location.href;
 let id = thisUrl.split('=')[1];
 
 // On récupère les infos de cette étape dans strapi
-let strapiApi = "/api/etapes/" + id + "?populate=*";
-let StrapiUrl = strapiIp + strapiPort + strapiApi;
+const strapiApi = "/api/etapes/" + id + "?populate=*";
+const StrapiUrl = strapiIp + strapiPort + strapiApi;
 
 fetch(StrapiUrl)
 .then(function(response) {

@@ -20,8 +20,8 @@ var customOptions =
 
 // On récupère la liste des étapes dans strapi
 
-let strapiApi = "/api/etapes?populate=*";
-let StrapiUrl = strapiIp + strapiPort + strapiApi;
+const strapiApi = "/api/etapes?populate=*";
+const StrapiUrl = strapiIp + strapiPort + strapiApi;
 
 console.log(StrapiUrl);
 
