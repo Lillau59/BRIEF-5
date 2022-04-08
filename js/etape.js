@@ -118,15 +118,11 @@ function construct(etape) {
     }).on('loaded', function (e) {
       map.fitBounds(e.target.getBounds());
     }).addTo(map);
-
 }
 
-window.addEventListener('resize', () => {
+window.addEventListener('resize', () => {  
   if(window.innerWidth > 800) {
-    console.log(itineraire.i);
-
-    //map.setView(itineraire.getBounds(), defaultZoom);
-
+    map.fitBounds(itineraire.getBounds());
   }
 });
 
