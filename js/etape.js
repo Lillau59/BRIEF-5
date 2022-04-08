@@ -1,5 +1,6 @@
 // On récupère l'url de la page
 let thisUrl = document.location.href; 
+let switcher = document.querySelector('.switcher');
 
 // On extrait le numéro d'étape
 let id = thisUrl.split('=')[1];
@@ -10,6 +11,7 @@ const StrapiUrl = strapiIp + strapiPort + strapiApi;
 
 var itineraire;
 var map;
+var bounds;
 
 const defaultLatitude = 50.679057;
 const defaultLongitude = 2.432957;
@@ -61,7 +63,7 @@ function construct(etape) {
 
   document.querySelector('.img-etape').alt = etape.attributes.nom;
 
-// gestion des champs Rich text issus de strapi
+  // gestion des champs Rich text issus de strapi
   if(etape.attributes.resume != null)
     document.querySelector('.resume').innerHTML = marked.parse(etape.attributes.resume);
   if(etape.attributes.situation != null)
@@ -117,17 +119,36 @@ function construct(etape) {
       }
     }).on('loaded', function (e) {
       map.fitBounds(e.target.getBounds());
+      bounds = e.target.getBounds();
     }).addTo(map);
 }
 
 window.addEventListener('resize', () => {  
   if(window.innerWidth > 800) {
-    map.fitBounds(itineraire.getBounds());
+    document.querySelector('.description').style.display = 'none'; 
+    document.querySelector('#map').style.display = 'block';
+    map.fitBoundsbounds(itineraire.getBounds());
   }
 });
 
+switcher.addEventListener('click', () => { 
 
+  if(switcher.innerText == "Afficher la carte") {
+    document.querySelector('.description').style.display = 'none';  
+    document.querySelector('#map').style.display = 'block';
+    switcher.innerText = "Afficher la liste";
+    // Bidouille pour pouvoir afficher la carte correctement
+    window.dispatchEvent(new Event('resize'));
+    map.setZoom(11); 
+  }
+  else {
+    document.querySelector('.description').style.display = 'block';  
+    document.querySelector('#map').style.display = 'none';
 
+    switcher.innerText = "Afficher la carte";
+  }
 
+ 
 
+});
 

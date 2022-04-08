@@ -217,6 +217,15 @@ function construct(etapes) {
 
 }
 
+document.querySelector('.show-map').addEventListener('click', () => { 
+  document.querySelector('.etapes').style.display = 'none';  
+  document.querySelector('#map').style.display = 'contents';
+
+  if(window.innerWidth > 800) {
+
+  }
+});
+
 // ****************************************************************************************
 //var marker = L.marker([50.4932069, 2.5494601]).addTo(map);
 
