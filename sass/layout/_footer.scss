@@ -124,11 +124,50 @@ footer {
 
     .footernoir {
         display: flex;
+        justify-content: space-between;
+        align-items: center;
         background-color: rgb(36, 34, 34);
+        z-index:50;
+        
         color: white;
         padding: 5px;
-        gap: 30px;
+        //gap: 30px;
         font-size: 13px;
         padding-left: 200px;
+
+        .footernoirLeft {
+            display: flex;
+            gap: 30px;
+
+            a{
+                text-decoration: none;
+                color:white;
+            }
+        }
+
+        .footernoirRight {
+            display: flex;
+            align-items: center;
+
+            p  span {
+                text-transform: uppercase;
+            }
+
+            img {
+                width:48px;
+                height:48px;
+                padding: 0 10px;
+            }
+        }
+    }
+
+    .anim-raptor {
+        position:fixed;
+        bottom:-10px;
+        right:50px;
+        max-width:800px;
+        max-height:800px;
+        z-index:20;
+        visibility:hidden;
     }
 }
