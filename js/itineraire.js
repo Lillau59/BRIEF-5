@@ -12,6 +12,7 @@ const switcher = document.querySelector('.switcher');
 // Les tableaux de tracés et de popups pour les étapes de l'itinéraires
 let mapEtape = [];
 let popup = [];
+var distance;
 
 L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
   maxZoom: 20,
@@ -106,7 +107,7 @@ function construct(etapes) {
     // On crée la div qui contient le nombre de kilomètres
     let km = document.createElement('div');
     km.classList.add('km');
-    km.innerText = etape.attributes.distance.toString().replace('.', ',') + " km";
+    //km.innerText = etape.attributes.distance.toString().replace('.', ',') + " km";
 
     // On ajoute cette div à la div leftEtape
     leftEtape.appendChild(km);
@@ -219,6 +220,9 @@ function construct(etapes) {
       }).on('click', function (e) {
         document.location.href = "etape.html?etape=" + etape.id;
     }).addTo(map);
+
+    distance = Number.parseFloat(mapEtape[etape.id].get_distance()/1000).toFixed(2);
+    document.querySelector('.etape' + etape.id + ' a .left-etape .km').innerText = distance.replace('.', ',') + " km";
   }
 }
 
