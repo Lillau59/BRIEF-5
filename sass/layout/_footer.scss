@@ -3,6 +3,7 @@ footer {
     display: flex;
     flex-direction: column;
 
+    .footerGris{
     .imagesFooterHaut {
 
         display: flex;
@@ -29,4 +30,8 @@ footer {
            text-align: justify;
         }
     }
-    } 
+    .footerNoir{
+        background-color: black;
+    }
+}
+}
