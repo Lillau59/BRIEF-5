@@ -1,2 +1,2 @@
-const strapiIp = "http://20.107.97.3";
+const strapiIp = "http://51.137.57.139";
 const strapiPort = ":1337";
