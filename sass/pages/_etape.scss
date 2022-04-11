@@ -48,6 +48,7 @@
 
         .img-etape {
             margin: 10px 0;
+            width:100%;
         }
 
         .km {
@@ -80,17 +81,17 @@
         }
     }
 
-    #map { 
-        height: 800px;
-        width: 100%; 
-        height:100%;
-        z-index: 50;
+    // #map { 
+    //     height: 800px;
+    //     width: 100%; 
+    //     height:100%;
+    //     z-index: 50;
 
-        @media screen and (max-width: 1000px) {
-            display: none;
-            height: 800px;
-        }
-    }
+    //     @media screen and (max-width: 1000px) {
+    //         display: none;
+    //         height: 800px;
+    //     }
+    // }
 
     .switcher {
         position:fixed;

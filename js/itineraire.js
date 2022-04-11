@@ -3,7 +3,13 @@ const defaultLatitude = 50.679057;
 const defaultLongitude = 2.432957;
 const defaultZoom = 10;
 var map = L.map('map').setView([defaultLatitude, defaultLongitude], defaultZoom);
+const couleurTrace = 'orange';
+const couleurSurvol = '#e5b9d5';
 
+// Le bouton qui permet de switcher entre la carte et la liste
+const switcher = document.querySelector('.switcher');
+
+// Les tableaux de tracés et de popups pour les étapes de l'itinéraires
 let mapEtape = [];
 let popup = [];
 
@@ -155,16 +161,16 @@ function construct(etapes) {
     // Quand on survole une étape sur la gauche, le tronçon correspondant est surligné
     document.querySelector('.etape' + etape.id).addEventListener('mouseover', () => {
       mapEtape[etape.id].setStyle({
-        color: 'yellow'
+        color: couleurSurvol
       });
     });
     document.querySelector('.etape' + etape.id).addEventListener('mouseout', () => {
       mapEtape[etape.id].setStyle({
-        color: 'orange'
+        color: couleurTrace
       });
     });
 
-    // Petit trick pour afficher un marker spécifique au début et à la fin de l'itinéraire complet et des mcercles orange sur les étapes
+    // Petit trick pour afficher un marker spécifique au début et à la fin de l'itinéraire complet et des m sur les étapes
     let iconStart = "pin-icon-start.png";
     let iconEnd = "circle.png";
     let iconShadow = "transparent.png";
@@ -187,7 +193,7 @@ function construct(etapes) {
 
     mapEtape[etape.id] = new L.GPX(url, {
       polyline_options: {
-        color: 'orange',
+        color: couleurTrace,
         opacity: 0.85,
         weight: 5,
         lineCap: 'round'
@@ -199,7 +205,7 @@ function construct(etapes) {
       }
     }).on('mouseover', function (e) {
         this.setStyle({
-          color: 'yellow'
+          color: couleurSurvol
         });
         popup[etape.id]
           .setLatLng(e.latlng)
@@ -208,23 +214,46 @@ function construct(etapes) {
       }).on('mouseout', function (e) {
         map.closePopup();
         this.setStyle({
-          color: 'orange'
+          color: couleurTrace
         });
       }).on('click', function (e) {
         document.location.href = "etape.html?etape=" + etape.id;
     }).addTo(map);
   }
-
 }
 
-document.querySelector('.show-map').addEventListener('click', () => { 
-  document.querySelector('.etapes').style.display = 'none';  
-  document.querySelector('#map').style.display = 'contents';
-
-  if(window.innerWidth > 800) {
-
+switcher.addEventListener('click', () => { 
+  if(switcher.innerText == "Afficher la carte") {
+    document.querySelector('.etapes').style.display = 'none';  
+    document.querySelector('#map').style.display = 'block';
+    switcher.innerText = "Afficher la liste";
+  }
+  else {
+    document.querySelector('.etapes').style.display = 'flex';  
+    document.querySelector('#map').style.display = 'none';
+    switcher.innerText = "Afficher la carte";
   }
 });
+
+window.addEventListener('resize', () => {
+  // Si on repasse au dessus de 800 px, affichage liste + carte et suppression bouton
+  if(window.innerWidth > 800) {
+    document.querySelector('.etapes').style.display = 'flex';  
+    document.querySelector('#map').style.display = 'block';
+    switcher.display = "none";
+  }
+  else {
+    if(switcher.innerText == "Afficher la carte") {
+      document.querySelector('.etapes').style.display = 'flex';  
+      document.querySelector('#map').style.display = 'none';
+    }
+    else {
+      document.querySelector('.etapes').style.display = 'none';  
+      document.querySelector('#map').style.display = 'block';
+    }
+  }
+});
+
 
 // ****************************************************************************************
 //var marker = L.marker([50.4932069, 2.5494601]).addTo(map);
