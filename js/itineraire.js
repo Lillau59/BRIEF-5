@@ -57,7 +57,7 @@ function construct(etapes) {
     //   <div class="etape">
     //     <a href="etape.html?etape=1">
     //       <div class="left-etape">
-    //           <img src="img/thumbnails/etape1.jpg" alt="Calais - Ardres" class="img-etape">
+    //           <img src="img/thumbnails/etape1.jpg" alt="Calais - Ardres" class="img-itineraire">
     //           <div class="km">22,7 Km</div>
     //       </div>
     //       <div class="right-etape">
@@ -89,7 +89,7 @@ function construct(etapes) {
 
     // On crée l'élément img pour la miniature
     let img = document.createElement('img');      
-    img.classList.add('img-etape');  
+    img.classList.add('img-itineraire');  
     img.alt = etape.attributes.nom;
 
     if(etape.attributes.photo.data != null) {

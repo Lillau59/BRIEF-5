@@ -14,6 +14,7 @@ const StrapiUrl = strapiIp + strapiPort + strapiApi;
 var itineraire;
 var map;
 var bounds;
+var distance;
 
 const defaultLatitude = 50.679057;
 const defaultLongitude = 2.432957;
@@ -57,7 +58,7 @@ function construct(etape) {
     document.querySelector('.type-etape').innerText = etape.attributes.typevoie;
   }
 
-  document.querySelector('.km').innerText = etape.attributes.distance.toString().replace('.', ',') + " km";
+  //document.querySelector('.km').innerText = etape.attributes.distance.toString().replace('.', ',') + " km";
 
   if(etape.attributes.photo.data != null)
     document.querySelector('.img-etape').src = strapiIp + strapiPort + etape.attributes.photo.data.attributes.url
@@ -99,6 +100,9 @@ function construct(etape) {
   // Gestion de la carte
   map = L.map('map');
 
+  var el = L.control.elevation();
+  el.addTo(map);
+
   L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
     maxZoom: 20,
     attribution: '&copy; OpenStreetMap France | &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -120,10 +124,28 @@ function construct(etape) {
         endIconUrl: 'pin-icon-end.png',
         shadowUrl: 'pin-shadow.png'
       }
+    }).on("addline",function(e){
+      el.addData(e.line);
     }).on('loaded', function (e) {
       map.fitBounds(e.target.getBounds());
       bounds = e.target.getBounds();
+
+      // récupérer les données d'élévation
+      // console.log(itineraire.get_elevation_data());
+
+      // récupérer la distance
+      distance = Number.parseFloat(itineraire.get_distance()/1000).toFixed(2);
+      document.querySelector('.km').innerText = distance.replace('.', ',') + " km";
+
+      // // récupérer l'élévation max      
+      // itineraire.get_elevation_max();
+      // // récupérer l'élévation max
+      // itineraire.get_elevation_min();
+
     }).addTo(map);
+
+    
+
 }
 
 // window.addEventListener('resize', () => {  

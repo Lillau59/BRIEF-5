@@ -49,6 +49,8 @@
         .img-etape {
             margin: 10px 0;
             width:100%;
+            height:auto;
+            flex-shrink: 0;
         }
 
         .km {

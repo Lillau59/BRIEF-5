@@ -45,7 +45,7 @@
                 color:black;
 
                 .left-etape {
-                    .img-etape {
+                    .img-itineraire {
                         width: 190px;
                         height: 190px;
                         object-fit: cover;
@@ -93,7 +93,7 @@
                     cursor: pointer;
     
                     .left-etape {
-                        .img-etape {
+                        .img-itineraire {
                             filter: blur(2px);
                         }
                     }
@@ -103,7 +103,7 @@
                     display: flex;
                     flex-direction: column;
 
-                    .left-etape .img-etape {
+                    .left-etape .img-itineraire {
                         width:100%;
                     }
                 }
