@@ -1,5 +1,6 @@
 // On récupère l'url de la page
 let thisUrl = document.location.href; 
+let switcher = document.querySelector('.switcher');
 
 // On extrait le numéro d'étape
 let id = thisUrl.split('=')[1];
@@ -7,6 +8,14 @@ let id = thisUrl.split('=')[1];
 // On récupère les infos de cette étape dans strapi
 const strapiApi = "/api/etapes/" + id + "?populate=*";
 const StrapiUrl = strapiIp + strapiPort + strapiApi;
+
+var itineraire;
+var map;
+var bounds;
+
+const defaultLatitude = 50.679057;
+const defaultLongitude = 2.432957;
+const defaultZoom = 10;
 
 fetch(StrapiUrl)
 .then(function(response) {
@@ -54,7 +63,7 @@ function construct(etape) {
 
   document.querySelector('.img-etape').alt = etape.attributes.nom;
 
-// gestion des champs Rich text issus de strapi
+  // gestion des champs Rich text issus de strapi
   if(etape.attributes.resume != null)
     document.querySelector('.resume').innerHTML = marked.parse(etape.attributes.resume);
   if(etape.attributes.situation != null)
@@ -67,9 +76,6 @@ function construct(etape) {
     document.querySelector('.tourisme').innerHTML = marked.parse(etape.attributes.tourisme);
   if(etape.attributes.transport != null)    
     document.querySelector('.transport').innerHTML = marked.parse(etape.attributes.transport);
-
-console.log(etape.attributes.parcours);
-
 
   if(id == 1) {    
     document.querySelector('.precedent').style.visibility = "hidden";
@@ -88,7 +94,7 @@ console.log(etape.attributes.parcours);
   document.querySelector('.id-etape').innerText = id;  
 
   // Gestion de la carte
-  var map = L.map('map');
+  map = L.map('map');
 
   L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
     maxZoom: 20,
@@ -99,7 +105,7 @@ console.log(etape.attributes.parcours);
   var url = './gpx/' + etape.attributes.gpx; // URL to your GPX file or the GPX itself
 
   // On crée le tracé de l'étape à partir des données du fichier gpx
-  var itineraire = new L.GPX(url, {async: true, 
+  itineraire = new L.GPX(url, {async: true, 
       polyline_options: {
         color: 'orange',
         opacity: 0.85,
@@ -113,10 +119,36 @@ console.log(etape.attributes.parcours);
       }
     }).on('loaded', function (e) {
       map.fitBounds(e.target.getBounds());
+      bounds = e.target.getBounds();
     }).addTo(map);
-
 }
 
+window.addEventListener('resize', () => {  
+  if(window.innerWidth > 800) {
+    document.querySelector('.description').style.display = 'none'; 
+    document.querySelector('#map').style.display = 'block';
+    map.fitBoundsbounds(itineraire.getBounds());
+  }
+});
 
+switcher.addEventListener('click', () => { 
 
+  if(switcher.innerText == "Afficher la carte") {
+    document.querySelector('.description').style.display = 'none';  
+    document.querySelector('#map').style.display = 'block';
+    switcher.innerText = "Afficher la liste";
+    // Bidouille pour pouvoir afficher la carte correctement
+    window.dispatchEvent(new Event('resize'));
+    map.setZoom(11); 
+  }
+  else {
+    document.querySelector('.description').style.display = 'block';  
+    document.querySelector('#map').style.display = 'none';
+
+    switcher.innerText = "Afficher la carte";
+  }
+
+ 
+
+});
 

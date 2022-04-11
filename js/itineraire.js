@@ -19,11 +19,10 @@ var customOptions =
 }
 
 // On récupère la liste des étapes dans strapi
-
 const strapiApi = "/api/etapes?populate=*";
 const StrapiUrl = strapiIp + strapiPort + strapiApi;
 
-console.log(StrapiUrl);
+//console.log(StrapiUrl);
 
 fetch(StrapiUrl)
 .then(function(response) {
@@ -89,7 +88,7 @@ function construct(etapes) {
 
     if(etape.attributes.photo.data != null) {
       img.src = strapiIp + strapiPort + etape.attributes.photo.data.attributes.formats.thumbnail.url
-      console.log(img.src);
+      //console.log(img.src);
     }
     else {
       img.src = "img/thumbnails/default.jpg";
@@ -165,6 +164,7 @@ function construct(etapes) {
       });
     });
 
+    // Petit trick pour afficher un marker spécifique au début et à la fin de l'itinéraire complet et des mcercles orange sur les étapes
     let iconStart = "pin-icon-start.png";
     let iconEnd = "circle.png";
     let iconShadow = "transparent.png";
@@ -213,69 +213,18 @@ function construct(etapes) {
       }).on('click', function (e) {
         document.location.href = "etape.html?etape=" + etape.id;
     }).addTo(map);
-    
-    // mapEtape[etape.id].on('mouseout', function (e) {
-    //   map.closePopup();
-    //   mapEtape[etape.id].setStyle({
-    //     color: 'orange'
-    //   });
-    // });
   }
 
 }
 
+document.querySelector('.show-map').addEventListener('click', () => { 
+  document.querySelector('.etapes').style.display = 'none';  
+  document.querySelector('#map').style.display = 'contents';
 
+  if(window.innerWidth > 800) {
 
-// On charge le fichier gpx de l'étape
-//let url = './gpx/EuroVelo_5_Via_Romea_Francigena.xml'; // URL to your GPX file or the GPX itself
-
-// La popup qui s'affiche lorsqu'on survole le tracé de l'étape
-//var popup = L.popup(customOptions);
-
-// On crée le tracé de l'étape à partir des données du fichier gpx
-// var mapEtape = new L.GPX(url, {
-//   polyline_options: {
-//     color: 'orange',
-//     opacity: 0.85,
-//     weight: 5,
-//     lineCap: 'round'
-//   }
-// }).on('mouseover', function (e) {
-//   this.setStyle({
-//     color: 'yellow'
-//   });
-//   popup
-//     .setLatLng(e.latlng)
-//     .setContent("<a href='index.html'>EuroVelo 5 - Via Romea Francigena</a>")
-//     .openOn(map);
-// }).on('loaded', function (e) {
-//   var gpx = e.target;
-//   map.fitToBounds(gpx.getBounds());
-// }).addTo(map);
-
-// mapEtape.on('mouseout', function (e) {
-//   map.closePopup();
-//   mapEtape.setStyle({
-//     color: 'orange'
-//   });
-// });
-
-
-// // On trace les cercles de début et fin de l'itinéraire
-// var circleStart = L.circle([50.967177, 1.854066], {
-//   color: 'green',
-//   fillColor: '#fff',
-//   fillOpacity: 0.8,
-//   radius: 500
-// }).addTo(map);
-
-// var circleEnd = L.circle([50.691165, 3.254207], {
-// color: 'red',
-// fillColor: '#fff',
-// fillOpacity: 0.8,
-// radius: 500
-// }).addTo(map);
-
+  }
+});
 
 // ****************************************************************************************
 //var marker = L.marker([50.4932069, 2.5494601]).addTo(map);
