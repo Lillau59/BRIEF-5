@@ -1,5 +1,7 @@
 // On récupère l'url de la page
 let thisUrl = document.location.href; 
+
+// Le bouton qui permet de switcher entre la carte et la liste
 let switcher = document.querySelector('.switcher');
 
 // On extrait le numéro d'étape
@@ -124,32 +126,51 @@ function construct(etape) {
     }).addTo(map);
 }
 
-window.addEventListener('resize', () => {  
-  if(window.innerWidth > 800) {
-    document.querySelector('.description').style.display = 'none'; 
-    document.querySelector('#map').style.display = 'block';
-    map.fitBoundsbounds(itineraire.getBounds());
-  }
-});
+// window.addEventListener('resize', () => {  
+//   if(window.innerWidth > 800) {
+//     document.querySelector('.description').style.display = 'none'; 
+//     document.querySelector('#map').style.display = 'block';
+
+//   }
+// });
 
 switcher.addEventListener('click', () => { 
-
   if(switcher.innerText == "Afficher la carte") {
     document.querySelector('.description').style.display = 'none';  
     document.querySelector('#map').style.display = 'block';
     switcher.innerText = "Afficher la liste";
     // Bidouille pour pouvoir afficher la carte correctement
     window.dispatchEvent(new Event('resize'));
-    map.setZoom(11); 
+    map.setZoom(12); 
   }
   else {
-    document.querySelector('.description').style.display = 'block';  
+    document.querySelector('.description').style.display = 'flex';  
     document.querySelector('#map').style.display = 'none';
 
     switcher.innerText = "Afficher la carte";
   }
+});
 
- 
-
+window.addEventListener('resize', () => {
+  // Si on repasse au dessus de 1000 px, affichage liste + carte et suppression bouton
+  if(window.innerWidth > 1000) {
+    document.querySelector('.description').style.display = 'flex';  
+    document.querySelector('#map').style.display = 'block';
+    map.fitBounds(itineraire.getBounds());
+    //window.dispatchEvent(new Event('resize'));
+    map.setZoom(12); 
+    
+    switcher.display = "none";
+  }
+  else {
+    if(switcher.innerText == "Afficher la carte") {
+      document.querySelector('.description').style.display = 'flex';  
+      document.querySelector('#map').style.display = 'none';
+    }
+    else {
+      document.querySelector('.description').style.display = 'none';  
+      document.querySelector('#map').style.display = 'block';
+    }
+  }
 });
 
