@@ -46,6 +46,7 @@ function construct(etape) {
     // <div class="transport"></div>
 
   document.querySelector('.nom').innerText = ' ' + etape.attributes.nom;
+  document.title = etape.attributes.nom;
 
   if(etape.attributes.revetement != null) {
     document.querySelector('.type-etape').innerText = etape.attributes.typevoie + " / " + etape.attributes.revetement;
