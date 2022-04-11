@@ -3,8 +3,8 @@ const defaultLatitude = 50.679057;
 const defaultLongitude = 2.432957;
 const defaultZoom = 10;
 var map = L.map('map').setView([defaultLatitude, defaultLongitude], defaultZoom);
-const couleurTrace = 'orange';
-const couleurSurvol = '#e5b9d5';
+const couleurTrace = '#2f9f48';
+const couleurSurvol = '#dea625';
 
 // Le bouton qui permet de switcher entre la carte et la liste
 const switcher = document.querySelector('.switcher');
@@ -227,6 +227,9 @@ switcher.addEventListener('click', () => {
     document.querySelector('.etapes').style.display = 'none';  
     document.querySelector('#map').style.display = 'block';
     switcher.innerText = "Afficher la liste";
+    // Bidouille pour pouvoir afficher la carte correctement
+    window.dispatchEvent(new Event('resize'));
+    map.setZoom(9); 
   }
   else {
     document.querySelector('.etapes').style.display = 'flex';  
@@ -243,6 +246,7 @@ window.addEventListener('resize', () => {
     switcher.display = "none";
   }
   else {
+    switcher.display = "block";
     if(switcher.innerText == "Afficher la carte") {
       document.querySelector('.etapes').style.display = 'flex';  
       document.querySelector('#map').style.display = 'none';

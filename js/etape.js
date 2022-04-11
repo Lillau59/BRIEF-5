@@ -158,11 +158,11 @@ window.addEventListener('resize', () => {
     document.querySelector('#map').style.display = 'block';
     map.fitBounds(itineraire.getBounds());
     //window.dispatchEvent(new Event('resize'));
-    map.setZoom(12); 
-    
+    map.setZoom(12);     
     switcher.display = "none";
   }
   else {
+    switcher.display = "block";
     if(switcher.innerText == "Afficher la carte") {
       document.querySelector('.description').style.display = 'flex';  
       document.querySelector('#map').style.display = 'none';
