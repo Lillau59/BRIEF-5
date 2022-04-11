@@ -74,9 +74,17 @@
 @media screen and (max-width: 800px) {
     .temoignages {
         main {
-            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-columns: 1fr 1fr;
 
         }
     }
+}
 
+@media screen and (max-width: 550px) {
+    .temoignages {
+        main {
+            grid-template-columns: 1fr;
+
+        }
+    }
 }
