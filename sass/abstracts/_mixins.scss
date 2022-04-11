@@ -2,7 +2,6 @@
 {
     position: relative;
     height: 500px;
-    background-color: bisque;
     a .imagearticlecasegrille
     {
         object-fit: cover;
@@ -19,7 +18,17 @@
     .titrearticlecasegrille
     {
         position: absolute;
-        bottom: 30px;
-        left: 40%;
+        bottom: 10px;
+        text-align: center;
+        width: 100%;
+        color: white;
+        text-shadow: black 1px 1px;
+        font-size: 25px;
+        span
+        {
+            background-color: $color-eurovelo5opaque;
+            padding: 0 10px;
+            border-radius: 5px;
+        }
     }
 }

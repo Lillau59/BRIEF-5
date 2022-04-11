@@ -14,29 +14,39 @@ fetch(url)
 
   function patapouf(data){
     console.log(data);
+    var section = document.querySelector('.grillepagenews');
+    var counter = 1;
+
     for (const newsa of data)
     {
-        console.log(newsa.attributes.Titre);
+        console.log(newsa.attributes.Image);
 
         let article = document.createElement("article");
-        article.classList.add("casegrillePN1");
-
-        let section = document.createElement("section");
-        section.classList.add("grillepagenews");
-        main.appendChild(section);
+        article.classList.add("casegrillePN" + counter);
+        counter++;
 
         let a = document.createElement("a");
-        section.appendChild(a);
+        a.href = "#"
+        article.appendChild(a);
 
-        let image = document.createElement("img")
-        image.classList.add("imagearticlecasegrille")
+        let image = document.createElement("img");
+        image.classList.add("imagearticlecasegrille");
+        image.src = strapiIp + strapiPort + newsa.attributes.Image.data.attributes.url
+        a.appendChild(image);
+
 
         let p = document.createElement("p");
         p.classList.add("titrearticlecasegrille");
-        p.innerText = newsa.attributes.Titre
         
 
-        article.appendChild(p)
-        main.appendChild(article);
+        let span = document.createElement("span")
+        span.innerText = newsa.attributes.Titre;
+
+        p.appendChild(span);
+        
+
+        a.appendChild(p);
+        section.appendChild(article);
+
     }
   }
