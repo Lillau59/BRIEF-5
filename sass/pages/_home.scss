@@ -80,17 +80,23 @@ main {
     text-align: center;
   }
 
+  form {
+    padding:0 25px;  
+  }
+
   .menuderoulantboite {
-    width: 950px;
-    height: 30px;
-    margin: 5px 25px;
+    width:100%;
+    margin: 0 auto;
+    padding: 10px;
+    border:0;
     border-radius: 5px;
   }
 
   .menuderoulantboite2 {
-    width: 950px;
-    height: 30px;
-    margin: 15px 25px;
+    width:100%;
+    margin: 15px auto;
+    padding: 10px;
+    border:0;
     border-radius: 5px;
   }
 }
