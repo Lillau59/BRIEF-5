@@ -3,8 +3,8 @@ const defaultLatitude = 50.679057;
 const defaultLongitude = 2.432957;
 const defaultZoom = 10;
 var map = L.map('map').setView([defaultLatitude, defaultLongitude], defaultZoom);
-const couleurTrace = '#2f9f48';
-const couleurSurvol = '#dea625';
+const couleurTrace = '#003399';
+const couleurSurvol = '#efd51f';
 
 // Le bouton qui permet de switcher entre la carte et la liste
 const switcher = document.querySelector('.switcher');
