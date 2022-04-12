@@ -35,7 +35,7 @@ fetch(url)
 
         let image = document.createElement("img");
         image.classList.add("imagearticlecasegrille");
-        image.src = strapiIp + strapiPort + newsa.attributes.Image.data.attributes.url
+        image.src = strapiIp + strapiPort + newsa.attributes.Image.data.attributes.formats.medium.url;
         a.appendChild(image);
 
 
