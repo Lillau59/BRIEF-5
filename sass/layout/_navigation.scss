@@ -218,21 +218,18 @@ nav {
 
         .rechercheopen.open {
             transform: scaleY(1);
-            top: 200px;
-            left: 125px;
         }
-    }
-}
-
-@media screen and (max-width: 520px) {
-    .navli a {
-        margin-left: 30px
+        .rechercheopen
+        {
+            top: 900px;
+            left: 20%;
+        }
     }
 }
 
 @media screen and (max-width: 450px) {
     .logonav {
-        left: 30%;
+        left: 25%;
     }
 
     .navul {
@@ -243,7 +240,7 @@ nav {
         margin-left: 10px;
     }
     .rechercheopen.open {
-        top: 300px;
+        left: 18%
     }
 }
 
