@@ -24,7 +24,7 @@ function printTemoignages(data){
 
     let img = document.createElement("img");
     img.alt = article.attributes.titre;
-    img.src = url + article.attributes.image.data.attributes.url;
+    img.src = url + article.attributes.image.data.attributes.formats.medium.url;
     console.log(article.attributes.image.data.attributes.url);
     a.appendChild(img);
     eltArticle.appendChild(a);
