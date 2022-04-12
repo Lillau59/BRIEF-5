@@ -20,6 +20,12 @@
 
                 i {
                     color: white;
+                    padding: 10px;
+
+                    &:hover {
+                        background-color: #0b312b59;
+                        color: #fff;
+                    }
                 }
             }
 
@@ -63,15 +69,37 @@
             padding-right: 20px;
 
             a {
-                display: flex;
-                align-self: center;
-                text-decoration: none;
-                color: white;
-                font-weight: bold;
+                    display: flex;
+                    align-self: center;
+                    text-decoration: none;
+                    color: white;
+                    font-weight: bold;
+                    position: relative;
+    
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        left: 50%;
+                        bottom: 0;
+                        transform: translateX(-50%) scaleX(0);
+                        transform-origin: 50% 50%;
+                        width: 100%;
+                        height: 1px;
+                        background-color: white;
+                        transition: transform 450ms;
+                    }
+    
+                    &:hover {
+    
+                        &::after {
+                            transform: translateX(-50%) scaleX(1);
+                        }
+    
+                    }
+                }
             }
         }
     }
-}
 
 //nav bar sur tt le site
 
