@@ -19,6 +19,8 @@
 
     <nav>
 
+        <a id="link" href="#"><span id="burger"></span></a>
+
         <section class="logonav">
 
             <a href="index.html"><img src="img/logo.png" alt=""></a>
@@ -29,21 +31,31 @@
 
         <ul class="navul">
 
-            <li class="navli"><a href="">Itinéraires</a></li>
-            <li class="navli"><a href="">Témoignages</a></li>
-            <li class="navli"><a href="">News</a></li>
+            <li class="navli"><a href="itineraire.html">Itinéraires</a></li>
+            <li class="navli"><a href="temoignages.html">Témoignages</a></li>
+            <li class="navli"><a href="news.html">News</a></li>
 
         </ul>
 
         <section class="ResearchBar">
 
-            <img class="Searchbutton" src="" alt="">
+            <a id="lautre" href="#"><span class="fa-solid fa-magnifying-glass fa-2x"></span></a>
+
+        </section>
+
+        <section class="rechercheopen">
+
+            <input class="barrederecherche" type="text" name="recherche" placeholder="Recherche">
+
+            <input type="submit" name="validation" value="Recherche">
 
         </section>
 
     </nav>
 
     <script src="js/nav.js"></script>
+
+    <script src="js/burger.js"></script>
 
 </body>
 
