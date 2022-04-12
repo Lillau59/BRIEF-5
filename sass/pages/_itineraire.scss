@@ -55,7 +55,7 @@
                         position:relative;
                         top:-150px;
                         left:10px;
-                        background-color: #eee;
+                        background-color: $color-eurovelo5_princ3;
                         width:60px;
                         padding:5px;
                         text-align: center;
@@ -71,7 +71,7 @@
                     width:100%;
         
                     .type-etape {
-                        background-color: $color-eurovelo5;
+                        background-color: $color-eurovelo5_princ1;
                         color:white;
                         padding: 8px;
                         font-size: 0.9rem;
@@ -85,11 +85,13 @@
     
                     .desc-etape {
                         padding:5px;
+                        font-family: 'Frutiger-light', Arial, sans-serif;
+                        font-weight: bold;
                     }
                 }
     
                 &:hover {
-                    background-color: #fef;
+                    background-color: $color-eurovelo5_princ3;
                     cursor: pointer;
     
                     .left-etape {
@@ -133,7 +135,8 @@
         bottom: 30px;
         left:10px;
         right:10px;
-        background-color: orange;
+        background-color: $color-eurovelo5_princ3;
+        color:$color-eurovelo5_princ2;
         text-align: center;
         padding:10px 0;
         z-index: 100;
