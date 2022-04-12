@@ -15,6 +15,8 @@ var itineraire;
 var map;
 var bounds;
 var distance;
+let elevationMax;
+var elevationMin;
 
 const couleurTrace = '#003399';
 const defaultLatitude = 50.679057;
@@ -139,13 +141,20 @@ function construct(etape) {
       document.querySelector('.km').innerText = distance.replace('.', ',') + " km";
 
       // // récupérer l'élévation max      
-      // itineraire.get_elevation_max();
+      console.log(itineraire.get_elevation_max());
+      elevationMax = itineraire.get_elevation_max();
       // // récupérer l'élévation max
-      // itineraire.get_elevation_min();
+      elevationMin = itineraire.get_elevation_min();
+
+      let elevation = document.querySelector('.etape-elevation');
+      elevation.appendChild(document.querySelector('.elevation'));
+  
+      let div = document.createElement('div');
+      div.innerText = "Élévation min. : " + elevationMin + " m - Élévation max. : " + elevationMax + " m";
+      elevation.appendChild(div);
 
     }).addTo(map);
 
-    
 
 }
 

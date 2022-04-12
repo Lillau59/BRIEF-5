@@ -46,16 +46,20 @@
             font-size: 0.9rem;
         }
 
-        .resume, .situation, .parcours, 
+        .resume, .situation, .etape-elevation, .parcours, 
         .caracteristiques, .tourisme, 
         .transport {
 
             padding: 0 10px;
 
-            p, li {
+            p, li, div {
                 font-family: 'Frutiger-light', Arial, sans-serif;
                 font-weight: bold;
-            }    
+            } 
+
+            div {
+                margin-bottom: 10px;
+            }            
         }
         
         .titre-etape {
@@ -95,6 +99,10 @@
                 font-weight: bold;
                 padding:10px 15px;;
             }
+        }
+
+        .elevation{
+            z-index:0; // Pour que le raphique des élévation ne passe pas devant les flèches de navigation
         }
         
         @media screen and (max-width: 1000px) {

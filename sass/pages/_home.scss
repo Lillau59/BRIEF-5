@@ -1,38 +1,155 @@
 header {
-    
-    // width: 100%;
-    // overflow: hidden;
 
-    
-    
-    .swiper {
+
+
+
+  .swiper {
+    width: 100%;
+    height: 50vh;
+    position: relative;
+
+    .title {
+      color: white;
+      text-shadow: 1px 1px 2px black;
+      top: 30%;
+      right: 50%;
+      transform: translate(50%, 50%);
+      position: absolute;
+      z-index: 10;
+    }
+
+    .swiper-slide {
+      img {
+        object-fit: cover;
         width: 100%;
-        height: 50vh;
-        position: relative;
-        .title {
-          color: white;
-          text-shadow: 1px 1px 2px black;
-          top: 30%;
-          right: 50%;
-          transform: translate(50%, 50%);
-          position: absolute;
-          z-index: 10;
-        }
-      .swiper-slide {
-        img{
-          object-fit: cover;
-          width: 100%;
-          height: 100%;
-        }
-        // font-family: "Open Sans", sans-serif;
-        background-size: cover;
-        background-position: 100%;
-        min-height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
+        height: 100%;
       }
-    
+
+      // font-family: "Open Sans", sans-serif;
+      background-size: cover;
+      background-position: 100%;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+  }
+}
+
+main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  article {
+    max-width: 1200px;
+  }
+}
+
+.presentation {
+
+  max-width: 800px;
+  margin: 20px 0;
+
+  h2 {
+    font-size: 30px;
+  }
+
+  p {
+    display: flex;
+    justify-items: center;
+    text-align: justify;
+  }
+}
+
+.menuderoulant {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  white-space: pre-line;
+  background-color: #00b9cb;
+  border-radius: 5px;
+
+  h3 {
+    margin: 20px 0;
+    font-size: 30px;
+    color: white;
+    text-align: center;
+  }
+
+  .menuderoulantboite {
+    width: 950px;
+    height: 30px;
+    margin: 5px 25px;
+    border-radius: 5px;
+  }
+
+  .menuderoulantboite2 {
+    width: 950px;
+    height: 30px;
+    margin: 15px 25px;
+    border-radius: 5px;
+  }
+}
+
+
+
+//grille trouver mon accueil
+.TMAV {
+  margin: 50px 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gap: 25px;
+
+  .TMAVhaut {
+    grid-column: 1 / 6;
+    display: flex;
+    justify-content: flex-start;
+    padding-top: 20px;
+
+
+    .TMAVlogo {
+      width: 22px;
+      height: 32px;
+
+
+    }
+
+    h3 {
+      font-size: 30px;
+      margin-left: 15px;
+      margin-top: 0;
     }
   }
+
+  p {
+    grid-column: 1/6;
+  }
+
+  .TMAVarticle {
+    position: relative;
+
+    .TMAVimage {
+      width: 100%;
+      border-radius: 10px;
+      object-fit: cover;
+
+
+    }
+
+    &:hover {
+      .TMAVimage{ filter: blur(2px);}
+    }
+
+    .titreAccueilVelo {
+      position: absolute;
+      bottom: 40px;
+      z-index: 100;
+      color: white;
+      text-align: center;
+    }
+  }
+}
