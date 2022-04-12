@@ -45,16 +45,17 @@
                 color:black;
 
                 .left-etape {
-                    .img-etape {
+                    .img-itineraire {
                         width: 190px;
                         height: 190px;
+                        object-fit: cover;
                     }
                     
                     .km {
                         position:relative;
                         top:-150px;
                         left:10px;
-                        background-color: #eee;
+                        background-color: $color-eurovelo5_princ3;
                         width:60px;
                         padding:5px;
                         text-align: center;
@@ -70,7 +71,7 @@
                     width:100%;
         
                     .type-etape {
-                        background-color: $color-eurovelo5;
+                        background-color: $color-eurovelo5_princ1;
                         color:white;
                         padding: 8px;
                         font-size: 0.9rem;
@@ -88,11 +89,11 @@
                 }
     
                 &:hover {
-                    background-color: #fef;
+                    background-color: $color-eurovelo5_princ3;
                     cursor: pointer;
     
                     .left-etape {
-                        .img-etape {
+                        .img-itineraire {
                             filter: blur(2px);
                         }
                     }
@@ -102,42 +103,15 @@
                     display: flex;
                     flex-direction: column;
 
-                    .left-etape .img-etape {
+                    .left-etape .img-itineraire {
                         width:100%;
                     }
                 }
             }  
         }
 
-        .switcher {
-            position:fixed;
-            bottom: 30px;
-            left:10px;
-            right:10px;
-            background-color: orange;
-            text-align: center;
-            padding:10px 0;
-            z-index: 100;
-            border-radius:5px;
-            opacity:0.8;
-            font-size: 1.1rem;
-            font-weight: bold;
-            visibility:hidden;
-            cursor: pointer;
-
-            &:hover {
-                font-size: 1.2rem;
-                padding:11px 0;
-                opacity:1;
-            }
-        }
-
         @media screen and (max-width: 800px) {
             width: 100%;
-           
-            .switcher {
-                visibility:visible;
-            }
         }
     }
 
@@ -146,10 +120,41 @@
         height: 800px;
         width: 100%; 
         height:100%;
+        z-index: 50;
 
         @media screen and (max-width: 800px) {
             display: none;
             height: 800px;
+        }
+    }
+    
+    .switcher {
+        position:fixed;
+        bottom: 30px;
+        left:10px;
+        right:10px;
+        background-color: $color-eurovelo5_princ3;
+        color:$color-eurovelo5_princ2;
+        text-align: center;
+        padding:10px 0;
+        z-index: 100;
+        border-radius:5px;
+        opacity:0.8;
+        font-size: 1.1rem;
+        font-weight: bold;
+        visibility:hidden;
+        cursor: pointer;
+
+        &:hover {
+            font-size: 1.2rem;
+            padding:11px 0;
+            opacity:1;
+        }
+    }
+
+    @media screen and (max-width: 800px) {
+        .switcher {
+            visibility:visible;
         }
     }
 }

@@ -1,5 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Istok+Web&display=swap');
+//@import url('https://fonts.googleapis.com/css2?family=Istok+Web&display=swap');
+@font-face {
+    font-family: 'Frutiger'; src: url('../../font/FTB.ttf');
+}
+
+@font-face {
+    font-family: 'Frutiger-light'; src: url('../../font/FTLC.ttf');
+}
 
 * {
-    font-family: 'Istok Web', Arial, sans-serif;
+    //font-family: 'Istok Web', Arial, sans-serif;
+    font-family: 'Frutiger', Arial, sans-serif;
 }

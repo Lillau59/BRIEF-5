@@ -7,14 +7,10 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
     integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
     crossorigin=""/>
-     <!-- Make sure you put this AFTER Leaflet's CSS -->
-     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-     integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-     crossorigin=""></script>
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-gpx/1.7.0/gpx.min.js"></script>
-     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-     <script src="https://kit.fontawesome.com/30705cebc4.js" crossorigin="anonymous"></script>
-     <link rel="stylesheet" href="sass/main.css">
+     <link rel="stylesheet" href="css/leaflet.elevation-0.0.4-d3v4.css" />    
+     <link rel="stylesheet" href="sass/main.css">     
+
+
     <title>Etape</title>
 </head>
 <body>
@@ -23,7 +19,7 @@
 
     <div class="step">
         <div class="description">
-            <h2 class="nom-etape"><a href="itineraire.html"><i class="fa-solid fa-arrow-left"></i></a><span class="nom"></span>&nbsp;</h2>
+            <h2 class="nom-etape"><a href="itineraire.html" title="Retour à l'itinéraire complet Eurovelo 5"><i class="fa-solid fa-arrow-left"></i></a><span class="nom"></span>&nbsp;</h2>
             <h3 class="type-etape">&nbsp;</h3>
             <div class="km"></div>
             <img src="#" alt="" class="img-etape">
@@ -56,6 +52,15 @@
         <div class="switcher">Afficher la carte</div>
     </div>
 
+         <!-- Make sure you put this AFTER Leaflet's CSS -->
+         <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+         integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+         crossorigin=""></script>        
+         <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-gpx/1.7.0/gpx.min.js"></script>
+         <script type="text/javascript" src="js/leaflet.elevation-0.0.4-d3v4.min.js"></script> 
+         <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+         <script src="https://kit.fontawesome.com/30705cebc4.js" crossorigin="anonymous"></script>
     <script src="js/main.js"></script>
     <script src="js/etape.js"></script>
 </body>

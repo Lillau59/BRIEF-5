@@ -1,5 +1,7 @@
 // On récupère l'url de la page
 let thisUrl = document.location.href; 
+
+// Le bouton qui permet de switcher entre la carte et la liste
 let switcher = document.querySelector('.switcher');
 
 // On extrait le numéro d'étape
@@ -12,7 +14,9 @@ const StrapiUrl = strapiIp + strapiPort + strapiApi;
 var itineraire;
 var map;
 var bounds;
+var distance;
 
+const couleurTrace = '#003399';
 const defaultLatitude = 50.679057;
 const defaultLongitude = 2.432957;
 const defaultZoom = 10;
@@ -46,6 +50,7 @@ function construct(etape) {
     // <div class="transport"></div>
 
   document.querySelector('.nom').innerText = ' ' + etape.attributes.nom;
+  document.title = etape.attributes.nom;
 
   if(etape.attributes.revetement != null) {
     document.querySelector('.type-etape').innerText = etape.attributes.typevoie + " / " + etape.attributes.revetement;
@@ -54,7 +59,7 @@ function construct(etape) {
     document.querySelector('.type-etape').innerText = etape.attributes.typevoie;
   }
 
-  document.querySelector('.km').innerText = etape.attributes.distance.toString().replace('.', ',') + " km";
+  //document.querySelector('.km').innerText = etape.attributes.distance.toString().replace('.', ',') + " km";
 
   if(etape.attributes.photo.data != null)
     document.querySelector('.img-etape').src = strapiIp + strapiPort + etape.attributes.photo.data.attributes.url
@@ -96,6 +101,9 @@ function construct(etape) {
   // Gestion de la carte
   map = L.map('map');
 
+  var el = L.control.elevation();
+  el.addTo(map);
+
   L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
     maxZoom: 20,
     attribution: '&copy; OpenStreetMap France | &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -107,7 +115,7 @@ function construct(etape) {
   // On crée le tracé de l'étape à partir des données du fichier gpx
   itineraire = new L.GPX(url, {async: true, 
       polyline_options: {
-        color: 'orange',
+        color: couleurTrace,
         opacity: 0.85,
         weight: 5,
         lineCap: 'round'
@@ -117,38 +125,75 @@ function construct(etape) {
         endIconUrl: 'pin-icon-end.png',
         shadowUrl: 'pin-shadow.png'
       }
+    }).on("addline",function(e){
+      el.addData(e.line);
     }).on('loaded', function (e) {
       map.fitBounds(e.target.getBounds());
       bounds = e.target.getBounds();
+
+      // récupérer les données d'élévation
+      // console.log(itineraire.get_elevation_data());
+
+      // récupérer la distance
+      distance = Number.parseFloat(itineraire.get_distance()/1000).toFixed(2);
+      document.querySelector('.km').innerText = distance.replace('.', ',') + " km";
+
+      // // récupérer l'élévation max      
+      // itineraire.get_elevation_max();
+      // // récupérer l'élévation max
+      // itineraire.get_elevation_min();
+
     }).addTo(map);
+
+    
+
 }
 
-window.addEventListener('resize', () => {  
-  if(window.innerWidth > 800) {
-    document.querySelector('.description').style.display = 'none'; 
-    document.querySelector('#map').style.display = 'block';
-    map.fitBoundsbounds(itineraire.getBounds());
-  }
-});
+// window.addEventListener('resize', () => {  
+//   if(window.innerWidth > 800) {
+//     document.querySelector('.description').style.display = 'none'; 
+//     document.querySelector('#map').style.display = 'block';
+
+//   }
+// });
 
 switcher.addEventListener('click', () => { 
-
   if(switcher.innerText == "Afficher la carte") {
     document.querySelector('.description').style.display = 'none';  
     document.querySelector('#map').style.display = 'block';
     switcher.innerText = "Afficher la liste";
     // Bidouille pour pouvoir afficher la carte correctement
     window.dispatchEvent(new Event('resize'));
-    map.setZoom(11); 
+    map.setZoom(12); 
   }
   else {
-    document.querySelector('.description').style.display = 'block';  
+    document.querySelector('.description').style.display = 'flex';  
     document.querySelector('#map').style.display = 'none';
 
     switcher.innerText = "Afficher la carte";
   }
+});
 
- 
-
+window.addEventListener('resize', () => {
+  // Si on repasse au dessus de 1000 px, affichage liste + carte et suppression bouton
+  if(window.innerWidth > 1000) {
+    document.querySelector('.description').style.display = 'flex';  
+    document.querySelector('#map').style.display = 'block';
+    map.fitBounds(itineraire.getBounds());
+    //window.dispatchEvent(new Event('resize'));
+    map.setZoom(12);     
+    switcher.display = "none";
+  }
+  else {
+    switcher.display = "block";
+    if(switcher.innerText == "Afficher la carte") {
+      document.querySelector('.description').style.display = 'flex';  
+      document.querySelector('#map').style.display = 'none';
+    }
+    else {
+      document.querySelector('.description').style.display = 'none';  
+      document.querySelector('#map').style.display = 'block';
+    }
+  }
 });
 
