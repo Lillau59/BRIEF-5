@@ -10,11 +10,3 @@ link.addEventListener('click', function(e) {
   input.classList.toggle('open')
 })
 
-let lautre = document.getElementById('lautre')
-let lautreimput = document.querySelector('section.rechercheopen')
-
-lautre.addEventListener('click', function(e) {
-    e.preventDefault()
-    lautreimput.classList.toggle('ouvrir')
-    .classList.toggle('ouvrir')
-  })
