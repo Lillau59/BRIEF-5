@@ -6,11 +6,11 @@ let url = strapiIp + strapiPort + api;
 fetch(url)
 
   .then((response) => { return response.json(); })
-  .then( data => {    
+  .then( data => {
 
-    // les données peuvent arriver dans un ordre différents de celui des id ascendant, on les trie donc d'abord pour les remettre dans l'ordre
+    // les données peuvent arriver dans un ordre différent de celui des id ascendants, on les trie donc d'abord pour les remettre dans l'ordre
     data.data.sort(function (a, b) {
-      return a.attributes.id - b.attributes.id;
+      return a.id - b.id;
     });  
 
       createHTML(data.data)
@@ -18,13 +18,12 @@ fetch(url)
   .catch( error => { console.log(error); })
 
   function createHTML(data){
-    console.log(data);
+
     var section = document.querySelector('.grillepagenews');
     var counter = 1;
 
     for (const newsa of data)
     {
-        console.log(newsa.attributes.Image);
 
         let article = document.createElement("article");
         article.classList.add("casegrillePN" + counter);

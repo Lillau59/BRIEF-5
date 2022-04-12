@@ -16,6 +16,7 @@ var map;
 var bounds;
 var distance;
 
+const couleurTrace = '#003399';
 const defaultLatitude = 50.679057;
 const defaultLongitude = 2.432957;
 const defaultZoom = 10;
@@ -114,7 +115,7 @@ function construct(etape) {
   // On crée le tracé de l'étape à partir des données du fichier gpx
   itineraire = new L.GPX(url, {async: true, 
       polyline_options: {
-        color: 'orange',
+        color: couleurTrace,
         opacity: 0.85,
         weight: 5,
         lineCap: 'round'
