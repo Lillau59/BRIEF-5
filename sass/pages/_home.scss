@@ -54,6 +54,12 @@ main {
   max-width: 800px;
   margin: 20px 0;
 
+
+  h1 {
+    font-family: 'Frutiger-light', Arial, sans-serif;
+    text-align: center;
+  }
+
   h2 {
     font-size: 30px;
   }
@@ -72,6 +78,8 @@ main {
   white-space: pre-line;
   background-color: #00b9cb;
   border-radius: 5px;
+  max-width: 800px;
+  width:100%;
 
   h3 {
     margin: 20px 0;
