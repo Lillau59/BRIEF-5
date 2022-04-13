@@ -1,15 +1,18 @@
 // On récupère l'url de la page
 let thisUrl = document.location.href; 
 
-// Le bouton qui permet de switcher entre la carte et la liste
-let switcher = document.querySelector('.switcher');
-
 // On extrait le numéro d'étape
 let id = thisUrl.split('=')[1];
+
+if(id == undefined)
+  id = 1;
 
 // On récupère les infos de cette étape dans strapi
 const strapiApi = "/api/etapes/" + id + "?populate=*";
 const StrapiUrl = strapiIp + strapiPort + strapiApi;
+
+// Le bouton qui permet de switcher entre la carte et la liste
+let switcher = document.querySelector('.switcher');
 
 var itineraire;
 var map;
@@ -35,8 +38,6 @@ fetch(StrapiUrl)
 
 function construct(etape) {
 
-  //console.log(etape.attributes);
-
     // On crée les éléments HTML 
     // On veut obtenir cette structure  
     // <h2 class="nom-etape"><a href="itineraire.html"><i class="fa-solid fa-arrow-left"></i></a> Calais > Ardres</h2>
@@ -60,8 +61,6 @@ function construct(etape) {
   else {
     document.querySelector('.type-etape').innerText = etape.attributes.typevoie;
   }
-
-  //document.querySelector('.km').innerText = etape.attributes.distance.toString().replace('.', ',') + " km";
 
   if(etape.attributes.photo.data != null)
     document.querySelector('.img-etape').src = strapiIp + strapiPort + etape.attributes.photo.data.attributes.url
@@ -115,7 +114,6 @@ function construct(etape) {
 
   // On charge le tracé 
   var url = './gpx/' + etape.attributes.gpx; // URL to your GPX file or the GPX itself
-
   
   let div = document.createElement('div');
   div.innerHTML = "<a href='" + url +"'><i class='fa-solid fa-download'></i> Télécharger le tracé en .GPX</a>"
@@ -148,7 +146,6 @@ function construct(etape) {
       document.querySelector('.km').innerText = distance.replace('.', ',') + " km";
 
       // // récupérer l'élévation max      
-      console.log(itineraire.get_elevation_max());
       elevationMax = itineraire.get_elevation_max();
       // // récupérer l'élévation max
       elevationMin = itineraire.get_elevation_min();
@@ -163,14 +160,6 @@ function construct(etape) {
 
 
 }
-
-// window.addEventListener('resize', () => {  
-//   if(window.innerWidth > 800) {
-//     document.querySelector('.description').style.display = 'none'; 
-//     document.querySelector('#map').style.display = 'block';
-
-//   }
-// });
 
 switcher.addEventListener('click', () => { 
   if(switcher.innerText == "Afficher la carte") {
