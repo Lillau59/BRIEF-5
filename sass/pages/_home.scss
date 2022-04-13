@@ -58,7 +58,7 @@ main {
     font-size: 30px;
   }
 
-  p {
+  .textPresentation{
     display: flex;
     justify-items: center;
     text-align: justify;
@@ -147,15 +147,19 @@ main {
     }
 
     &:hover {
-      .TMAVimage{ filter: blur(2px);}
+      .TMAVimage{ 
+        filter: blur(2px);
+      }
     }
-
-    .titreAccueilVelo {
+.titreAccueilVelo {
       position: absolute;
       bottom: 40px;
       z-index: 100;
       color: white;
       text-align: center;
     }
+   
+
   }
-}
+} 
+
