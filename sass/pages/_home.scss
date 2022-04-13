@@ -151,12 +151,14 @@ main {
         filter: blur(2px);
       }
     }
-.titreAccueilVelo {
-      position: absolute;
-      bottom: 40px;
-      z-index: 100;
-      color: white;
-      text-align: center;
+
+    .titreAccueilVelo {
+        position: absolute;
+        bottom: 40px;
+        z-index: 100;
+        color: white;
+        text-align: center;
+        width:100%;
     }
    
 
