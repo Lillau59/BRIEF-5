@@ -100,6 +100,8 @@ function construct(etape) {
 
   document.querySelector('.id-etape').innerText = id;  
 
+  var elevation = document.querySelector('.etape-elevation');
+
   // Gestion de la carte
   map = L.map('map');
 
@@ -113,6 +115,11 @@ function construct(etape) {
 
   // On charge le tracé 
   var url = './gpx/' + etape.attributes.gpx; // URL to your GPX file or the GPX itself
+
+  
+  let div = document.createElement('div');
+  div.innerHTML = "<a href='" + url +"'><i class='fa-solid fa-download'></i> Télécharger le tracé en .GPX</a>"
+  elevation.appendChild(div);
 
   // On crée le tracé de l'étape à partir des données du fichier gpx
   itineraire = new L.GPX(url, {async: true, 
@@ -146,7 +153,6 @@ function construct(etape) {
       // // récupérer l'élévation max
       elevationMin = itineraire.get_elevation_min();
 
-      let elevation = document.querySelector('.etape-elevation');
       elevation.appendChild(document.querySelector('.elevation'));
   
       let div = document.createElement('div');
