@@ -71,10 +71,27 @@
                     width:100%;
         
                     .type-etape {
+                        display:flex;
+                        justify-content: space-between;
+                        align-items: center;
                         background-color: $color-eurovelo5_princ1;
-                        color:white;
-                        padding: 8px;
-                        font-size: 0.9rem;
+                        padding:0;
+                        width:100%;
+
+                        h3 {
+                            color:white;
+                            padding: 5px 10px;
+                            margin:0;
+                            font-size: 0.9rem;
+                        }
+
+                        i {
+                            color:$color-eurovelo5_princ2;
+                            font-size: 20px;
+                            background-color: white;
+                            padding:8px;
+                        }
+
                     }
         
                     .nom-etape {

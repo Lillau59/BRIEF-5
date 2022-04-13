@@ -62,7 +62,10 @@ function construct(etapes) {
     //           <div class="km">22,7 Km</div>
     //       </div>
     //       <div class="right-etape">
-    //           <h3 class="type-etape">Voie verte / Stabilisé</h3>
+    //           <div class="type-etape">
+    //              <h3>Voie verte / Stabilisé</h3>
+    //              <i class="fa-regular fa-heart"></i>
+    //           </div>
     //           <h2 class="nom-etape">Calais > Ardres</h2>
     //           <p class="desc-etape">Cet itinéraire fait partie de l'EuroVelo 5 « Via RomeaFrancigena », une voie célèbre de pèlerinage puis de commerce reliant à partir du 9ème siècle Canterbury [...]</p>                    
     //       </div>
@@ -120,14 +123,47 @@ function construct(etapes) {
     a.appendChild(rigthEtape);      
 
     // On crée l'élément qui contient le type de voie et le revêtement
-    let h3 = document.createElement('h3');
-    h3.classList.add('type-etape');
+    let typeEtape = document.createElement('div');
+    typeEtape.classList.add('type-etape');
+
+    let h3 = document.createElement('h3');    
     if(etape.attributes.revetement != null) {
       h3.innerText = etape.attributes.typevoie + " / " + etape.attributes.revetement;
     }
     else {
       h3.innerText = etape.attributes.typevoie;
     }
+    typeEtape.appendChild(h3); 
+
+    let i = document.createElement('i');
+    i.id = 'favorite' + etape.id;
+    
+    var favorite = localStorage.getItem('favorite' + etape.id);
+    console.log(favorite);
+    if(favorite == null || favorite == '0') {        
+      i.classList.add('fa-regular');
+    }
+    else {      
+      i.classList.add('fa-solid');
+    }
+
+    i.classList.add('fa-heart');
+    i.addEventListener('click', function(event) {
+      var fav = localStorage.getItem('favorite' + etape.id);
+      console.log(fav);
+      if(fav == null || fav == '0') {        
+        document.querySelector('#favorite' + etape.id).classList.add('fa-solid');
+        document.querySelector('#favorite' + etape.id).classList.remove('fa-regular');
+        localStorage.setItem('favorite' + etape.id, '1');
+      }
+      else {
+        document.querySelector('#favorite' + etape.id).classList.add('fa-regular');
+        document.querySelector('#favorite' + etape.id).classList.remove('fa-solid');
+        localStorage.setItem('favorite' + etape.id, '0');
+      }
+      event.preventDefault();
+    }, false);
+    typeEtape.appendChild(i); 
 
     let h2 = document.createElement('h2');
     h2.classList.add('nom-etape');
@@ -143,7 +179,7 @@ function construct(etapes) {
     }
 
     // On ajoute les éléments dans la div rigthEtape
-    rigthEtape.appendChild(h3); 
+    rigthEtape.appendChild(typeEtape); 
     rigthEtape.appendChild(h2); 
     rigthEtape.appendChild(desc); 
 
@@ -261,6 +297,8 @@ window.addEventListener('resize', () => {
     }
   }
 });
+
+
 
 
 // ****************************************************************************************
