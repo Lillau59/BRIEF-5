@@ -14,19 +14,9 @@ let mapEtape = [];
 let popup = [];
 var distance;
 
-// L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
-//   maxZoom: 20,
-//   attribution: '&copy; OpenStreetMap France | &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-// }).addTo(map);
-
-L.tileLayer('https://wxs.ign.fr/{apikey}/geoportail/wmts?REQUEST=GetTile&SERVICE=WMTS&VERSION=1.0.0&STYLE={style}&TILEMATRIXSET=PM&FORMAT={format}&LAYER=GEOGRAPHICALGRIDSYSTEMS.PLANIGNV2&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}', {
-	attribution: '<a target="_blank" href="https://www.geoportail.gouv.fr/">Geoportail France</a>',
-	bounds: [[-75, -180], [81, 180]],
-	minZoom: 2,
-	maxZoom: 18,
-	apikey: 'choisirgeoportail',
-	format: 'image/png',
-	style: 'normal'
+L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
+  maxZoom: 20,
+  attribution: '&copy; OpenStreetMap France | &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
 
 // permet de customiser la popup en lui ajoutant une classe ('popupCustom'), donc modifiable depuis le CSS
