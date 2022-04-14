@@ -46,7 +46,7 @@ main {
     flex-direction: column;
 
     background-color: #efd51f77;
-    border-radius:25px;
+    border-radius: 25px;
 
 
     #carte-png {
@@ -179,6 +179,8 @@ main {
 
   .TMAVarticle {
     position: relative;
+    width: 200px;
+    
 
     .TMAVimage {
       width: 100%;
@@ -208,221 +210,237 @@ main {
 
 }
 
-//partie ils l'ont fait
-.articlebackground1 {
-  background-image: url(/img/temoignagefond.jpg);
-  width: 100%;
-  height: 700px;
+@media screen and (max-width: 1280px) {
+  .TMAV {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 
-  .articlefait {
-    display: flex;
-    flex-direction: row;
-    padding: 40px 100px 80px 100px;
-    gap: 100px;
+  .TMAVhaut {
+    grid-column: 1 / 4;
+}
 
-    
+
+}
+
+  //partie ils l'ont fait
+  .articlebackground1 {
+    background-image: url(/img/temoignagefond.jpg);
+    width: 100%;
+    height: 700px;
+
+    .articlefait {
+      display: flex;
+      flex-direction: row;
+      padding: 40px 100px 80px 100px;
+      gap: 100px;
+
+
       .ilsontfait {
-        &:hover { 
+        &:hover {
           a .titreLienTemoignage {
-          transition : 2s;
-          transform: scale(1.1) translate(1px, -21px);
+            transition: 2s;
+            transform: scale(1.1) translate(1px, -21px);
+          }
+        }
+
+      }
+
+      img {
+        border-radius: 5px;
+        object-fit: cover;
+
+        &:hover {
+          filter: blur(2px);
+
         }
       }
+    }
+
+    h3 {
+      color: white;
+      padding-left: 200px;
+      font-size: 40px;
+    }
+
+    .resumeIlslOnFait {
+      padding-left: 200px;
+      color: white;
 
     }
 
-    img {
-      border-radius: 5px;
-      object-fit: cover;
+    //animation sur le titre de ils l'on fait 
+    .ilsontfait {
 
-      &:hover {
-        filter: blur(2px);
+      width: 500px;
+      height: 300px;
+      position: relative;
 
+    }
+
+
+    .titreLienTemoignage {
+      position: absolute;
+      z-index: 10;
+      bottom: 50px;
+      width: 100%;
+      text-align: center;
+      box-sizing: content-box;
+      color: white;
+      text-shadow: 1px 1px 2px grey;
+
+
+    }
+
+    .boutonsindex {
+      a {
+        width: 197px;
+        height: 35px;
+        border-radius: 5px;
+      }
+
+      display: flex;
+      padding-left: 850px;
+      width: 197px;
+      height: 40px;
+      cursor: pointer;
+
+      button {
+        background-color: transparent;
+        border-radius: 5px;
+        color: white;
+        border: solid white 2px;
+        font-size: 15px;
+        padding: 8px;
+        cursor: pointer;
+        background-color: #0cdbeeab;
+        text-shadow: 1px 1px 2px grey;
+      }
+
+      :hover {
+        background-color: white;
+        color: #00b9cb;
       }
     }
-  }
-
-  h3 {
-    color: white;
-    padding-left: 200px;
-    font-size: 40px;
-  }
-
-  .resumeIlslOnFait {
-    padding-left: 200px;
-    color: white;
-
-  }
-
-  //animation sur le titre de ils l'on fait 
-  .ilsontfait {
-
-    width: 500px;
-    height: 300px;
-    position: relative;
-
-  }
-
-
-  .titreLienTemoignage {
-    position: absolute;
-    z-index: 10;
-    bottom: 50px;
-    width: 100%;
-    text-align: center;
-    box-sizing: content-box;
-    color: white;
-    text-shadow: 1px 1px 2px grey;
 
 
   }
 
-  .boutonsindex {
-    a {
-      width: 197px;
-      height: 35px;
-      border-radius: 5px;
-    }
-
+  .grilleavis {
     display: flex;
-    padding-left: 850px;
-    width: 197px;
-    height: 40px;
-    cursor: pointer;
+    flex-direction: row;
+    width: 100%;
+    gap: 50px;
+    justify-content: center;
+  }
 
-    button {
-      background-color: transparent;
-      border-radius: 5px;
-      color: white;
-      border: solid white 2px;
+  .casegrille1 {
+    width: 370px;
+    height: 490px;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    background-color: wheat;
+
+    .noteavis {
+      width: 100%;
+      height: 60px;
+      display: flex;
+      flex-direction: row;
+      gap: 25px;
       font-size: 15px;
-      padding: 8px;
-      cursor: pointer;
-      background-color: #0cdbeeab;
-      text-shadow: 1px 1px 2px grey;
+      text-align: center;
+      justify-content: space-between;
+      margin-bottom: 25px;
     }
 
-    :hover {
-      background-color: white;
-      color: #00b9cb;
-    }
-  }
-
-  
-}
-.grilleavis {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  gap: 50px;
-  justify-content: center;
-}
-
-.casegrille1 {
-  width: 370px;
-  height: 490px;
-  display: flex;
-  flex-direction: column;
-  padding: 30px;
-  background-color: wheat;
-
-  .noteavis {
-    width: 100%;
-    height: 60px;
-    display: flex;
-    flex-direction: row;
-    gap: 25px;
-    font-size: 15px;
-    text-align: center;
-    justify-content: space-between;
-    margin-bottom: 25px;
-  }
-
-  .hautavis {
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    height: 150px;
-
-    .lieuavis {
+    .hautavis {
       display: flex;
-      background-color: orange;
-      color: white;
-      width: 180px;
-      height: 15px;
-      font-size: 13px;
-      padding: 5px;
+      width: 100%;
+      flex-direction: column;
+      height: 150px;
+
+      .lieuavis {
+        display: flex;
+        background-color: orange;
+        color: white;
+        width: 180px;
+        height: 15px;
+        font-size: 13px;
+        padding: 5px;
+      }
+
+      .dateavis {
+        font-size: 13px;
+      }
+
+      .nomavis {
+        font-size: 25px;
+        margin: 0px;
+      }
+
     }
 
-    .dateavis {
-      font-size: 13px;
-    }
-
-    .nomavis {
-      font-size: 25px;
+    .descavis {
       margin: 0px;
+      font-size: 13px;
+      line-height: 20px;
     }
 
+
   }
 
-  .descavis {
-    margin: 0px;
-    font-size: 13px;
-    line-height: 20px;
-  }
-
-  
-}
-.casegrille2 {
-  width: 370px;
-  height: 490px;
-  display: flex;
-  flex-direction: column;
-  padding: 30px;
-  background-color: wheat;
-
-  .noteavis {
-    width: 100%;
-    height: 60px;
+  .casegrille2 {
+    width: 370px;
+    height: 490px;
     display: flex;
-    flex-direction: row;
-    gap: 25px;
-    font-size: 15px;
-    text-align: center;
-    justify-content: space-between;
-    margin-bottom: 25px;
-  }
-
-  .hautavis2 {
-    display: flex;
-    width: 100%;
     flex-direction: column;
-    height: 150px;
+    padding: 30px;
+    background-color: wheat;
 
-    .lieuavis2 {
+    .noteavis {
+      width: 100%;
+      height: 60px;
       display: flex;
-      background-color: orange;
-      color: white;
-      width: 82px;
-      height: 15px;
-      font-size: 13px;
-      padding: 5px;
+      flex-direction: row;
+      gap: 25px;
+      font-size: 15px;
+      text-align: center;
+      justify-content: space-between;
+      margin-bottom: 25px;
     }
 
-    .dateavis2 {
-      font-size: 13px;
+    .hautavis2 {
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+      height: 150px;
+
+      .lieuavis2 {
+        display: flex;
+        background-color: orange;
+        color: white;
+        width: 82px;
+        height: 15px;
+        font-size: 13px;
+        padding: 5px;
+      }
+
+      .dateavis2 {
+        font-size: 13px;
+      }
+
+      .nomavis2 {
+        font-size: 25px;
+        margin: 0px;
+      }
+
     }
 
-    .nomavis2 {
-      font-size: 25px;
+    .descavis2 {
       margin: 0px;
+      font-size: 13px;
+      line-height: 20px;
     }
-
   }
-
-  .descavis2 {
-    margin: 0px;
-    font-size: 13px;
-    line-height: 20px;
-  }
-}
