@@ -42,23 +42,23 @@ main {
   align-items: center;
 
   .pedalez {
-    display:flex;
+    display: flex;
     flex-direction: column;
     background-color: $color-eurovelo5_princ3;
-    border-radius:25px;
+    border-radius: 25px;
 
     #carte-png {
-      max-width:1150px;
-      width:100%;
-      margin:0;
-      padding:0;
-  
+      max-width: 1150px;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+
       img {
         border-radius: 25px;
-        margin:0;
-        padding:0;        
+        margin: 0;
+        padding: 0;
       }
-    }  
+    }
 
     .menuderoulant {
       display: flex;
@@ -68,37 +68,37 @@ main {
       background-color: #00b9cb;
       border-radius: 5px;
       max-width: 800px;
-      width:100%;
+      width: 100%;
       margin: -20px auto 20px auto;
-    
+
       h3 {
         margin: 20px 0;
         font-size: 30px;
         color: white;
         text-align: center;
       }
-    
+
       form {
-        padding:0 25px;  
+        padding: 0 25px;
       }
-    
+
       .menuderoulantboite {
-        width:100%;
+        width: 100%;
         margin: 0 auto;
         padding: 10px;
-        border:0;
+        border: 0;
         border-radius: 5px;
       }
-    
+
       .menuderoulantboite2 {
-        width:100%;
+        width: 100%;
         margin: 15px auto;
         padding: 10px;
-        border:0;
+        border: 0;
         border-radius: 5px;
       }
     }
-    
+
   }
 }
 
@@ -125,17 +125,19 @@ main {
 }
 
 @media screen and (max-width: 800px) {
-  body{
-    width: 100%;
-  }
-  header{
+  body {
     width: 100%;
   }
 
-  .swiper-wrapper{
+  header {
     width: 100%;
   }
-  .swiper-slide{
+
+  .swiper-wrapper {
+    width: 100%;
+  }
+
+  .swiper-slide {
     width: 100%;
   }
 }
@@ -204,6 +206,7 @@ main {
 
 }
 
+//partie ils l'ont fait
 .articlebackground1 {
   background-image: url(/img/temoignagefond.jpg);
   width: 100%;
@@ -215,12 +218,24 @@ main {
     padding: 40px 100px 80px 100px;
     gap: 100px;
 
+    
+      .ilsontfait {
+        &:hover { 
+          a .titreLienTemoignage {
+          transition : 2s;
+          transform: scale(1.1) translate(1px, -21px);
+        }
+      }
+
+    }
+
     img {
       border-radius: 5px;
       object-fit: cover;
 
       &:hover {
         filter: blur(2px);
+
       }
     }
   }
@@ -231,16 +246,33 @@ main {
     font-size: 40px;
   }
 
-  p {
+  .resumeIlslOnFait {
     padding-left: 200px;
     color: white;
 
   }
 
+  //animation sur le titre de ils l'on fait 
   .ilsontfait {
 
     width: 500px;
     height: 300px;
+    position: relative;
+
+  }
+
+
+  .titreLienTemoignage {
+    position: absolute;
+    z-index: 10;
+    bottom: 50px;
+    width: 100%;
+    text-align: center;
+    box-sizing: content-box;
+    color: white;
+    text-shadow: 1px 1px 2px grey;
+
+
   }
 
   .boutonsindex {
