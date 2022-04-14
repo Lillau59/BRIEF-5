@@ -146,7 +146,11 @@ nav {
     }
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width:680px) {
+    .navup
+    {
+        display: none;
+    }    
 
     nav {
         #burger {
