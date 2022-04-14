@@ -46,7 +46,7 @@ main {
     flex-direction: column;
 
     background-color: #efd51f77;
-    border-radius:25px;
+    border-radius: 25px;
 
 
     #carte-png {
@@ -220,11 +220,11 @@ main {
     padding: 40px 100px 80px 100px;
     gap: 100px;
 
-    
-      .ilsontfait {
-        &:hover { 
-          a .titreLienTemoignage {
-          transition : 2s;
+
+    .ilsontfait {
+      &:hover {
+        a .titreLienTemoignage {
+          transition: 2s;
           transform: scale(1.1) translate(1px, -21px);
         }
       }
@@ -308,8 +308,9 @@ main {
     }
   }
 
-  
+
 }
+
 .grilleavis {
   display: flex;
   flex-direction: row;
@@ -324,7 +325,7 @@ main {
   display: flex;
   flex-direction: column;
   padding: 30px;
-  background-color: wheat;
+  background-color: rgba(128, 128, 128, 0.11);
 
   .noteavis {
     width: 100%;
@@ -371,15 +372,16 @@ main {
     line-height: 20px;
   }
 
-  
+
 }
-.casegrille2 {
+
+.casegrille3 {
   width: 370px;
   height: 490px;
   display: flex;
   flex-direction: column;
   padding: 30px;
-  background-color: wheat;
+  background-color: rgba(128, 128, 128, 0.11);
 
   .noteavis {
     width: 100%;
@@ -424,5 +426,114 @@ main {
     margin: 0px;
     font-size: 13px;
     line-height: 20px;
+  }
+}
+
+.casegrille2 {
+  width: 370px;
+  height: 490px;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  background-color: rgba(128, 128, 128, 0.11);
+
+  .noteavis {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+    font-size: 15px;
+    text-align: center;
+    justify-content: space-between;
+    margin-bottom: 25px;
+  }
+
+  .hautavis2 {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    height: 150px;
+
+    .lieuavis2 {
+      display: flex;
+      background-color: orange;
+      color: white;
+      width: 130px;
+      height: 15px;
+      font-size: 13px;
+      padding: 5px;
+    }
+
+    .dateavis2 {
+      font-size: 13px;
+    }
+
+    .nomavis2 {
+      font-size: 25px;
+      margin: 0px;
+    }
+
+  }
+
+  .descavis2 {
+    margin: 0px;
+    font-size: 13px;
+    line-height: 20px;
+  }
+}
+
+.articlegrille1 {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  text-align: center;
+
+  h3 {
+    font-size: 40px;
+  }
+
+  p {
+    line-height: 25px;
+    font-size: 16px;
+    width: 600px;
+    color: gray;
+  }
+}
+
+@media screen and (max-width: 1400px)
+{
+  .grilleavis {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 50px;
+    justify-content: center;
+  }
+  .articlegrille1
+  {
+    h3{
+      font-size: 25px;
+    }
+    p 
+    {
+      font-size: 13px;
+      width: 350px;
+    }
+  }
+  .casegrille1
+  {
+    width: 320px;
+    height: 400px;
+  }
+  .casegrille2
+  {
+    width: 320px;
+    height: 400px;
+  }
+  .casegrille3
+  {
+    width: 320px;
+    height: 400px;
   }
 }
