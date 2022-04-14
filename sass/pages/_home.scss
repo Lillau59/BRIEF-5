@@ -54,11 +54,17 @@ main {
   max-width: 800px;
   margin: 20px 0;
 
+
+  h1 {
+    font-family: 'Frutiger-light', Arial, sans-serif;
+    text-align: center;
+  }
+
   h2 {
     font-size: 30px;
   }
 
-  p {
+  .textPresentation{
     display: flex;
     justify-items: center;
     text-align: justify;
@@ -72,6 +78,8 @@ main {
   white-space: pre-line;
   background-color: #00b9cb;
   border-radius: 5px;
+  max-width: 800px;
+  width:100%;
 
   h3 {
     margin: 20px 0;
@@ -80,17 +88,23 @@ main {
     text-align: center;
   }
 
+  form {
+    padding:0 25px;  
+  }
+
   .menuderoulantboite {
-    width: 950px;
-    height: 30px;
-    margin: 5px 25px;
+    width:100%;
+    margin: 0 auto;
+    padding: 10px;
+    border:0;
     border-radius: 5px;
   }
 
   .menuderoulantboite2 {
-    width: 950px;
-    height: 30px;
-    margin: 15px 25px;
+    width:100%;
+    margin: 15px auto;
+    padding: 10px;
+    border:0;
     border-radius: 5px;
   }
 }
@@ -141,15 +155,21 @@ main {
     }
 
     &:hover {
-      .TMAVimage{ filter: blur(2px);}
+      .TMAVimage{ 
+        filter: blur(2px);
+      }
     }
 
     .titreAccueilVelo {
-      position: absolute;
-      bottom: 40px;
-      z-index: 100;
-      color: white;
-      text-align: center;
+        position: absolute;
+        bottom: 40px;
+        z-index: 100;
+        color: white;
+        text-align: center;
+        width:100%;
     }
+   
+
   }
-}
+} 
+
