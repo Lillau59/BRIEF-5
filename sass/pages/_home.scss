@@ -1,9 +1,11 @@
 header {
 
+
   .swiper {
+    position: absolute;
+    top:0;
     width: 100%;
-    height: 50vh;
-    position: relative;
+    height: 75vh;
 
     .title {
       color: white;
@@ -12,7 +14,7 @@ header {
       right: 50%;
       transform: translate(50%, 50%);
       position: absolute;
-      z-index: 10;
+      z-index: 0;
     }
 
     .swiper-slide {
@@ -40,14 +42,13 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top:550px;
 
   .pedalez {
     display: flex;
     flex-direction: column;
-
     background-color: #efd51f77;
     border-radius: 25px;
-
 
     #carte-png {
       max-width: 1150px;
@@ -100,8 +101,23 @@ main {
         border-radius: 5px;
       }
     }
-
   }
+
+  .articlegrille1 {
+    h2 {
+      font-size: 35px;
+      text-align: center;
+    }
+
+    p {
+      text-align: center;
+      font-size: 16px;
+      color: gray;
+      max-width: 650px;
+      width: 100%;
+    }
+  }
+
 }
 
 .presentation {
@@ -180,7 +196,7 @@ main {
   .TMAVarticle {
     position: relative;
     width: 200px;
-    
+
 
     .TMAVimage {
       width: 100%;
@@ -204,10 +220,7 @@ main {
       text-align: center;
       width: 100%;
     }
-
-
   }
-
 }
 
 @media screen and (max-width: 1280px) {
@@ -215,50 +228,45 @@ main {
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr ;
+    grid-template-rows: 1fr 1fr;
+
+    .TMAVhaut {
+      grid-column: 1 / 5;
+    }
   }
-
-  .TMAVhaut {
-    grid-column: 1 / 5;
-}
 }
 
+//partie ils l'ont fait
+.articlebackground1 {
+  background-image: url(/img/temoignagefond.jpg);
+  width: 100%;
+  height: 700px;
 
+  .articlefait {
+    display: flex;
+    flex-direction: row;
+    padding: 40px 100px 80px 100px;
+    gap: 100px;
 
-  //partie ils l'ont fait
-  .articlebackground1 {
-    background-image: url(/img/temoignagefond.jpg);
-    width: 100%;
-    height: 700px;
-
-    .articlefait {
-      display: flex;
-      flex-direction: row;
-      padding: 40px 100px 80px 100px;
-      gap: 100px;
-
-
-
-      .ilsontfait {
-        &:hover {
-          a .titreLienTemoignage {
-            transition: 2s;
-            transform: scale(1.1) translate(1px, -21px);
-          }
-        }
-
-      }
-
-      img {
-        border-radius: 5px;
-        object-fit: cover;
-
-        &:hover {
-          filter: blur(2px);
-
+    .ilsontfait {
+      &:hover {
+        a .titreLienTemoignage {
+          transition: 2s;
+          transform: scale(1.1) translate(1px, -21px);
         }
       }
-    
+
+    }
+
+    img {
+      border-radius: 5px;
+      object-fit: cover;
+
+      &:hover {
+        filter: blur(2px);
+
+      }
+    }
 
     h3 {
       color: white;
@@ -269,18 +277,14 @@ main {
     .resumeIlslOnFait {
       padding-left: 200px;
       color: white;
-
     }
 
     //animation sur le titre de ils l'on fait 
     .ilsontfait {
-
       width: 500px;
       height: 300px;
       position: relative;
-
     }
-
 
     .titreLienTemoignage {
       position: absolute;
@@ -291,59 +295,57 @@ main {
       box-sizing: content-box;
       color: white;
       text-shadow: 1px 1px 2px grey;
-
-
     }
+  }
 
-    .boutonsindex {
-      a {
-        width: 197px;
-        height: 35px;
-        border-radius: 5px;
-      }
-
-      display: flex;
-      padding-left: 850px;
-      width: 197px;
-      height: 40px;
+  .boutonsindex {
+    a {
+      //width: 197px;
+      height: 35px;
+      border-radius: 5px;
       cursor: pointer;
-
-      button {
-        background-color: transparent;
-        border-radius: 5px;
-        color: white;
-        border: solid white 2px;
-        font-size: 15px;
-        padding: 8px;
-        cursor: pointer;
-        background-color: #0cdbeeab;
-        text-shadow: 1px 1px 2px grey;
-      }
-
-      :hover {
-        background-color: white;
-        color: #00b9cb;
-      }
     }
 
-
-  }
-
-  .grilleavis {
     display: flex;
-    flex-direction: row;
-    width: 100%;
-    gap: 50px;
-    justify-content: center;
-  }
+    padding-left: 850px;
+    width: 197px;
+    height: 40px;
+    cursor: pointer;
 
-  .casegrille1 {
+    button {
+      background-color: transparent;
+      border-radius: 5px;
+      color: white;
+      border: solid white 2px;
+      font-size: 15px;
+      padding: 8px;
+      cursor: pointer;
+      background-color: #0cdbeeab;
+      text-shadow: 1px 1px 2px grey;
+    }
+
+    :hover {
+      background-color: white;
+      color: #00b9cb;
+    }
+  }
+}
+
+
+.grilleavis {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 50px;
+  justify-content: center;
+
+  .casegrille {
     width: 370px;
     height: 490px;
     display: flex;
     flex-direction: column;
     padding: 30px;
-    background-color: wheat;
+    background-color: rgba(128, 128, 128, 0.11);
 
     .noteavis {
       width: 100%;
@@ -357,17 +359,37 @@ main {
       margin-bottom: 25px;
     }
 
-
     .hautavis {
+      height: 150px;
 
-    :hover {
-      background-color: white;
-      color: #00b9cb;
+      .lieuavis {
+        display: inline;
+        background-color: orange;
+        color: white;
+        font-size: 13px;
+        padding: 5px;
+      }
+
+      .dateavis {
+        font-size: 13px;
+      }
+
+      .nomavis {
+        font-size: 25px;
+        margin-bottom: 10px;
+      }
+    }
+
+    .descavis {
+      margin: 0px;
+      font-size: 13px;
+      line-height: 20px;
     }
   }
 
-
 }
+
+
 
 @media screen and(max-width: 1350px) {
   .articlebackground1 {
@@ -381,7 +403,6 @@ main {
       gap: 100px;
       align-items: center;
 
-
       .ilsontfait {
         &:hover {
           a .titreLienTemoignage {
@@ -389,7 +410,6 @@ main {
             transform: scale(1.1) translate(1px, -21px);
           }
         }
-
       }
 
       img {
@@ -398,7 +418,6 @@ main {
 
         &:hover {
           filter: blur(2px);
-
         }
       }
     }
@@ -417,15 +436,13 @@ main {
       padding: 0px;
     }
 
-
-
     .boutonsindex {
       display: flex;
       justify-content: center;
       padding: 0px;
       width: 100%;
 
-      a{
+      a {
         margin: 0 auto;
       }
 
@@ -448,232 +465,6 @@ main {
         color: #00b9cb;
       }
     }
-  }
-}
-
-.grilleavis {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  gap: 50px;
-  justify-content: center;
-}
-
-.casegrille1 {
-  width: 370px;
-  height: 490px;
-  display: flex;
-  flex-direction: column;
-  padding: 30px;
-  background-color: rgba(128, 128, 128, 0.11);
-
-  .noteavis {
-    width: 100%;
-    height: 60px;
-    display: flex;
-    flex-direction: row;
-    gap: 25px;
-    font-size: 15px;
-    text-align: center;
-    justify-content: space-between;
-    margin-bottom: 25px;
-  }
-
-  .hautavis {
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    height: 150px;
-
-    .lieuavis {
-
-      display: flex;
-      width: 100%;
-      flex-direction: column;
-      height: 150px;
-
-      .lieuavis {
-        display: flex;
-        background-color: orange;
-        color: white;
-        width: 180px;
-        height: 15px;
-        font-size: 13px;
-        padding: 5px;
-      }
-
-      .dateavis {
-        font-size: 13px;
-      }
-
-      .nomavis {
-        font-size: 25px;
-        margin: 0px;
-      }
-
-    }
-
-    .descavis {
-      margin: 0px;
-      font-size: 13px;
-      line-height: 20px;
-    }
-
-
-  }
-
-
-  .casegrille2 {
-    width: 370px;
-    height: 490px;
-
-  .descavis {
-    margin: 0px;
-    font-size: 13px;
-    line-height: 20px;
-  }
-
-
-}
-
-.casegrille3 {
-  width: 370px;
-  height: 490px;
-  display: flex;
-  flex-direction: column;
-  padding: 30px;
-  background-color: rgba(128, 128, 128, 0.11);
-
-  .noteavis {
-    width: 100%;
-    height: 60px;
-    display: flex;
-    flex-direction: column;
-    padding: 30px;
-    background-color: wheat;
-
-    .noteavis {
-      width: 100%;
-      height: 60px;
-      display: flex;
-      flex-direction: row;
-      gap: 25px;
-      font-size: 15px;
-      text-align: center;
-      justify-content: space-between;
-      margin-bottom: 25px;
-    }
-
-    .hautavis2 {
-      display: flex;
-      width: 100%;
-      flex-direction: column;
-      height: 150px;
-
-      .lieuavis2 {
-        display: flex;
-        background-color: orange;
-        color: white;
-        width: 82px;
-        height: 15px;
-        font-size: 13px;
-        padding: 5px;
-      }
-
-      .dateavis2 {
-        font-size: 13px;
-      }
-
-      .nomavis2 {
-        font-size: 25px;
-        margin: 0px;
-      }
-
-    }
-
-    .descavis2 {
-      margin: 0px;
-      font-size: 13px;
-      line-height: 20px;
-    }
-
-  }
-
-  .descavis2 {
-    margin: 0px;
-    font-size: 13px;
-    line-height: 20px;
-  }
-}
-
-.casegrille2 {
-  width: 370px;
-  height: 490px;
-  display: flex;
-  flex-direction: column;
-  padding: 30px;
-  background-color: rgba(128, 128, 128, 0.11);
-
-  .noteavis {
-    width: 100%;
-    height: 60px;
-    display: flex;
-    flex-direction: row;
-    gap: 25px;
-    font-size: 15px;
-    text-align: center;
-    justify-content: space-between;
-    margin-bottom: 25px;
-  }
-
-  .hautavis2 {
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    height: 150px;
-
-    .lieuavis2 {
-      display: flex;
-      background-color: orange;
-      color: white;
-      width: 130px;
-      height: 15px;
-      font-size: 13px;
-      padding: 5px;
-    }
-
-    .dateavis2 {
-      font-size: 13px;
-    }
-
-    .nomavis2 {
-      font-size: 25px;
-      margin: 0px;
-    }
-
-  }
-
-  .descavis2 {
-    margin: 0px;
-    font-size: 13px;
-    line-height: 20px;
-  }
-}
-
-.articlegrille1 {
-  padding-top: 50px;
-  padding-bottom: 50px;
-  text-align: center;
-
-  h3 {
-    font-size: 40px;
-  }
-
-  p {
-    line-height: 25px;
-    font-size: 16px;
-    width: 600px;
-    color: gray;
   }
 }
 
@@ -712,4 +503,4 @@ main {
     width: 320px;
     height: 400px;
   }
-}}}
+}

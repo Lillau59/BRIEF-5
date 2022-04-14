@@ -1,138 +1,152 @@
 //bar de log
 .navup {
+    display: flex;
+    justify-content: space-between;
     width: 100%;
-    position: absolute;
-    z-index: 10;
-    background-color: rgba($color: #cbd8d7, $alpha: 0.8);
+    background-color: #ffffffaa;
+    //height:50px;
 
-    .divnavbouton {
+    .boutondroit {
         display: flex;
-        justify-content: space-around;
+        //z-index: 200;
 
-        .boutondroit {
+        .reseaux {
+            gap: 25px;
             display: flex;
+            align-self: center;
+            font-size: 20px;
 
-            .reseaux {
-                gap: 25px;
-                display: flex;
-                align-self: center;
-                font-size: 20px;
+            i {
+                color: white;
+                padding: 10px;
 
-                i {
-                    color: white;
-                    padding: 10px;
-
-                    &:hover {
-                        background-color: #0b312b59;
-                        color: #fff;
-                    }
-                }
-            }
-
-            .newsletternav {
-                display: flex;
-                // align-items: center;
-                font-size: 15px;
-                height: 40px;
-                gap: 20px;
-                margin-left: 30px;
-
-                #pAbonnerNav {
-                    color: #4d6362;
-                    font-weight: bold;
-                }
-
-                #boutonInscription {
-                    text-decoration: none;
-                    color: white;
-                    background-color: #007c744d;
-                    border-radius: 5px;
-                    display: flex;
-                    align-items: center;
-                    padding: 0 5px;
-                    font-size: smaller;
-                }
-
-                #inscriptionMailAaccueil {
-                    border-radius: 5px;
-                    border: none;
-                    background-color: rgba($color: white, $alpha: 0.4);
-                    text-align: center;
+                &:hover {
+                    background-color: #0b312b59;
+                    color: #fff;
                 }
             }
         }
 
-        .boutongauche {
+        .newsletternav {
             display: flex;
-            align-items: center;
-            gap: 15px;
-            padding-right: 20px;
+            // align-items: center;
+            font-size: 15px;
+            height: 40px;
+            gap: 20px;
+            margin-left: 30px;
 
-            a {
-                display: flex;
-                align-self: center;
+            #pAbonnerNav {
+                color: #4d6362;
+                font-weight: bold;
+            }
+
+            #boutonInscription {
                 text-decoration: none;
                 color: white;
-                font-weight: bold;
-                position: relative;
+                background-color: #007c744d;
+                border-radius: 5px;
+                display: flex;
+                align-items: center;
+                padding: 0 5px;
+                font-size: smaller;
+            }
 
-                &::after {
-                    content: '';
-                    position: absolute;
-                    left: 50%;
-                    bottom: 0;
-                    transform: translateX(-50%) scaleX(0);
-                    transform-origin: 50% 50%;
-                    width: 100%;
-                    height: 1px;
-                    background-color: white;
-                    transition: transform 450ms;
-                }
-
-                &:hover {
-
-                    &::after {
-                        transform: translateX(-50%) scaleX(1);
-                    }
-
-                }
+            #inscriptionMailAaccueil {
+                border-radius: 5px;
+                border: none;
+                background-color: rgba($color: white, $alpha: 0.4);
+                text-align: center;
             }
         }
     }
+
+    .boutongauche {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        padding-right: 20px;
+        z-index: 200;
+
+        a {
+            display: flex;
+            align-self: center;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            position: relative;
+
+            &::after {
+                content: '';
+                position: absolute;
+                left: 50%;
+                bottom: 0;
+                transform: translateX(-50%) scaleX(0);
+                transform-origin: 50% 50%;
+                width: 100%;
+                height: 1px;
+                background-color: white;
+                transition: transform 450ms;
+            }
+
+            &:hover {
+
+                &::after {
+                    transform: translateX(-50%) scaleX(1);
+                }
+
+            }
+        }
+    }
+
 }
 
 //nav bar sur tt le site
-
 nav {
-    position: fixed;
+    position: sticky;
+    top: 0;
     z-index: 100;
     width: 100%;
     display: flex;
-    background-color: bisque;
-    height: 100px;
+    background-color: white;
+    //height: 100px;
+    box-shadow: 0 10px 10px #eee;
+    align-items: center;
+    padding: 8px 0;
 
     .logonav {
         display: flex;
-        width: 200px;
-        height: 100px;
+        //width: 200px;
+        height: 50px;
+        margin-left:50px;
+
+        a {
+            margin-right:10px;
+
+            img {
+            height: 50px;
+            }
+        }
     }
 
     .navul {
         display: flex;
         margin: 0;
         padding: 0;
-    }
+        align-items: center;
 
-    .navli {
-        margin-left: 30px;
-        margin-top: 40px;
-        list-style: none;
-
-        a {
-            text-decoration: none;
-            color: black;
+        .navli {
+            margin-left: 30px;
+            list-style: none;
+            text-transform: uppercase;
+    
+            a {
+                text-decoration: none;
+                color: black;
+            }
         }
     }
+
+
 
     .ResearchBar {
         position: absolute;
@@ -177,8 +191,8 @@ nav {
                     left: 44%;
                     margin-left: -80px;
                     font-size: 18px;
-                    #boutonInscription
-                    {
+
+                    #boutonInscription {
                         font-size: 16px;
                         width: 85px;
                         margin-left: 60px;
