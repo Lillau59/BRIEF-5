@@ -44,12 +44,8 @@ main {
   flex-direction: column;
   align-items: center;
 
-  article {
-    max-width: 1200px;
-  }
-
   #carte-svg {
-    width:900px;
+    width: 900px;
     //height:500px;
   }
 }
@@ -69,7 +65,7 @@ main {
     font-size: 30px;
   }
 
-  .textPresentation{
+  .textPresentation {
     display: flex;
     justify-items: center;
     text-align: justify;
@@ -84,7 +80,7 @@ main {
   background-color: #00b9cb;
   border-radius: 5px;
   max-width: 800px;
-  width:100%;
+  width: 100%;
 
   h3 {
     margin: 20px 0;
@@ -94,22 +90,22 @@ main {
   }
 
   form {
-    padding:0 25px;  
+    padding: 0 25px;
   }
 
   .menuderoulantboite {
-    width:100%;
+    width: 100%;
     margin: 0 auto;
     padding: 10px;
-    border:0;
+    border: 0;
     border-radius: 5px;
   }
 
   .menuderoulantboite2 {
-    width:100%;
+    width: 100%;
     margin: 15px auto;
     padding: 10px;
-    border:0;
+    border: 0;
     border-radius: 5px;
   }
 }
@@ -118,6 +114,7 @@ main {
 
 //grille trouver mon accueil
 .TMAV {
+  width: 1200px;
   margin: 50px 0;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -160,21 +157,93 @@ main {
     }
 
     &:hover {
-      .TMAVimage{ 
+      .TMAVimage {
         filter: blur(2px);
       }
     }
 
     .titreAccueilVelo {
-        position: absolute;
-        bottom: 40px;
-        z-index: 100;
-        color: white;
-        text-align: center;
-        width:100%;
+      position: absolute;
+      bottom: 40px;
+      z-index: 100;
+      color: white;
+      text-align: center;
+      width: 100%;
     }
-   
+
 
   }
-} 
 
+}
+
+.articlebackground1 {
+  background-image: url(/img/temoignagefond.jpg);
+  width: 100%;
+  height: 700px;
+
+  .articlefait {
+    display: flex;
+    flex-direction: row;
+    padding: 40px 100px 80px 100px;
+    gap: 100px;
+
+    img {
+      border-radius: 5px;
+      object-fit: cover;
+
+      &:hover {
+        filter: blur(2px);
+      }
+    }
+  }
+
+  h3 {
+    color: white;
+    padding-left: 200px;
+    font-size: 40px;
+  }
+
+  p {
+    padding-left: 200px;
+    color: white;
+
+  }
+
+  .ilsontfait {
+
+    width: 500px;
+    height: 300px;
+  }
+
+  .boutonsindex {
+    a {
+      width: 197px;
+      height: 35px;
+      border-radius: 5px;
+    }
+
+    display: flex;
+    padding-left: 850px;
+    width: 197px;
+    height: 40px;
+    cursor: pointer;
+
+    button {
+      background-color: transparent;
+      border-radius: 5px;
+      color: white;
+      border: solid white 2px;
+      font-size: 15px;
+      padding: 8px;
+      cursor: pointer;
+      background-color: #0cdbeeab;
+      text-shadow: 1px 1px 2px grey;
+    }
+
+    :hover {
+      background-color: white;
+      color: #00b9cb;
+    }
+  }
+
+}
