@@ -48,8 +48,14 @@ main {
     max-width: 1200px;
   }
 
-  #carte-svg {
-    width:900px;
+  #carte-png {
+    max-width:1150px;
+    width:100%;
+
+    img {
+      border-radius: 25px;;
+    }
+
     //height:500px;
   }
 }
