@@ -1,9 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1170 390">
     <defs>
         <style>.cls-1,.cls-19,.cls-21,.cls-22{fill:none;}.cls-2,.cls-25{fill:#fff;}.cls-3{fill:#bde3f9;}.cls-4{clip-path:url(#clip-path);}.cls-5{fill:#f5f5f4;}.cls-6{fill:#cccccb;}.cls-7{fill:#0588ba;}.cls-8{fill:#200087;}.cls-9{fill:#adadae;}.cls-10{fill:#1a171b;}.cls-11{fill:#0085ca;}.cls-12{fill:#1f81bf;}.cls-13{fill:#666;}.cls-14{opacity:0.4;}.cls-15{fill:#6f7072;}.cls-16{fill:#737373;}.cls-17{fill:#b3c5ce;}.cls-18{fill:#9b99af;}.cls-19{stroke:#9b99af;stroke-width:2px;}.cls-19,.cls-21,.cls-25{stroke-linecap:round;}.cls-19,.cls-25{stroke-linejoin:round;}.cls-20{fill:#eea622;}.cls-21,.cls-22{stroke:#000;stroke-miterlimit:10;stroke-width:0.5px;}.cls-23{fill:#094591;}.cls-24{fill:#ffdb07;}.cls-25{stroke:#00b9ca;}.cls-26{fill:#00b9ca;}</style>
-        <clipPath id="clip-path">
-            <rect class="cls-1" x="133.5" y="-11.02" width="900" height="343" />
-        </clipPath>
+
     </defs>
     <g id="Calque_1" data-name="Calque 1">
         <rect class="cls-2" width="1170" height="390" />
