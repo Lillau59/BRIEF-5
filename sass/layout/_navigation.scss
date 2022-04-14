@@ -101,7 +101,6 @@
     }
 }
 
-
 //nav bar sur tt le site
 
 nav {
@@ -126,6 +125,11 @@ nav {
         margin-left: 30px;
         margin-top: 40px;
         list-style: none;
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
     }
 
     .ResearchBar {
@@ -149,6 +153,57 @@ nav {
 
 @media screen and (max-width:680px) {
     .navup {
+        background-color: rgb(231, 175, 175);
+        transform: scaleY(0);
+    }
+
+    .navup.open {
+        transform: scaleY(1);
+        height: 100vh;
+        position: fixed;
+        top: 0;
+
+        .divnavbouton {
+            flex-direction: column;
+
+            .boutondroit {
+
+                .newsletternav {
+                    flex-direction: column;
+                    position: absolute;
+                    top: 65%;
+                    left: 44%;
+                    margin-left: -80px;
+                    font-size: 18px;
+                    #boutonInscription
+                    {
+                        font-size: 16px;
+                        width: 85px;
+                        margin-left: 60px;
+                        padding: 0 10px;
+                    }
+                }
+            }
+
+            .reseaux {
+                position: absolute;
+                top: 90%;
+                left: 48%;
+                margin-left: -80px;
+            }
+
+            .boutongauche {
+                position: absolute;
+                top: 45%;
+                left: 50%;
+                margin: -75px;
+                flex-direction: column;
+                gap: 50px;
+            }
+        }
+    }
+
+    .title.open {
         display: none;
     }
 
@@ -161,6 +216,7 @@ nav {
             position: fixed;
             left: 25px;
             top: 50px;
+            z-index: 1000;
         }
 
         #burger::before,
@@ -190,6 +246,7 @@ nav {
         #burger.open::before {
             transform: rotate(45deg);
             top: 0;
+
         }
 
         #burger.open::after {
@@ -203,17 +260,22 @@ nav {
 
         .navul.open {
             transform: scaleY(1);
+            z-index: 500;
             position: absolute;
-            top: 100px;
+            top: 10%;
+            left: 50%;
+            margin-left: -220px;
+
+            .navli a {
+                margin-left: 0;
+                color: white;
+                font-size: 22px;
+            }
         }
 
         .logonav {
             position: absolute;
             left: 40%;
-        }
-
-        .ResearchBar {
-            transform: scaleY(0);
         }
 
         .navli a {
@@ -236,16 +298,15 @@ nav {
         left: 25%;
     }
 
-    .navul {
+    nav .navul.open {
         flex-direction: column;
+        text-align: center;
+        margin-left: -110px;
+        top: 5%;
     }
 
     .navli a {
         margin-left: 10px;
-    }
-
-    .rechercheopen.open {
-        left: 18%
     }
 }
 
