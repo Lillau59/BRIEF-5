@@ -311,6 +311,88 @@ main {
 
 }
 
+@media screen and(max-width: 1350px) {
+  .articlebackground1 {
+    background-image: url(/img/temoignagefond2.jpg);
+    width: 100%;
+    height: 1500px;
+
+    .articlefait {
+      display: flex;
+      flex-direction: column;
+      gap: 100px;
+      align-items: center;
+
+
+      .ilsontfait {
+        &:hover {
+          a .titreLienTemoignage {
+            transition: 2s;
+            transform: scale(1.1) translate(1px, -21px);
+          }
+        }
+
+      }
+
+      img {
+        border-radius: 5px;
+        object-fit: cover;
+
+        &:hover {
+          filter: blur(2px);
+
+        }
+      }
+    }
+
+    h3 {
+      color: white;
+      text-align: center;
+      font-size: 40px;
+      padding: 0px;
+    }
+
+    .resumeIlslOnFait {
+
+      color: white;
+      text-align: center;
+      padding: 0px;
+    }
+
+
+
+    .boutonsindex {
+      display: flex;
+      justify-content: center;
+      padding: 0px;
+      width: 100%;
+
+      a{
+        margin: 0 auto;
+      }
+
+      button {
+
+        align-items: center;
+        background-color: transparent;
+        border-radius: 5px;
+        color: white;
+        border: solid white 2px;
+        font-size: 15px;
+        padding: 8px;
+        cursor: pointer;
+        background-color: #0cdbeeab;
+        text-shadow: 1px 1px 2px grey;
+      }
+
+      :hover {
+        background-color: white;
+        color: #00b9cb;
+      }
+    }
+  }
+}
+
 .grilleavis {
   display: flex;
   flex-direction: row;
@@ -500,8 +582,7 @@ main {
   }
 }
 
-@media screen and (max-width: 1400px)
-{
+@media screen and (max-width: 1400px) {
   .grilleavis {
     align-items: center;
     display: flex;
@@ -510,29 +591,29 @@ main {
     gap: 50px;
     justify-content: center;
   }
-  .articlegrille1
-  {
-    h3{
+
+  .articlegrille1 {
+    h3 {
       font-size: 25px;
     }
-    p 
-    {
+
+    p {
       font-size: 13px;
       width: 350px;
     }
   }
-  .casegrille1
-  {
+
+  .casegrille1 {
     width: 320px;
     height: 400px;
   }
-  .casegrille2
-  {
+
+  .casegrille2 {
     width: 320px;
     height: 400px;
   }
-  .casegrille3
-  {
+
+  .casegrille3 {
     width: 320px;
     height: 400px;
   }
