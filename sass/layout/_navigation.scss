@@ -104,6 +104,8 @@
 //nav bar sur tt le site
 
 nav {
+    position: fixed;
+    z-index: 100;
     width: 100%;
     display: flex;
     background-color: bisque;
@@ -261,7 +263,7 @@ nav {
         .navul.open {
             transform: scaleY(1);
             z-index: 500;
-            position: absolute;
+            position: fixed;
             top: 10%;
             left: 50%;
             margin-left: -220px;
