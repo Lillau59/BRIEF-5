@@ -214,15 +214,16 @@ main {
   .TMAV {
     width: 100%;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr ;
   }
 
   .TMAVhaut {
-    grid-column: 1 / 4;
+    grid-column: 1 / 5;
+}
 }
 
 
-}
 
   //partie ils l'ont fait
   .articlebackground1 {
@@ -235,6 +236,7 @@ main {
       flex-direction: row;
       padding: 40px 100px 80px 100px;
       gap: 100px;
+
 
 
       .ilsontfait {
@@ -256,7 +258,7 @@ main {
 
         }
       }
-    }
+    
 
     h3 {
       color: white;
@@ -355,7 +357,54 @@ main {
       margin-bottom: 25px;
     }
 
+
     .hautavis {
+
+    :hover {
+      background-color: white;
+      color: #00b9cb;
+    }
+  }
+
+
+}
+
+.grilleavis {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 50px;
+  justify-content: center;
+}
+
+.casegrille1 {
+  width: 370px;
+  height: 490px;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  background-color: rgba(128, 128, 128, 0.11);
+
+  .noteavis {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+    font-size: 15px;
+    text-align: center;
+    justify-content: space-between;
+    margin-bottom: 25px;
+  }
+
+  .hautavis {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    height: 150px;
+
+    .lieuavis {
+
       display: flex;
       width: 100%;
       flex-direction: column;
@@ -391,9 +440,31 @@ main {
 
   }
 
+
   .casegrille2 {
     width: 370px;
     height: 490px;
+
+  .descavis {
+    margin: 0px;
+    font-size: 13px;
+    line-height: 20px;
+  }
+
+
+}
+
+.casegrille3 {
+  width: 370px;
+  height: 490px;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  background-color: rgba(128, 128, 128, 0.11);
+
+  .noteavis {
+    width: 100%;
+    height: 60px;
     display: flex;
     flex-direction: column;
     padding: 30px;
@@ -443,4 +514,121 @@ main {
       font-size: 13px;
       line-height: 20px;
     }
+
   }
+
+  .descavis2 {
+    margin: 0px;
+    font-size: 13px;
+    line-height: 20px;
+  }
+}
+
+.casegrille2 {
+  width: 370px;
+  height: 490px;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  background-color: rgba(128, 128, 128, 0.11);
+
+  .noteavis {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+    font-size: 15px;
+    text-align: center;
+    justify-content: space-between;
+    margin-bottom: 25px;
+  }
+
+  .hautavis2 {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    height: 150px;
+
+    .lieuavis2 {
+      display: flex;
+      background-color: orange;
+      color: white;
+      width: 130px;
+      height: 15px;
+      font-size: 13px;
+      padding: 5px;
+    }
+
+    .dateavis2 {
+      font-size: 13px;
+    }
+
+    .nomavis2 {
+      font-size: 25px;
+      margin: 0px;
+    }
+
+  }
+
+  .descavis2 {
+    margin: 0px;
+    font-size: 13px;
+    line-height: 20px;
+  }
+}
+
+.articlegrille1 {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  text-align: center;
+
+  h3 {
+    font-size: 40px;
+  }
+
+  p {
+    line-height: 25px;
+    font-size: 16px;
+    width: 600px;
+    color: gray;
+  }
+}
+
+@media screen and (max-width: 1400px)
+{
+  .grilleavis {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 50px;
+    justify-content: center;
+  }
+  .articlegrille1
+  {
+    h3{
+      font-size: 25px;
+    }
+    p 
+    {
+      font-size: 13px;
+      width: 350px;
+    }
+  }
+  .casegrille1
+  {
+    width: 320px;
+    height: 400px;
+  }
+  .casegrille2
+  {
+    width: 320px;
+    height: 400px;
+  }
+  .casegrille3
+  {
+    width: 320px;
+    height: 400px;
+  }
+}}}
