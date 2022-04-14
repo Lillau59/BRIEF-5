@@ -282,6 +282,14 @@ nav {
             margin-left: 40px;
         }
 
+        .rechercheopen.open {
+            transform: scaleY(1);
+        }
+
+        .rechercheopen {
+            top: 900px;
+            left: 20%;
+        }
     }
 }
 
