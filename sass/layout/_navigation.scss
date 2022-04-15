@@ -9,6 +9,27 @@
     z-index:300;
     //height:50px;
 
+    .navulup {
+        display:none;
+        margin: 0;
+        padding: 0;
+        align-items: center;
+        width:100%;
+        padding-top:65px;
+
+        .navli {
+            margin-top: 30px;
+            list-style: none;
+            text-transform: uppercase;
+    
+            a {
+                text-decoration: none;
+                color: white;
+                font-size:18px
+            }
+        }
+    }
+
     .boutondroit {
         display: flex;
         z-index: 200;
@@ -117,8 +138,6 @@
 body::before {
     content: "";
     display:block;
-    //font-size: 50px;
-    //z-index:300;
     height:40px;
 }
 
@@ -130,14 +149,12 @@ body::before {
     width: 100%;
     display: flex;
     background-color: white;
-    //height: 100px;
     box-shadow: 0 5px 5px #efefef;
     align-items: center;
     padding: 8px 0;
 
     .logonav {
         display: flex;
-        //width: 200px;
         height: 50px;
         margin-left:50px;
 
@@ -168,8 +185,6 @@ body::before {
             }
         }
     }
-
-
 
     .ResearchBar {
         position: absolute;
@@ -211,44 +226,60 @@ body::before {
         // position: fixed;
         // top: 0;
 
-        .divnavbouton {
+        flex-direction: column;
+
+        
+        .navulup {
+            display:flex;
             flex-direction: column;
+        }
 
-            .boutondroit {
+        .boutondroit {
+            padding:0;  
+            margin:0;         
 
-                .newsletternav {
-                    flex-direction: column;
-                    position: absolute;
-                    top: 65%;
-                    left: 44%;
-                    margin-left: -80px;
-                    font-size: 18px;
+            .newsletternav {
+                flex-direction: column;
+                display:flex;
+                position: absolute;
+                top: 75%;
+                font-size: 18px;
+                width:100%;
+                align-items:center;
+                //align-content: center;
+                padding:0;            
+                margin:0;
 
-                    #boutonInscription {
-                        font-size: 16px;
-                        width: 85px;
-                        margin-left: 60px;
-                        padding: 0 10px;
-                    }
+                #boutonInscription, #inscriptionMailAaccueil {
+                    font-size: 14px;
+                    //width: 85px;
+                    // margin-left: 60px;
+                    // padding: 0 10px;
                 }
             }
+        }
 
-            .reseaux {
-                position: absolute;
-                top: 90%;
-                left: 48%;
-                margin-left: -80px;
-            }
+        .reseaux {
+            position: absolute;
+            top: 90%;
+            left: 48%;
+            margin-left: -80px;
+        }
 
-            .boutongauche {
-                position: absolute;
-                top: 45%;
-                left: 50%;
-                margin: -75px;
-                flex-direction: column;
-                gap: 50px;
+        .boutongauche {
+            position: absolute;
+            top: 60%;
+            left: 50%;
+            margin: -75px;
+            flex-direction: column;
+            //gap: 50px;
+
+            .liensBoutonGaucheAccueil {
+                border-top: 1px solid white;
+                padding:10px 10px 10px 10px;
             }
         }
+    
     }
 
     .title.open {
@@ -309,21 +340,6 @@ body::before {
             transform: scaleY(0);
         }
 
-        .navul.open {
-            transform: scaleY(1);
-            z-index: 500;
-            position: fixed;
-            top: 10%;
-            left: 50%;
-            margin-left: -220px;
-
-            .navli a {
-                margin-left: 0;
-                color: white;
-                font-size: 22px;
-            }
-        }
-
         .logonav {
             position: absolute;
             left: 40%;
@@ -342,6 +358,24 @@ body::before {
             left: 20%;
         }
     }
+
+    // .navdown.open {
+    //     .navul {
+    //         background-color:aqua;
+    //         transform: scaleY(1);
+    //         z-index: 500;
+    //         position: fixed;
+    //         top: 100%;
+    //         left: 50%;
+    //         //margin-left: -220px;
+
+    //         .navli a {
+    //             margin-left: 0;
+    //             color: gray;
+    //             font-size: 22px;
+    //         }
+    //     }
+    // }
 }
 
 @media screen and (max-width: 450px) {
