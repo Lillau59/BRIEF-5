@@ -284,7 +284,7 @@ main {
 //partie ils l'ont fait
 .articlebackground1 {
   background-image: url(/img/temoignagefond.jpg);
-  width: 100%;
+  //width: 100%;
   height: 700px;
 
   h3,
@@ -359,10 +359,11 @@ main {
     }
 
     display: flex;
-    padding-left: 850px;
-    width: 197px;
+    //padding-left: 850px;
+    justify-content: center;
+    width: 100%;
     height: 40px;
-    cursor: pointer;
+    //cursor: pointer;
 
     button {
       background-color: transparent;
