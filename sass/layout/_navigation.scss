@@ -1,14 +1,17 @@
 //bar de log
 .navup {
     display: flex;
+    position:absolute;
+    top:0;
     justify-content: space-between;
     width: 100%;
-    background-color: #00000022;
+    background-color: #000000aa;
+    z-index:300;
     //height:50px;
 
     .boutondroit {
         display: flex;
-        //z-index: 200;
+        z-index: 200;
         align-content:center;
 
         .reseaux {
@@ -111,8 +114,16 @@
 
 }
 
+body::before {
+    content: "";
+    display:block;
+    //font-size: 50px;
+    //z-index:300;
+    height:40px;
+}
+
 //nav bar sur tt le site
-nav {
+.navdown {
     position: sticky;
     top: 0;
     z-index: 100;
@@ -182,16 +193,23 @@ nav {
 @media screen and (max-width:680px) {
 
     .navup {
-        background-color: rgb(231, 175, 175);
+        background-color: black;
         transform: scaleY(0);
+        width:100%;
+        position:fixed;
+        top:75px;
+        bottom:0;
+        left:0;
+        right:0;
+        z-index: 2000;
         //display:none;
     }
 
     .navup.open {
         transform: scaleY(1);
-        height: 100vh;
-        position: fixed;
-        top: 0;
+        // height: 100vh;
+        // position: fixed;
+        // top: 0;
 
         .divnavbouton {
             flex-direction: column;
@@ -237,7 +255,10 @@ nav {
         display: none;
     }
 
-    nav {
+    .navdown {
+        position:fixed;
+        height:75px;
+
         #burger {
             width: 30px;
             height: 2px;

@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="sass/main.css">
-
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
     <script src="https://kit.fontawesome.com/30705cebc4.js" crossorigin="anonymous"></script>
 
     <title>News</title>
@@ -17,67 +17,10 @@
 
 <body>
 
-    <nav>
-
-        <a id="link" href="#"><span id="burger"></span></a>
-
-        <section class="logonav">
-
-            <a href="index.html"><img src="img/logo.png" alt=""></a>
-
-            <a href="index.html"><img src="img/logo_velomaritime.png" alt=""></a>
-
-        </section>
-
-        <ul class="navul">
-
-            <li class="navli"><a href="itineraire.html">Itinéraires</a></li>
-            <li class="navli"><a href="temoignages.html">Témoignages</a></li>
-            <li class="navli"><a href="news.html">News</a></li>
-
-        </ul>
-
-    </nav>
 
     <header>
 
         <div class="swiper">
-
-            <div class="navup">
-
-                <div class="divnavbouton">
-
-                    <div class="boutondroit">
-
-                        <section class="reseaux">
-
-                            <a href="https://instagram.com"><i class="fa-brands fa-instagram"></i></a>
-                            <a href="https://youtube.com"><i class="fa-brands fa-youtube"></i></a>
-                            <a href="https://facebook.com"><i class="fa-brands fa-facebook-f"></i></a>
-
-                        </section>
-
-                        <section class="newsletternav">
-
-                            <p id="pAbonnerNav"> S'abonner à la newsletter :</p>
-                            <input type="email" placeholder="Entrez votre mail" id="inscriptionMailAaccueil">
-                            <a href="#" id="boutonInscription"> Je m'inscris</a>
-
-                        </section>
-
-                    </div>
-
-                    <section class="boutongauche">
-
-                        <a href="#" class="liensBoutonGaucheAccueil">Espace pro</a>
-                        <a href="#" class="liensBoutonGaucheAccueil">Carnet de voyage</a>
-                        <a href="#" class="liensBoutonGaucheAccueil">Espace personnel</a>
-
-                    </section>
-
-                </div>
-
-            </div>
 
             <div class="title">
 
@@ -116,8 +59,46 @@
 
     </header>
 
-    <script src="js/nav.js"></script>
 
+    <nav class="navup">
+        <div class="boutondroit">
+            <section class="reseaux">
+                <a href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://youtube.com" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                <a href="https://facebook.com" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+            </section>
+
+            <section class="newsletternav">
+                <p id="pAbonnerNav">S'abonner à la newsletter</p>
+                <input type="email" placeholder="Entrez votre mail" id="inscriptionMailAaccueil">
+                <button id="boutonInscription">JE M'INSCRIS</button>
+            </section>
+        </div>
+
+        <div class="boutongauche">
+            <a href="#" class="liensBoutonGaucheAccueil">Espace pro</a>
+            <a href="#" class="liensBoutonGaucheAccueil">Carnet de voyage</a>
+            <a href="#" class="liensBoutonGaucheAccueil">Espace personnel</a>
+        </div>
+    </nav>
+
+    <nav class="navdown">
+        <a id="link" href="#"><span id="burger"></span></a>
+
+        <section class="logonav">
+            <a href="index.html"><img src="img/logox50.png" alt=""></a>
+            <a href="index.html"><img src="img/eurovélo.jpg" alt=""></a>
+        </section>
+
+        <ul class="navul">
+            <li class="navli"><a href="itineraire.html">l'itinéraire</a></li>
+            <li class="navli"><a href="temoignages.html">témoignages</a></li>
+            <li class="navli"><a href="news.html">news</a></li>
+        </ul>
+    </nav>
+
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+    <script src="js/carousel.js"></script>
     <script src="js/burger.js"></script>
 
 </body>
