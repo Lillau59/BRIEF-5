@@ -5,7 +5,8 @@
     top:0;
     justify-content: space-between;
     width: 100%;
-    background-color: #000000aa;
+    background-color: rgba($color: $color-almost-black, $alpha: 0.5);
+    
     z-index:300;
     //height:50px;
 
@@ -24,7 +25,7 @@
     
             a {
                 text-decoration: none;
-                color: white;
+                color: $color-almost-white;
                 font-size:18px
             }
         }
@@ -42,12 +43,12 @@
             font-size: 20px;
 
             i {
-                color: white;
+                color: $color-almost-white;
                 padding: 10px;
 
                 &:hover {
-                    background-color: #0b312b59;
-                    color: #fff;
+                    background-color: $color-almost-black;
+                    color: $color-almost-white;
                 }
             }
         }
@@ -61,7 +62,7 @@
             margin-left: 30px;
 
             #pAbonnerNav {
-                color: white;
+                color: $color-almost-white;
                 font-weight: bold;
                 margin-right:20px;
             }
@@ -69,20 +70,20 @@
             #inscriptionMailAaccueil {
                 border-radius: 5px 0 0 5px;
                 border: none;
-                background-color: rgba($color: black, $alpha: 0.4);
+                background-color: rgba($color: $color-almost-black, $alpha: 0.4);
                 height:35px;
                 margin:0;
 
                 &::placeholder {
                     opacity:1;
-                    color:white;
+                    color:$color-almost-white;
                     padding-left:5px;
                 }
             }
             
             #boutonInscription {
                 text-decoration: none;
-                color: white;
+                color: $color-almost-white;
                 background-color: #007c74ee;
                 border:0;
                 border-radius: 0 5px 5px 0;
@@ -106,7 +107,7 @@
             display: flex;
             align-self: center;
             text-decoration: none;
-            color: white;
+            color: $color-almost-white;
             font-weight: bold;
             position: relative;
 
@@ -119,7 +120,7 @@
                 transform-origin: 50% 50%;
                 width: 100%;
                 height: 1px;
-                background-color: white;
+                background-color: $color-almost-white;
                 transition: transform 450ms;
             }
 
@@ -148,8 +149,8 @@ body::before {
     z-index: 100;
     width: 100%;
     display: flex;
-    background-color: white;
-    box-shadow: 0 5px 5px #efefef;
+    background-color: $color-almost-white;
+    box-shadow: 0 5px 5px $color-almost-white;
     align-items: center;
     padding: 8px 0;
 
@@ -180,7 +181,7 @@ body::before {
     
             a {
                 text-decoration: none;
-                color: black;
+                color: $color-almost-black;
                 font-size:18px
             }
         }
@@ -208,7 +209,7 @@ body::before {
 @media screen and (max-width:680px) {
 
     .navup {
-        background-color: black;
+        background-color: $color-almost-black;
         transform: scaleY(0);
         width:100%;
         position:fixed;
@@ -275,7 +276,7 @@ body::before {
             //gap: 50px;
 
             .liensBoutonGaucheAccueil {
-                border-top: 1px solid white;
+                border-top: 1px solid $color-almost-white;
                 padding:10px 10px 10px 10px;
             }
         }
@@ -293,7 +294,7 @@ body::before {
         #burger {
             width: 30px;
             height: 2px;
-            background: black;
+            background: $color-almost-black;
             display: inline-block;
             position: fixed;
             left: 25px;
@@ -306,7 +307,7 @@ body::before {
             content: '';
             width: 30px;
             height: 2px;
-            background: black;
+            background: $color-almost-black;
             display: inline-block;
             position: absolute;
             transform-origin: center;

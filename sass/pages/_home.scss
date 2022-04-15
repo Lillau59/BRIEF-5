@@ -9,16 +9,23 @@ header {
     position: absolute;
     top: 0;
     width: 100%;
-    height: 75vh;
+    height: 80vh;
 
     .title {
-      color: white;
-      text-shadow: 1px 1px 2px black;
-      top: 30%;
-      right: 50%;
-      transform: translate(50%, 50%);
-      position: absolute;
-      z-index: 0;
+      color: $color-almost-white;
+      text-shadow: 1px 1px 2px $color-almost-black;
+
+      h1, h2 {
+        position: absolute;
+        top: 30%;
+        right: 50%;
+        transform: translate(50%, 50%);
+        z-index: 100;
+      }
+
+      h2 {
+        top: 40%;
+      }
     }
 
     .swiper-slide {
@@ -46,7 +53,8 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top:650px;
+  margin-top:70vh;
+  background-color: $color-almost-white;
 
   .pedalez {
     display: flex;
@@ -81,7 +89,7 @@ main {
       h3 {
         margin: 20px 0;
         font-size: 30px;
-        color: white;
+        color: $color-almost-white;
         text-align: center;
       }
 
@@ -225,7 +233,7 @@ main {
       position: absolute;
       bottom: 40px;
       z-index: 100;
-      color: white;
+      color: $color-almost-white;
       text-align: center;
       width: 100%;
     }
@@ -289,7 +297,7 @@ main {
 
   h3,
   p {
-    color: white;
+    color: $color-almost-white;
     padding-left: 20px;
   }
 
@@ -320,14 +328,14 @@ main {
     }
 
     h3 {
-      color: white;
+      color: $color-almost-white;
       padding-left: 200px;
       font-size: 40px;
     }
 
     .resumeIlslOnFait {
       padding-left: 200px;
-      color: white;
+      color: $color-almost-white;
     }
 
     //animation sur le titre de ils l'on fait 
@@ -344,7 +352,7 @@ main {
       width: 100%;
       text-align: center;
       box-sizing: content-box;
-      color: white;
+      color: $color-almost-white;
       text-shadow: 1px 1px 2px grey;
       padding-left: 0px;
     }
@@ -368,8 +376,8 @@ main {
     button {
       background-color: transparent;
       border-radius: 5px;
-      color: white;
-      border: solid white 2px;
+      color: $color-almost-white;
+      border: solid $color-almost-white 2px;
       font-size: 15px;
       padding: 8px;
       cursor: pointer;
@@ -378,7 +386,7 @@ main {
     }
 
     :hover {
-      background-color: white;
+      background-color: $color-almost-white;
       color: #00b9cb;
     }
   }
@@ -418,7 +426,7 @@ main {
       .lieuavis {
         display: inline;
         background-color: orange;
-        color: white;
+        color: $color-almost-white;
         font-size: 13px;
         padding: 5px;
       }
@@ -452,7 +460,7 @@ main {
 
     h3,
     p {
-      color: white;
+      color: $color-almost-white;
       text-align: center;
     }
 
@@ -482,7 +490,7 @@ main {
     }
 
     h3 {
-      color: white;
+      color: $color-almost-white;
       text-align: center;
       font-size: 40px;
       padding: 0px;
@@ -490,7 +498,7 @@ main {
 
     .resumeIlslOnFait {
       width: 350px;
-      color: white;
+      color: $color-almost-white;
       
     }
 
@@ -509,8 +517,8 @@ main {
         align-items: center;
         background-color: transparent;
         border-radius: 5px;
-        color: white;
-        border: solid white 2px;
+        color: $color-almost-white;
+        border: solid $color-almost-white 2px;
         font-size: 15px;
         padding: 8px;
         cursor: pointer;
@@ -519,7 +527,7 @@ main {
       }
 
       :hover {
-        background-color: white;
+        background-color: $color-almost-white;
         color: #00b9cb;
       }
     }
@@ -577,7 +585,7 @@ main {
 
   h3,
   p {
-    color: white;
+    color: $color-almost-white;
     text-align: center;
     text-shadow: 1px 1px 2px rgb(32, 29, 30);
   }
@@ -624,7 +632,7 @@ main {
       text-align: center;
       box-sizing: content-box;
 
-      color: white;
+      color: $color-almost-white;
       text-shadow: 1px 1px 2px grey;
 
     }
@@ -646,8 +654,8 @@ main {
     button {
       background-color: transparent;
       border-radius: 5px;
-      color: white;
-      border: solid white 2px;
+      color: $color-almost-white;
+      border: solid $color-almost-white 2px;
       font-size: 15px;
       padding: 8px;
       cursor: pointer;
@@ -656,7 +664,7 @@ main {
     }
 
     :hover {
-      background-color: white;
+      background-color: $color-almost-white;
       color: #00b9cb;
     }
   }
@@ -696,7 +704,7 @@ main {
     }
 
     h3 {
-      color: white;
+      color: $color-almost-white;
       text-align: center;
       font-size: 40px;
       padding: 0px;
@@ -705,7 +713,7 @@ main {
     }
 
     .resumeOnOrganisePourVous {
-      color: white;
+      color: $color-almost-white;
       text-align: center;
       padding: 0px;
       font-size: smaller;
@@ -727,8 +735,8 @@ main {
         align-items: center;
         background-color: transparent;
         border-radius: 5px;
-        color: white;
-        border: solid white 2px;
+        color: $color-almost-white;
+        border: solid $color-almost-white 2px;
         font-size: 15px;
         padding: 8px;
         cursor: pointer;
@@ -737,7 +745,7 @@ main {
       }
 
       :hover {
-        background-color: white;
+        background-color: $color-almost-white;
         color: #00b9cb;
       }
     }
