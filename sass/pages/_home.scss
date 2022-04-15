@@ -1,3 +1,7 @@
+html
+{
+  width: 100%;
+}
 header {
 
 
@@ -231,7 +235,13 @@ main {
 @media screen and (max-width: 1200px) {
   .TMAV {
     width: 100%;
-
+    p 
+    {
+      text-align: center;
+    }
+    h3{
+      text-align: center;
+    }
     .TMAVarticlephoto {
       grid-template-columns: 1fr 1fr 1fr;
     }
@@ -247,6 +257,14 @@ main {
   .TMAV {
     .TMAVarticlephoto {
       grid-template-columns: 1fr 1fr;
+      
+    }
+  }
+  .TMAVarticle
+  {
+    .TMAVimage
+    {
+      height: 300px;
     }
   }
 }
@@ -254,7 +272,9 @@ main {
 @media screen and (max-width: 480px) {
   .TMAV {
     .TMAVarticlephoto {
-      grid-template-columns: 1fr;
+      display: flex;
+    flex-direction: column;
+    align-items: center;
     }
   }
 }
@@ -312,9 +332,9 @@ main {
 
     //animation sur le titre de ils l'on fait 
     .ilsontfait {
-      width: 500px;
       height: 300px;
       position: relative;
+      width: 85%;
     }
 
     .titreLienTemoignage {
@@ -326,6 +346,7 @@ main {
       box-sizing: content-box;
       color: white;
       text-shadow: 1px 1px 2px grey;
+      padding-left: 0px;
     }
   }
 
@@ -467,10 +488,9 @@ main {
     }
 
     .resumeIlslOnFait {
-
+      width: 350px;
       color: white;
-      text-align: center;
-      padding: 0px;
+      
     }
 
     .boutonsindex {
@@ -551,8 +571,8 @@ main {
 .articlebackground2 {
   margin-top: 40px;
   background-image: url(/img/tour-de-bretagne-a-velo-famille.jpg);
-  //width: 100%;
-  height: 700px;
+  width: 100%;
+  height: 800px;
 
   h3,
   p {
@@ -564,8 +584,8 @@ main {
   .suggestions {
     display: flex;
     flex-direction: row;
-    padding: 40px 100px 80px 100px;
-    gap: 100px;
+    padding: 40px 80px 80px 80px;
+    gap: 80px;
 
     .organisentpourvous {
       &:hover {
@@ -580,7 +600,7 @@ main {
     img {
       border-radius: 5px;
       object-fit: cover;
-
+      width: 530px;
       &:hover {
         filter: blur(2px);
 
@@ -591,7 +611,6 @@ main {
 
     //animation sur le titre de ils l'on fait 
     .organisentpourvous {
-      width: 500px;
       height: 300px;
       position: relative;
     }
@@ -647,13 +666,13 @@ main {
   .articlebackground2 {
     background-image: url(/img/Image-Page-News/V24.jpg);
     width: 100%;
-    height: 1500px;
+    height: 1400px;
 
     .suggestions {
       display: flex;
       flex-direction: column;
       gap: 100px;
-      align-items: center;
+      height: 1000px;
 
       .organisentpourvous {
         &:hover {
@@ -667,6 +686,7 @@ main {
       img {
         border-radius: 5px;
         object-fit: cover;
+        width: 100%;
 
         &:hover {
           filter: blur(2px);
@@ -680,14 +700,15 @@ main {
       font-size: 40px;
       padding: 0px;
       width: 100%;
+      font-size: 19px;
     }
 
     .resumeOnOrganisePourVous {
-      width: 100%;
       color: white;
       text-align: center;
       padding: 0px;
       font-size: smaller;
+      padding: 5px;
     }
 
     .boutonItineraire {
