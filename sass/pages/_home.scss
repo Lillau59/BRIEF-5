@@ -3,7 +3,7 @@ header {
 
   .swiper {
     position: absolute;
-    top:0;
+    top: 0;
     width: 100%;
     height: 75vh;
 
@@ -42,7 +42,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top:550px;
+  margin-top: 550px;
 
   .pedalez {
     display: flex;
@@ -164,9 +164,14 @@ main {
 .TMAV {
   width: 1200px;
   margin: 50px 0;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  gap: 25px;
+
+
+  .TMAVarticlephoto {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 25px;
+  }
 
   .TMAVhaut {
     grid-column: 1 / 6;
@@ -223,18 +228,38 @@ main {
   }
 }
 
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 1200px) {
   .TMAV {
     width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+
+    .TMAVarticlephoto {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
 
     .TMAVhaut {
       grid-column: 1 / 5;
     }
   }
 }
+
+@media screen and (max-width: 700px) {
+  .TMAV {
+    .TMAVarticlephoto {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .TMAV {
+    .TMAVarticlephoto {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+
 
 //partie ils l'ont fait
 .articlebackground1 {
