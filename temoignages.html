@@ -11,8 +11,20 @@
     <title>Témoignages</title>
 </head>
 
-<body class="temoignages">
+<body>
+
+    <header class="headertitre">
+        <img src="img/tour-de-bretagne-a-velo-famille.jpg" alt="phototemoign" />
+        <h1>Vos aventures en témoignages</h1>
+    </header>
+
     <nav class="navup">
+        <ul class="navulup">
+            <li class="navli"><a href="itineraire.html">l'itinéraire</a></li>
+            <li class="navli"><a href="temoignages.html">témoignages</a></li>
+            <li class="navli"><a href="news.html">news</a></li>
+        </ul>
+
         <div class="boutondroit">
             <section class="reseaux">
                 <a href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
@@ -22,8 +34,11 @@
 
             <section class="newsletternav">
                 <p id="pAbonnerNav">S'abonner à la newsletter</p>
-                <input type="email" placeholder="Entrez votre mail" id="inscriptionMailAaccueil">
-                <button id="boutonInscription">JE M'INSCRIS</button>
+                <div>
+                    <input type="email" placeholder="Entrez votre mail" id="inscriptionMailAaccueil">
+                    <button id="boutonInscription">JE M'INSCRIS</button>
+                </div>
+
             </section>
         </div>
 
@@ -49,11 +64,8 @@
         </ul>
     </nav>
 
-    <header class="headertitre">
-        <img src="img/tour-de-bretagne-a-velo-famille.jpg" alt="phototemoign" />
-        <h1>Vos aventures en témoignages</h1>
-    </header>
-    <div>
+
+    <div class="derniersavis">
         <h2>
             Les derniers avis publiés
         </h2>
@@ -120,6 +132,7 @@
     <script src="js/footer.js"></script>
     <script src="js/main.js"></script>
     <script src="js/temoignage.js"></script>
+    <script src="js/burger.js"></script>
 </body>
 
 </html>
