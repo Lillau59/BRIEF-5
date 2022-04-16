@@ -32,26 +32,26 @@ const StrapiUrl = strapiIp + strapiPort + strapiApi;
 //console.log(StrapiUrl);
 
 fetch(StrapiUrl)
-.then(function(response) {
-  return response.json();
-})
-.then(function(response) {  
+  .then(function (response) {
+    return response.json();
+  })
+  .then(function (response) {
 
-  // les données peuvent arriver dans un ordre différents de celui des id ascendant, on les trie donc d'abord pour les remettre dans l'ordre
-  response.data.sort(function (a, b) {
-    return a.id - b.id;
-  });  
+    // les données peuvent arriver dans un ordre différents de celui des id ascendant, on les trie donc d'abord pour les remettre dans l'ordre
+    response.data.sort(function (a, b) {
+      return a.id - b.id;
+    });
 
-  construct(response.data);
+    construct(response.data);
 
-}).catch(function(error) {
-  console.log('Il y a eu un problème avec l\'opération fetch: ' + error.message);
-});
+  }).catch(function (error) {
+    console.log('Il y a eu un problème avec l\'opération fetch: ' + error.message);
+  });
 
 // On parcoure la liste des étapes
 function construct(etapes) {
 
-  for(const etape of etapes) {
+  for (const etape of etapes) {
 
     // On crée les éléments HTML de cette étape (nom, Kms...)
     // On veut obtenir cette structure
@@ -75,7 +75,7 @@ function construct(etapes) {
     // On crée la div 'etape'
     let eltEtape = document.createElement('div');
     eltEtape.classList.add('etape');
-    eltEtape.classList.add('etape' + etape.id);    
+    eltEtape.classList.add('etape' + etape.id);
 
     // On crée l'élément 'a' (qui mène à la page détail)
     let a = document.createElement('a');
@@ -89,14 +89,14 @@ function construct(etapes) {
     leftEtape.classList.add('left-etape');
 
     // On ajoute la div 'etape' dans l'élément 'a'
-    a.appendChild(leftEtape);    
+    a.appendChild(leftEtape);
 
     // On crée l'élément img pour la miniature
-    let img = document.createElement('img');      
-    img.classList.add('img-itineraire');  
+    let img = document.createElement('img');
+    img.classList.add('img-itineraire');
     img.alt = etape.attributes.nom;
 
-    if(etape.attributes.photo.data != null) {
+    if (etape.attributes.photo.data != null) {
       img.src = strapiIp + strapiPort + etape.attributes.photo.data.attributes.formats.thumbnail.url
       //console.log(img.src);
     }
@@ -120,38 +120,38 @@ function construct(etapes) {
     rigthEtape.classList.add('right-etape');
 
     // On ajoute la div 'etape' dans l'élément 'a'
-    a.appendChild(rigthEtape);      
+    a.appendChild(rigthEtape);
 
     // On crée l'élément qui contient le type de voie et le revêtement
     let typeEtape = document.createElement('div');
     typeEtape.classList.add('type-etape');
 
-    let h3 = document.createElement('h3');    
-    if(etape.attributes.revetement != null) {
+    let h3 = document.createElement('h3');
+    if (etape.attributes.revetement != null) {
       h3.innerText = etape.attributes.typevoie + " / " + etape.attributes.revetement;
     }
     else {
       h3.innerText = etape.attributes.typevoie;
     }
-    typeEtape.appendChild(h3); 
+    typeEtape.appendChild(h3);
 
     let i = document.createElement('i');
     i.id = 'favorite' + etape.id;
-    
+
     var favorite = localStorage.getItem('favorite' + etape.id);
     console.log(favorite);
-    if(favorite == null || favorite == '0') {        
+    if (favorite == null || favorite == '0') {
       i.classList.add('fa-regular');
     }
-    else {      
+    else {
       i.classList.add('fa-solid');
     }
 
     i.classList.add('fa-heart');
-    i.addEventListener('click', function(event) {
+    i.addEventListener('click', function (event) {
       var fav = localStorage.getItem('favorite' + etape.id);
       console.log(fav);
-      if(fav == null || fav == '0') {        
+      if (fav == null || fav == '0') {
         document.querySelector('#favorite' + etape.id).classList.add('fa-solid');
         document.querySelector('#favorite' + etape.id).classList.remove('fa-regular');
         localStorage.setItem('favorite' + etape.id, '1');
@@ -163,7 +163,7 @@ function construct(etapes) {
       }
       event.preventDefault();
     }, false);
-    typeEtape.appendChild(i); 
+    typeEtape.appendChild(i);
 
     let h2 = document.createElement('h2');
     h2.classList.add('nom-etape');
@@ -171,7 +171,7 @@ function construct(etapes) {
 
     let desc = document.createElement('p');
     desc.classList.add('desc-etape');
-    if(etape.attributes.resume.length > 150) {
+    if (etape.attributes.resume.length > 150) {
       desc.innerText = etape.attributes.resume.substr(0, 150) + "[...]";
     }
     else {
@@ -179,9 +179,9 @@ function construct(etapes) {
     }
 
     // On ajoute les éléments dans la div rigthEtape
-    rigthEtape.appendChild(typeEtape); 
-    rigthEtape.appendChild(h2); 
-    rigthEtape.appendChild(desc); 
+    rigthEtape.appendChild(typeEtape);
+    rigthEtape.appendChild(h2);
+    rigthEtape.appendChild(desc);
 
     // On ajoute au document
     let container = document.querySelector('.etapes');
@@ -212,7 +212,7 @@ function construct(etapes) {
     let iconEnd = "circle.png";
     let iconShadow = "transparent.png";
 
-    if(etape.id == 1) {
+    if (etape.id == 1) {
       iconStart = "pin-icon-start.png";
       iconEnd = "circle.png";
       iconShadow = "transparent.png";
@@ -241,38 +241,38 @@ function construct(etapes) {
         shadowUrl: iconShadow
       }
     }).on('mouseover', function (e) {
-        this.setStyle({
-          color: couleurSurvol
-        });
-        popup[etape.id]
-          .setLatLng(e.latlng)
-          .setContent("<h3>" + etape.attributes.nom + "</h3>")
-          .openOn(map);
-      }).on('mouseout', function (e) {
-        map.closePopup();
-        this.setStyle({
-          color: couleurTrace
-        });
-      }).on('click', function (e) {
-        document.location.href = "etape.html?etape=" + etape.id;
+      this.setStyle({
+        color: couleurSurvol
+      });
+      popup[etape.id]
+        .setLatLng(e.latlng)
+        .setContent("<h3>" + etape.attributes.nom + "</h3>")
+        .openOn(map);
+    }).on('mouseout', function (e) {
+      map.closePopup();
+      this.setStyle({
+        color: couleurTrace
+      });
+    }).on('click', function (e) {
+      document.location.href = "etape.html?etape=" + etape.id;
     }).addTo(map);
 
-    distance = Number.parseFloat(mapEtape[etape.id].get_distance()/1000).toFixed(2);
+    distance = Number.parseFloat(mapEtape[etape.id].get_distance() / 1000).toFixed(2);
     document.querySelector('.etape' + etape.id + ' a .left-etape .km').innerText = distance.replace('.', ',') + " km";
   }
 }
 
-switcher.addEventListener('click', () => { 
-  if(switcher.innerText == "Afficher la carte") {
-    document.querySelector('.etapes').style.display = 'none';  
+switcher.addEventListener('click', () => {
+  if (switcher.innerText == "Afficher la carte") {
+    document.querySelector('.etapes').style.display = 'none';
     document.querySelector('#map').style.display = 'block';
     switcher.innerText = "Afficher la liste";
     // Bidouille pour pouvoir afficher la carte correctement
     window.dispatchEvent(new Event('resize'));
-    map.setZoom(9); 
+    map.setZoom(9);
   }
   else {
-    document.querySelector('.etapes').style.display = 'flex';  
+    document.querySelector('.etapes').style.display = 'flex';
     document.querySelector('#map').style.display = 'none';
     switcher.innerText = "Afficher la carte";
   }
@@ -280,19 +280,19 @@ switcher.addEventListener('click', () => {
 
 window.addEventListener('resize', () => {
   // Si on repasse au dessus de 800 px, affichage liste + carte et suppression bouton
-  if(window.innerWidth > 800) {
-    document.querySelector('.etapes').style.display = 'flex';  
+  if (window.innerWidth > 800) {
+    document.querySelector('.etapes').style.display = 'flex';
     document.querySelector('#map').style.display = 'block';
     switcher.display = "none";
   }
   else {
     switcher.display = "block";
-    if(switcher.innerText == "Afficher la carte") {
-      document.querySelector('.etapes').style.display = 'flex';  
+    if (switcher.innerText == "Afficher la carte") {
+      document.querySelector('.etapes').style.display = 'flex';
       document.querySelector('#map').style.display = 'none';
     }
     else {
-      document.querySelector('.etapes').style.display = 'none';  
+      document.querySelector('.etapes').style.display = 'none';
       document.querySelector('#map').style.display = 'block';
     }
   }

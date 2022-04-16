@@ -379,7 +379,7 @@ header {
     height: 40px;
     //cursor: pointer;
 
-    button {
+    .button {
       background-color: transparent;
       border-radius: 5px;
       color: $color-almost-white;
@@ -518,7 +518,7 @@ header {
         margin: 0 auto;
       }
 
-      button {
+      .button {
 
         align-items: center;
         background-color: transparent;
@@ -658,7 +658,7 @@ header {
     height: 40px;
     cursor: pointer;
 
-    button {
+    .button {
       background-color: transparent;
       border-radius: 5px;
       color: $color-almost-white;
@@ -734,10 +734,10 @@ header {
       width: 100%;
 
       a {
-        margin: 0 auto;
+        margin: 0 auto;       
       }
 
-      button {
+      .button {
 
         align-items: center;
         background-color: transparent;

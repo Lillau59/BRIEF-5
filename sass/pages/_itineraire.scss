@@ -16,33 +16,33 @@
 }
 
 .itineraire {
-    position:absolute;
-    top:100px;  
-    left:0;
-    bottom:0;
-    right:0;
-    display:flex;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
     flex-direction: row;
 
     .etapes {
-        display:flex;
+        display: flex;
         flex-direction: column;
-        width:50%;
+        width: 50%;
         font-family: 'Istok Web', Arial, sans-serif;
         font-weight: 100;
         overflow-y: scroll;
         //scrollbar-color: rebeccapurple green;
         scrollbar-width: thin;
-    
+
         .etape {
 
             a {
-                display:flex;
+                display: flex;
                 flex-direction: row;
-                padding:2px 0;
+                padding: 2px 0;
                 transition: all ease 0.3s;
                 text-decoration: none;
-                color:black;
+                color: black;
 
                 .left-etape {
                     .img-itineraire {
@@ -50,83 +50,83 @@
                         height: 190px;
                         object-fit: cover;
                     }
-                    
+
                     .km {
-                        position:relative;
-                        top:-150px;
-                        left:10px;
+                        position: relative;
+                        top: -150px;
+                        left: 10px;
                         background-color: $color-eurovelo5_princ3;
-                        width:60px;
-                        padding:5px;
+                        width: 60px;
+                        padding: 5px;
                         text-align: center;
                         font-size: 0.8rem;
                         font-weight: bold;
-                        margin-top:-30px;
+                        margin-top: -30px;
                     }
                 }
-        
+
                 .right-etape {
-                    display:flex;
+                    display: flex;
                     flex-direction: column;
-                    width:100%;
-        
+                    width: 100%;
+
                     .type-etape {
-                        display:flex;
+                        display: flex;
                         justify-content: space-between;
                         align-items: center;
                         background-color: $color-eurovelo5_princ1;
-                        padding:0;
-                        width:100%;
+                        padding: 0;
+                        width: 100%;
 
                         h3 {
-                            color:white;
+                            color: white;
                             padding: 5px 10px;
-                            margin:0;
+                            margin: 0;
                             font-size: 0.9rem;
                         }
 
                         i {
-                            color:$color-eurovelo5_princ2;
+                            color: $color-eurovelo5_princ2;
                             font-size: 20px;
                             background-color: white;
-                            padding:8px;
+                            padding: 8px;
                         }
 
                     }
-        
+
                     .nom-etape {
                         margin: 2px 0;
                         padding-left: 8px;
                         font-size: 1.3rem;
                     }
-    
+
                     .desc-etape {
-                        padding:5px;
+                        padding: 5px;
                         font-family: 'Frutiger-light', Arial, sans-serif;
                         font-weight: bold;
                     }
                 }
-    
+
                 &:hover {
                     background-color: $color-eurovelo5_princ3;
                     cursor: pointer;
-    
+
                     .left-etape {
                         .img-itineraire {
                             filter: blur(2px);
                         }
                     }
                 }
-                
+
                 @media screen and (max-width: 1200px) {
                     display: flex;
                     flex-direction: column;
 
                     .left-etape .img-itineraire {
-                        width:100%;
+                        width: 100%;
                     }
                 }
-            }  
+            }
         }
 
         @media screen and (max-width: 800px) {
@@ -134,11 +134,11 @@
         }
     }
 
-    #map { 
+    #map {
         //max-width: 1000px; 
         height: 800px;
-        width: 100%; 
-        height:100%;
+        width: 100%;
+        height: 100%;
         z-index: 50;
 
         @media screen and (max-width: 800px) {
@@ -146,34 +146,34 @@
             height: 800px;
         }
     }
-    
+
     .switcher {
-        position:fixed;
+        position: fixed;
         bottom: 30px;
-        left:10px;
-        right:10px;
+        left: 10px;
+        right: 10px;
         background-color: $color-eurovelo5_princ3;
-        color:$color-eurovelo5_princ2;
+        color: $color-eurovelo5_princ2;
         text-align: center;
-        padding:10px 0;
+        padding: 10px 0;
         z-index: 100;
-        border-radius:5px;
-        opacity:0.8;
+        border-radius: 5px;
+        opacity: 0.8;
         font-size: 1.1rem;
         font-weight: bold;
-        visibility:hidden;
+        visibility: hidden;
         cursor: pointer;
 
         &:hover {
             font-size: 1.2rem;
-            padding:11px 0;
-            opacity:1;
+            padding: 11px 0;
+            opacity: 1;
         }
     }
 
     @media screen and (max-width: 800px) {
         .switcher {
-            visibility:visible;
+            visibility: visible;
         }
     }
 }

@@ -10,6 +10,3 @@ function closeNav() {
         document.getElementById("boutonrech").classList.remove("cache")
     }, 200);
 }
-
-
-

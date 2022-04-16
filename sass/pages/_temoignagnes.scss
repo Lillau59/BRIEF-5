@@ -1,86 +1,84 @@
+header {
+    width: 100%;
+    position: absolute;
 
-    header {
+    img {
         width: 100%;
+        height: 400px;
+        object-fit: cover;
+    }
+
+    h1 {
         position: absolute;
-
-        img {
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
-        }
-
-        h1 {
-            position: absolute;
-            top: 85px;
-            text-align: center;
-            left: 0%;
-            right: 0%;
-            color: aliceblue;
-        }
-    }
-
-    .derniersavis {
+        top: 85px;
         text-align: center;
-        margin:400px 15px 15px 15px;
-
+        left: 0%;
+        right: 0%;
+        color: $color-almost-white;
     }
+}
 
-    .mainTemognages {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+.derniersavis {
+    text-align: center;
+    margin: 400px 15px 15px 15px;
+}
+
+.mainTemognages {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    text-align: center;
+    max-width: 1400px;
+    width: 100%;
+    margin: auto;
+    align-items: start;
+
+    article {
+        flex-direction: column;
+        display: flex;
         text-align: center;
-        max-width: 1400px;
-        width: 100%;
-        margin: auto;
-        align-items: start;
-        
-        article {
-            flex-direction: column;
+        align-content: space-around;
+        padding: 15px;
+
+        h2 {
             display: flex;
-            text-align: center;
-            align-content: space-around;
-            padding: 15px;
-            
-            h2 {
-                display: flex;
-                justify-content: center;
-            }
+            justify-content: center;
+        }
 
-            p {
-                display: flex;
-                justify-content: center;
-                text-align: justify;
+        p {
+            display: flex;
+            justify-content: center;
+            text-align: justify;
 
-            }
+        }
 
-            .phototemoign {
+        .phototemoign {
+            width: 100%;
+
+            img {
                 width: 100%;
-
-                img {
-                    width: 100%;
-                    height: 400px;
-                    object-fit: cover;
-                    width: 100%;
-                }
+                height: 400px;
+                object-fit: cover;
+                width: 100%;
             }
         }
     }
+}
 
 
 @media screen and (max-width: 800px) {
 
-        main {
-            grid-template-columns: 1fr 1fr;
+    main {
+        grid-template-columns: 1fr 1fr;
 
-        }
+    }
 
 }
 
 @media screen and (max-width: 550px) {
 
-        main {
-            grid-template-columns: 1fr;
+    main {
+        grid-template-columns: 1fr;
 
-        }
+    }
 
 }

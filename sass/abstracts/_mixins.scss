@@ -1,22 +1,19 @@
-@mixin mixincasegrillePN
-{
+@mixin mixincasegrillePN {
     position: relative;
     height: 500px;
-    a .imagearticlecasegrille
-    {
+
+    a .imagearticlecasegrille {
         object-fit: cover;
-        
+
     }
-    
-    @media screen and (max-width: 1000px)
-    {
+
+    @media screen and (max-width: 1000px) {
         height: 300px;
     }
 }
-@mixin mixintitrearticlecasegrille
-{
-    .titrearticlecasegrille
-    {
+
+@mixin mixintitrearticlecasegrille {
+    .titrearticlecasegrille {
         position: absolute;
         bottom: 10px;
         text-align: center;
@@ -24,8 +21,8 @@
         color: white;
         text-shadow: black 1px 1px;
         font-size: 25px;
-        span
-        {
+
+        span {
             background-color: $color-eurovelo5opaque;
             padding: 0 10px;
             border-radius: 5px;
