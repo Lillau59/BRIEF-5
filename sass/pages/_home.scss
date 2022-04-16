@@ -1,9 +1,8 @@
-html
-{
+html {
   width: 100%;
 }
-header {
 
+header {
 
   .swiper {
     position: absolute;
@@ -15,16 +14,18 @@ header {
       color: $color-almost-white;
       text-shadow: 1px 1px 2px $color-almost-black;
 
-      h1, h2 {
+      h1,
+      h2 {
         position: absolute;
         top: 30%;
         right: 50%;
         transform: translate(50%, 50%);
         z-index: 100;
+        text-align: center;
       }
 
       h2 {
-        top: 40%;
+        top: 43%;
       }
     }
 
@@ -35,7 +36,6 @@ header {
         height: 100%;
       }
 
-      // font-family: "Open Sans", sans-serif;
       background-size: cover;
       background-position: 100%;
       min-height: 100vh;
@@ -44,7 +44,6 @@ header {
       justify-content: center;
       flex-direction: column;
     }
-
   }
 }
 
@@ -53,7 +52,7 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top:70vh;
+  margin-top: 70vh;
   background-color: $color-almost-white;
 
   .pedalez {
@@ -80,7 +79,7 @@ header {
       flex-direction: column;
       justify-items: center;
       white-space: pre-line;
-      background-color: #00b9cb;
+      background-color: $color-eurovelo5_princ1;
       border-radius: 5px;
       max-width: 800px;
       width: 100%;
@@ -134,7 +133,7 @@ header {
 
 .presentation {
 
-  max-width: 800px;
+  max-width: 1000px;
   margin: 20px 0;
 
 
@@ -151,6 +150,7 @@ header {
     display: flex;
     justify-items: center;
     text-align: justify;
+    padding: 0 10px;
   }
 }
 
@@ -243,13 +243,15 @@ header {
 @media screen and (max-width: 1200px) {
   .TMAV {
     width: 100%;
-    p 
-    {
+
+    p {
       text-align: center;
     }
-    h3{
+
+    h3 {
       text-align: center;
     }
+
     .TMAVarticlephoto {
       grid-template-columns: 1fr 1fr 1fr;
     }
@@ -262,16 +264,21 @@ header {
 }
 
 @media screen and (max-width: 700px) {
+
+  .mainIndex {
+    margin-top: 80vh;
+    font-size: 14px;
+  }
+
   .TMAV {
     .TMAVarticlephoto {
       grid-template-columns: 1fr 1fr;
-      
+
     }
   }
-  .TMAVarticle
-  {
-    .TMAVimage
-    {
+
+  .TMAVarticle {
+    .TMAVimage {
       height: 300px;
     }
   }
@@ -281,8 +288,8 @@ header {
   .TMAV {
     .TMAVarticlephoto {
       display: flex;
-    flex-direction: column;
-    align-items: center;
+      flex-direction: column;
+      align-items: center;
     }
   }
 }
@@ -322,9 +329,9 @@ header {
       img {
         border-radius: 5px;
         object-fit: cover;
-  
+
         &:hover {
-          filter: blur(2px);  
+          filter: blur(2px);
         }
       }
 
@@ -380,13 +387,13 @@ header {
       font-size: 15px;
       padding: 8px;
       cursor: pointer;
-      background-color: #0cdbeeab;
+      background-color: $color-eurovelo5_princ1;
       text-shadow: 1px 1px 2px grey;
     }
 
     :hover {
       background-color: $color-almost-white;
-      color: #00b9cb;
+      color: $color-eurovelo5_princ1;
     }
   }
 }
@@ -424,8 +431,8 @@ header {
 
       .lieuavis {
         display: inline;
-        background-color: orange;
-        color: $color-almost-white;
+        background-color: $color-eurovelo5_princ3;
+        color: $color-almost-black;
         font-size: 13px;
         padding: 5px;
       }
@@ -498,7 +505,7 @@ header {
     .resumeIlslOnFait {
       width: 350px;
       color: $color-almost-white;
-      
+
     }
 
     .boutonsindex {
@@ -521,13 +528,13 @@ header {
         font-size: 15px;
         padding: 8px;
         cursor: pointer;
-        background-color: #0cdbeeab;
+        background-color: $color-eurovelo5_princ1;
         text-shadow: 1px 1px 2px grey;
       }
 
       :hover {
         background-color: $color-almost-white;
-        color: #00b9cb;
+        color: $color-eurovelo5_princ1;
       }
     }
   }
@@ -609,6 +616,7 @@ header {
       border-radius: 5px;
       object-fit: cover;
       width: 530px;
+
       &:hover {
         filter: blur(2px);
 
@@ -658,13 +666,13 @@ header {
       font-size: 15px;
       padding: 8px;
       cursor: pointer;
-      background-color: #0cdbeeab;
+      background-color: $color-eurovelo5_princ1;
       text-shadow: 1px 1px 2px grey;
     }
 
     :hover {
       background-color: $color-almost-white;
-      color: #00b9cb;
+      color: $color-eurovelo5_princ1;
     }
   }
 }
@@ -684,7 +692,7 @@ header {
 
       .organisentpourvous {
         &:hover {
-          a .etapeSuggeres{
+          a .etapeSuggeres {
             transition: 0.8s;
             transform: scale(1.1) translate(1px, -21px);
           }
@@ -739,13 +747,13 @@ header {
         font-size: 15px;
         padding: 8px;
         cursor: pointer;
-        background-color: #0cdbeeab;
+        background-color: $color-eurovelo5_princ1;
         text-shadow: 1px 1px 2px grey;
       }
 
       :hover {
         background-color: $color-almost-white;
-        color: #00b9cb;
+        color: $color-eurovelo5_princ1;
       }
     }
   }

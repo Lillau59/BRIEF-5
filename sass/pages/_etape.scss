@@ -63,6 +63,18 @@
         }
 
         .etape-elevation {
+
+            display:flex;
+            flex-direction: column;
+
+            .elevation {
+                //width:100%;
+
+                svg {
+                    width:100%;   
+                }
+            }
+
             a {
                 text-decoration: none;
                 color:$color-eurovelo5_princ1;
