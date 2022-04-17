@@ -18,12 +18,12 @@
         bottom: 10px;
         text-align: center;
         width: 100%;
-        color: white;
-        text-shadow: black 1px 1px;
+        color: $color-almost-white;
+        text-shadow: $color-almost-black 1px 1px;
         font-size: 25px;
 
         span {
-            background-color: $color-eurovelo5opaque;
+            background-color: $color-eurovelo5_princ1;
             padding: 0 10px;
             border-radius: 5px;
         }
