@@ -78,4 +78,3 @@ Nous avons utilisé le préprocesseur SASS et le modèle 7-1 (7 dossiers thémat
 <img width="50" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original-wordmark.svg" alt="GitHub" title="GitHub" />
 <img width="50" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma" title="Figma" />
 <img width="70" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/trello/trello-plain-wordmark.svg" alt="Visual Studio Code" title="Visual Studio Code" />
-
