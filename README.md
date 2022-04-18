@@ -67,7 +67,7 @@ Nous avons utilisé le préprocesseur SASS et le modèle 7-1 (7 dossiers thémat
 
 
 ## Les technos que nous avons utilisés
-
+<p>
 <img width="50" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original-wordmark.svg" alt="HTML5" title="HTML5" />
 <img width="50" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original-wordmark.svg" alt="CSS3" title="CSS3" />
 <img width="50" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" title="JavaScript" />
@@ -78,3 +78,4 @@ Nous avons utilisé le préprocesseur SASS et le modèle 7-1 (7 dossiers thémat
 <img width="50" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original-wordmark.svg" alt="GitHub" title="GitHub" />
 <img width="50" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma" title="Figma" />
 <img width="70" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/trello/trello-plain-wordmark.svg" alt="Visual Studio Code" title="Visual Studio Code" />
+</p>
