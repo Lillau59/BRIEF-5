@@ -152,7 +152,7 @@ body::before {
     width: 100%;
     display: flex;
     background-color: $color-almost-white;
-    box-shadow: 0 5px 5px $color-almost-white;
+    box-shadow: 0 5px 5px 5px $color-almost-white;
     align-items: center;
     padding: 8px 0;
 
@@ -242,7 +242,7 @@ body::before {
 
 @media screen and (max-width:680px) {
 
-    body {
+    body.open {
         overflow: hidden;
     }
 
