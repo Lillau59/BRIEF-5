@@ -569,11 +569,11 @@ header {
 //css base
 
 .articlebackground2 {
-  margin-top: 40px;
+  margin: 40px 0;
   background-image: url(/img/tour-de-bretagne-a-velo-famille.jpg);
   width: 100%;
-  max-width:1920px;
-  height: 800px;
+  max-width:1500px;
+  //height: 800px;
 
   h3,
   p {
@@ -585,8 +585,9 @@ header {
   .suggestions {
     display: flex;
     flex-direction: row;
-    padding: 40px 80px 80px 80px;
-    gap: 80px;
+    padding: 40px auto 80px auto;
+    //gap: 40px;
+    justify-content: space-around;
 
     .organisentpourvous {
       &:hover {
@@ -601,7 +602,7 @@ header {
     img {
       border-radius: 5px;
       object-fit: cover;
-      width: 530px;
+      width: 450px;
 
       &:hover {
         filter: blur(2px);
@@ -633,7 +634,7 @@ header {
 
   .boutonItineraire {
     display: flex;
-    margin: auto;
+    margin: 100px auto;
     width: 197px;
     height: 40px;
     cursor: pointer;
@@ -648,7 +649,7 @@ header {
 }
 
 //media-queries pour la section "partez en voyage, ils organisent tout pour vous!
-@media screen and(max-width: 1350px) {
+@media screen and(max-width: 1500px) {
   .articlebackground2 {
     background-image: url(/img/Image-Page-News/V24.jpg);
     width: 100%;
